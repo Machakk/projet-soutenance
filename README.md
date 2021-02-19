@@ -24,7 +24,7 @@ php bin/console doctrine:migrations:migrate
 #####
 - Create entities
 ```
-users, skills, 
+users, skills, articles,  PostForum
 ```
 
 

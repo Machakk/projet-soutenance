@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ArticlesRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -37,6 +39,16 @@ class Articles
      * @ORM\JoinColumn(nullable=false)
      */
     private $metier;
+
+    /**
+     * @ORM\OneToMany(targetEntity=CommentaireArticle::class, mappedBy="article")
+     */
+    private $commentaireArticles;
+
+    public function __construct()
+    {
+        $this->commentaireArticles = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -87,6 +99,36 @@ class Articles
     public function setMetier(?metiers $metier): self
     {
         $this->metier = $metier;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|CommentaireArticle[]
+     */
+    public function getCommentaireArticles(): Collection
+    {
+        return $this->commentaireArticles;
+    }
+
+    public function addCommentaireArticle(CommentaireArticle $commentaireArticle): self
+    {
+        if (!$this->commentaireArticles->contains($commentaireArticle)) {
+            $this->commentaireArticles[] = $commentaireArticle;
+            $commentaireArticle->setArticle($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommentaireArticle(CommentaireArticle $commentaireArticle): self
+    {
+        if ($this->commentaireArticles->removeElement($commentaireArticle)) {
+            // set the owning side to null (unless already changed)
+            if ($commentaireArticle->getArticle() === $this) {
+                $commentaireArticle->setArticle(null);
+            }
+        }
 
         return $this;
     }

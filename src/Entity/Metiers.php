@@ -34,10 +34,16 @@ class Metiers
      */
     private $articles;
 
+    /**
+     * @ORM\OneToMany(targetEntity=PostForum::class, mappedBy="metier")
+     */
+    private $postForums;
+
     public function __construct()
     {
         $this->users = new ArrayCollection();
         $this->articles = new ArrayCollection();
+        $this->postForums = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -111,6 +117,36 @@ class Metiers
             // set the owning side to null (unless already changed)
             if ($article->getMetier() === $this) {
                 $article->setMetier(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|PostForum[]
+     */
+    public function getPostForums(): Collection
+    {
+        return $this->postForums;
+    }
+
+    public function addPostForum(PostForum $postForum): self
+    {
+        if (!$this->postForums->contains($postForum)) {
+            $this->postForums[] = $postForum;
+            $postForum->setMetier($this);
+        }
+
+        return $this;
+    }
+
+    public function removePostForum(PostForum $postForum): self
+    {
+        if ($this->postForums->removeElement($postForum)) {
+            // set the owning side to null (unless already changed)
+            if ($postForum->getMetier() === $this) {
+                $postForum->setMetier(null);
             }
         }
 

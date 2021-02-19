@@ -97,10 +97,22 @@ class Users implements UserInterface
      */
     private $metier;
 
+    /**
+     * @ORM\OneToMany(targetEntity=CommentaireArticle::class, mappedBy="user")
+     */
+    private $commentaireArticles;
+
+    /**
+     * @ORM\OneToMany(targetEntity=CommentaireForum::class, mappedBy="user")
+     */
+    private $commentaireForums;
+
     public function __construct()
     {
         $this->skills = new ArrayCollection();
         $this->postForums = new ArrayCollection();
+        $this->commentaireArticles = new ArrayCollection();
+        $this->commentaireForums = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -357,6 +369,66 @@ class Users implements UserInterface
     public function setMetier(?metiers $metier): self
     {
         $this->metier = $metier;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|CommentaireArticle[]
+     */
+    public function getCommentaireArticles(): Collection
+    {
+        return $this->commentaireArticles;
+    }
+
+    public function addCommentaireArticle(CommentaireArticle $commentaireArticle): self
+    {
+        if (!$this->commentaireArticles->contains($commentaireArticle)) {
+            $this->commentaireArticles[] = $commentaireArticle;
+            $commentaireArticle->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommentaireArticle(CommentaireArticle $commentaireArticle): self
+    {
+        if ($this->commentaireArticles->removeElement($commentaireArticle)) {
+            // set the owning side to null (unless already changed)
+            if ($commentaireArticle->getUser() === $this) {
+                $commentaireArticle->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|CommentaireForum[]
+     */
+    public function getCommentaireForums(): Collection
+    {
+        return $this->commentaireForums;
+    }
+
+    public function addCommentaireForum(CommentaireForum $commentaireForum): self
+    {
+        if (!$this->commentaireForums->contains($commentaireForum)) {
+            $this->commentaireForums[] = $commentaireForum;
+            $commentaireForum->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommentaireForum(CommentaireForum $commentaireForum): self
+    {
+        if ($this->commentaireForums->removeElement($commentaireForum)) {
+            // set the owning side to null (unless already changed)
+            if ($commentaireForum->getUser() === $this) {
+                $commentaireForum->setUser(null);
+            }
+        }
 
         return $this;
     }
