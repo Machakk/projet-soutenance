@@ -86,9 +86,15 @@ class Users implements UserInterface
      */
     private $skills;
 
+    /**
+     * @ORM\OneToMany(targetEntity=PostForum::class, mappedBy="user", orphanRemoval=true)
+     */
+    private $postForums;
+
     public function __construct()
     {
         $this->skills = new ArrayCollection();
+        $this->postForums = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -302,6 +308,36 @@ class Users implements UserInterface
     {
         if ($this->skills->removeElement($skill)) {
             $skill->removeUser($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|PostForum[]
+     */
+    public function getPostForums(): Collection
+    {
+        return $this->postForums;
+    }
+
+    public function addPostForum(PostForum $postForum): self
+    {
+        if (!$this->postForums->contains($postForum)) {
+            $this->postForums[] = $postForum;
+            $postForum->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removePostForum(PostForum $postForum): self
+    {
+        if ($this->postForums->removeElement($postForum)) {
+            // set the owning side to null (unless already changed)
+            if ($postForum->getUser() === $this) {
+                $postForum->setUser(null);
+            }
         }
 
         return $this;
