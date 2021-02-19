@@ -1,7 +1,12 @@
 # DEV - NATION
 
 ## Base de données
-- dans .env
+
+### Pour recuperer la base de données
+- git pull origin master
+- composer update
+
+- dans .env verifier la ligne suivants
 ```
 DATABASE_URL="mysql://root:@127.0.0.1:3306/devnation"
 ```
@@ -10,10 +15,16 @@ DATABASE_URL="mysql://root:@127.0.0.1:3306/devnation"
 ```
 php bin/console doctrine:database:create
 ```
+- puis 
 
+```
+php bin/console doctrine:migrations:migrate
+```
+
+#####
 - Create entities
 ```
-php bin/console make:entity
+users, skills, 
 ```
 
 
