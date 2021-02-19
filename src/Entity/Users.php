@@ -91,6 +91,12 @@ class Users implements UserInterface
      */
     private $postForums;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=metiers::class, inversedBy="users")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $metier;
+
     public function __construct()
     {
         $this->skills = new ArrayCollection();
@@ -339,6 +345,18 @@ class Users implements UserInterface
                 $postForum->setUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getMetier(): ?metiers
+    {
+        return $this->metier;
+    }
+
+    public function setMetier(?metiers $metier): self
+    {
+        $this->metier = $metier;
 
         return $this;
     }

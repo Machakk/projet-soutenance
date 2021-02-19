@@ -32,6 +32,12 @@ class Articles
      */
     private $date_publication;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=metiers::class, inversedBy="articles")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $metier;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +75,18 @@ class Articles
     public function setDatePublication(\DateTimeInterface $date_publication): self
     {
         $this->date_publication = $date_publication;
+
+        return $this;
+    }
+
+    public function getMetier(): ?metiers
+    {
+        return $this->metier;
+    }
+
+    public function setMetier(?metiers $metier): self
+    {
+        $this->metier = $metier;
 
         return $this;
     }
