@@ -1,0 +1,38 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}compétences {% endblock %}
+
+{% block body %}
+
+
+
+<h2 class="text-center p-3">Liste des Compétences</h2>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>N°</th>
+            <th>Titre</th>
+            <th>Image</th>
+            <th>modifier</th>
+            <th>supprimer</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for skill in skills %}
+            <tr>
+                <div class="align-middle">{{loop.index}}</div>
+                <div class="align-middle">{{skill.title}}</div>
+                <div class="align-middle">{{skill.imageskill}}</div>
+                <div class="align-middle"> <i class="fas fa-pen"></i> </div>
+                <div class="align-middle"> <i class="fas fa-trash-alt"></i> </div>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<div class="text-right">
+    <a class="btn btn-outline-danger" href="">Ajouter une compétence</a>
+</div>
+
+{% endblock %}
