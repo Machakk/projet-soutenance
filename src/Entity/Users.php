@@ -107,12 +107,24 @@ class Users implements UserInterface
      */
     private $commentaireForums;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Users::class, inversedBy="users_abonnes")
+     */
+    private $abonne;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Users::class, mappedBy="abonne")
+     */
+    private $users_abonnes;
+
     public function __construct()
     {
         $this->skills = new ArrayCollection();
         $this->postForums = new ArrayCollection();
         $this->commentaireArticles = new ArrayCollection();
         $this->commentaireForums = new ArrayCollection();
+        $this->abonne = new ArrayCollection();
+        $this->users_abonnes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -428,6 +440,57 @@ class Users implements UserInterface
             if ($commentaireForum->getUser() === $this) {
                 $commentaireForum->setUser(null);
             }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|self[]
+     */
+    public function getAbonne(): Collection
+    {
+        return $this->abonne;
+    }
+
+    public function addAbonne(self $abonne): self
+    {
+        if (!$this->abonne->contains($abonne)) {
+            $this->abonne[] = $abonne;
+        }
+
+        return $this;
+    }
+
+    public function removeAbonne(self $abonne): self
+    {
+        $this->abonne->removeElement($abonne);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|self[]
+     */
+    public function getUsersAbonnes(): Collection
+    {
+        return $this->users_abonnes;
+    }
+
+    public function addUsersAbonne(self $usersAbonne): self
+    {
+        if (!$this->users_abonnes->contains($usersAbonne)) {
+            $this->users_abonnes[] = $usersAbonne;
+            $usersAbonne->addAbonne($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUsersAbonne(self $usersAbonne): self
+    {
+        if ($this->users_abonnes->removeElement($usersAbonne)) {
+            $usersAbonne->removeAbonne($this);
         }
 
         return $this;
