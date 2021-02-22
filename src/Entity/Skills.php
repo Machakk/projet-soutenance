@@ -30,7 +30,7 @@ class Skills
     private $imageskill;
 
     /**
-     * @ORM\ManyToMany(targetEntity=users::class, inversedBy="skills")
+     * @ORM\ManyToMany(targetEntity=Users::class, inversedBy="skills")
      */
     private $user;
 
@@ -69,14 +69,14 @@ class Skills
     }
 
     /**
-     * @return Collection|users[]
+     * @return Collection|Users[]
      */
     public function getUser(): Collection
     {
         return $this->user;
     }
 
-    public function addUser(users $user): self
+    public function addUser(Users $user): self
     {
         if (!$this->user->contains($user)) {
             $this->user[] = $user;
@@ -85,7 +85,7 @@ class Skills
         return $this;
     }
 
-    public function removeUser(users $user): self
+    public function removeUser(Users $user): self
     {
         $this->user->removeElement($user);
 
