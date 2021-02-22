@@ -1,29 +1,24 @@
 {% extends 'baseAdmin.html.twig' %}
 
-{% block title %}compétences {% endblock %}
+{% block title %}métiers!{% endblock %}
 
 {% block body %}
-
-
-
-<h2 class="text-center p-3">Liste des Compétences</h2>
+<h2 class="text-center p3"> Liste des Métiers</h2>
 
 <table class="table">
     <thead class="thead-dark">
         <tr>
             <th>N°</th>
-            <th>Titre</th>
-            <th>Image</th>
+            <th>Métier</th>
             <th>modifier</th>
             <th>supprimer</th>
         </tr>
     </thead>
     <tbody>
-        {% for skill in skills %}
+        {% for metier in metiers %}
             <tr>
                 <td class="align-middle">{{loop.index}}</td>
-                <td class="align-middle">{{skill.title}}</td>
-                <td class="align-middle">{{skill.imageskill}}</td>
+                <td class="align-middle">{{metier.metier}}</td>
                 <td class="align-middle"> <i class="fas fa-pen"></i> </td>
                 <td class="align-middle"> <i class="fas fa-trash-alt"></i> </td>
             </tr>
@@ -32,7 +27,6 @@
 </table>
 
 <div class="text-right">
-    <a class="btn btn-outline-danger" href="">Ajouter une compétence</a>
+    <a class="btn btn-outline-danger" href="">Ajouter une métier</a>
 </div>
-
 {% endblock %}
