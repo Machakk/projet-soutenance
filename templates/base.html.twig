@@ -1,19 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Dev-nation | {% block title %}{% endblock %}</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../public/css/style.css" />
 
     {% block stylesheets %}{% endblock %}
-    
-</head>
-<body>
-    {% block body %}{% endblock %}
-</body>
+  </head>
+  <body>
+    <div class="background">
+      <header>
+        <div class="logo">
+          <img src="../public/img/logo.png" alt="logo" />
+        </div>
+        <nav>
+          <ul>
+            <li class="home-button">
+              <a href="#"
+                ><img src="../public/img/icons/home 1-vert.png" alt="icon-home"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img
+                  src="../public/img/icons/discussion 1.png"
+                  alt="icon-home"
+              /></a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <div class="content">{% block body %}{% endblock %}</div>
+    </div>
+  </body>
 </html>
