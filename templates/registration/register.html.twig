@@ -11,9 +11,11 @@
 
     
     {{ form_start(registrationForm) }}
-    <div class="container offset-5">
-        <h2>Inscription</h2>
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="container-fluid offset-4 p-4">
+        
+        <h2 class="p-3">Inscription</h2>
+        <div class="dropdown-divider col-2"></div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 p-2">
             <form>
                 
                 <div class="row form-group">
@@ -25,7 +27,7 @@
                 </div>
                 <div class="row form-group">
                     {{ form_row(registrationForm.plainPassword, {
-                        label: 'Password'
+                        label: 'Mot de passe'
                     }) }}
                 </div>
                 <div class="row form-group">
@@ -35,14 +37,19 @@
                     {{ form_row(registrationForm.niveau) }}
                 </div>
                 <div class="row form-group">
-                    {{ form_label(registrationForm.agreeTerms) }}
-                    {{ form_widget(registrationForm.agreeTerms) }}
+                    {{ form_row(registrationForm.imgProfil)}}
+                </div>
+                <div class="row form-group">
+                    {{ form_row(registrationForm.agreeTerms) }}
                 </div>
                 <div class="row form-group">
                     {{ form_widget(registrationForm.valider) }}
                 </div>
+                <div>
+                    <p class="">Vous avez déjà un compte ? <a href="{{ path('app_login') }}" class="badge badge-success">Se connecter</a></p>
+                </div>
+
             </form>
-            <p class="text-center">Vous avez déjà un compte ? <a href="{{ path('app_login') }}" class="badge badge-success">Se connecter</a></p>
         </div>
 
     </div>
