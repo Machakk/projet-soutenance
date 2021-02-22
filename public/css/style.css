@@ -88,6 +88,7 @@ header ul li {
   display: flex;
   align-items: center;
 }
+/* Partie text */
 .part-text {
   font-family: "Sawarabi Gothic", sans-serif;
   padding: 20px;
@@ -123,6 +124,7 @@ header ul li {
   background: #184d4d;
 }
 
+/* part form home */
 .form-container {
   width: 550px;
   height: 450px;

@@ -54,19 +54,21 @@ class RegistrationFormType extends AbstractType
                 ],
             ])
             ->add('metier', ChoiceType::class, [
+                'required' => true,
                 'choices' => [
                     '-- choisir un métier --' => true,
-                    'Front end' => false,
-                    'Back end' => false,
-                    'Full stack' => false,
-                    'Designer' => false
+                    'Développeur Front end' => false,
+                    'Développeur Back end' => false,
+                    'Développeur Full stack' => false,
+                    'Web Designer' => false
                 ]
             ])
             ->add('niveau', ChoiceType::class, [
+                'required' => true,
                 'choices' => [
                     '-- ton niveau --' => true,
                     'Junior' => false,
-                    'Confirme' => false,
+                    'Confirmé' => false,
                     'Expert' => false
                 ]
             ])
@@ -78,7 +80,9 @@ class RegistrationFormType extends AbstractType
                 ]
             ])
             ->add('valider', SubmitType::class, [
-                
+                'attr' => [
+                    'class' => 'btn btn-success'
+                ]
             ])
         ;
     }

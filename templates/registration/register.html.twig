@@ -10,30 +10,51 @@
     {% endfor %}
 
     
-
-    <main class="container-fluid col-6">
-        <div class="col-4 offset-4">
-            <h1>Inscription</h1>        
-            {{ form_start(registrationForm) }}
-
-            {{ form_row(registrationForm.pseudo) }}
-            {{ form_row(registrationForm.email) }}
-            {{ form_row(registrationForm.plainPassword, {
-                label: 'Password'
-            }) }}
-            {{ form_row(registrationForm.metier) }}
-            {{ form_row(registrationForm.niveau) }}
-            {{ form_row(registrationForm.imgProfil) }}
-            {{ form_row(registrationForm.agreeTerms) }}
-            {{ form_row(registrationForm.valider) }}
-            
-
-            {{ form_end(registrationForm) }}
-            <div class="dropdown-divider"></div>
-        </div>
-        <p class="text-center">Vous avez déjà un compte ? <a href="{{ path('app_login') }}" class="badge badge-success">Se connecter</a></p>
+    {{ form_start(registrationForm) }}
+    <div class="container-fluid offset-4 p-4">
         
-    </main>
+        <h2 class="p-3">Inscription</h2>
+        <div class="dropdown-divider col-2"></div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 p-2">
+            <form>
+                
+                <div class="row form-group">
+                    {{ form_row(registrationForm.pseudo) }}
+                </div>
 
+                <div class="row form-group">
+                    {{ form_row(registrationForm.email) }}
+                </div>
+                <div class="row form-group">
+                    {{ form_row(registrationForm.plainPassword, {
+                        label: 'Mot de passe'
+                    }) }}
+                </div>
+                <div class="row form-group">
+                    {{ form_row(registrationForm.metier) }}
+                </div>
+                <div class="row form-group">
+                    {{ form_row(registrationForm.niveau) }}
+                </div>
+                <div class="row form-group">
+                    {{ form_row(registrationForm.imgProfil)}}
+                </div>
+                <div class="row form-group">
+                    {{ form_row(registrationForm.agreeTerms) }}
+                </div>
+                <div class="row form-group">
+                    {{ form_widget(registrationForm.valider) }}
+                </div>
+                <div>
+                    <p class="">Vous avez déjà un compte ? <a href="{{ path('app_login') }}" class="badge badge-success">Se connecter</a></p>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+        
+        {{ form_end(registrationForm) }}
+    
     
 {% endblock %}
