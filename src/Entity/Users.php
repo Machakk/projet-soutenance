@@ -92,7 +92,7 @@ class Users implements UserInterface
     private $postForums;
 
     /**
-     * @ORM\ManyToOne(targetEntity=metiers::class, inversedBy="users")
+     * @ORM\ManyToOne(targetEntity=Metiers::class, inversedBy="users")
      * @ORM\JoinColumn(nullable=false)
      */
     private $metier;
@@ -361,12 +361,12 @@ class Users implements UserInterface
         return $this;
     }
 
-    public function getMetier(): ?metiers
+    public function getMetier(): ?Metiers
     {
         return $this->metier;
     }
 
-    public function setMetier(?metiers $metier): self
+    public function setMetier(?Metiers $metier): self
     {
         $this->metier = $metier;
 

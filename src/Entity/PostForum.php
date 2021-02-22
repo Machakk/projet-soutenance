@@ -51,7 +51,7 @@ class PostForum
     private $commentaireForums;
 
     /**
-     * @ORM\ManyToOne(targetEntity=metiers::class, inversedBy="postForums")
+     * @ORM\ManyToOne(targetEntity=Metiers::class, inversedBy="postForums")
      * @ORM\JoinColumn(nullable=false)
      */
     private $metier;
@@ -156,12 +156,12 @@ class PostForum
         return $this;
     }
 
-    public function getMetier(): ?metiers
+    public function getMetier(): ?Metiers
     {
         return $this->metier;
     }
 
-    public function setMetier(?metiers $metier): self
+    public function setMetier(?Metiers $metier): self
     {
         $this->metier = $metier;
 

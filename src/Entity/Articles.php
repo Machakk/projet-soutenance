@@ -35,7 +35,7 @@ class Articles
     private $date_publication;
 
     /**
-     * @ORM\ManyToOne(targetEntity=metiers::class, inversedBy="articles")
+     * @ORM\ManyToOne(targetEntity=Metiers::class, inversedBy="articles")
      * @ORM\JoinColumn(nullable=false)
      */
     private $metier;
@@ -91,12 +91,12 @@ class Articles
         return $this;
     }
 
-    public function getMetier(): ?metiers
+    public function getMetier(): ?Metiers
     {
         return $this->metier;
     }
 
-    public function setMetier(?metiers $metier): self
+    public function setMetier(?Metiers $metier): self
     {
         $this->metier = $metier;
 
