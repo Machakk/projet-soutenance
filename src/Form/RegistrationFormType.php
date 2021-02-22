@@ -78,7 +78,9 @@ class RegistrationFormType extends AbstractType
                 ]
             ])
             ->add('valider', SubmitType::class, [
-                
+                'attr' => [
+                    'class' => 'btn btn-success'
+                ]
             ])
         ;
     }
