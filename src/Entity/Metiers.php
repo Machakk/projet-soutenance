@@ -2,10 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\MetiersRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use App\Entity\Users;
+use App\Entity\Articles;
+use App\Entity\PostForum;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\MetiersRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity(repositoryClass=MetiersRepository::class)
