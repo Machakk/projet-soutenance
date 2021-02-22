@@ -6,7 +6,14 @@
 
 Principale: #184D4D
 Secondaire: #41826A
+paragraphe: #4e4e4e
 Autre: a definir
+
+### Polices
+
+Titre: font-family: 'Sawarabi Gothic', sans-serif;
+Sous-titre: font-family: 'Noto Sans', sans-serif;
+Paragraphe: font-family: 'KoHo', sans-serif;
 
 ## Base de données
 
