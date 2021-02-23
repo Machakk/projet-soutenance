@@ -74,10 +74,10 @@ class RegistrationFormType extends AbstractType
             ->add('niveau', ChoiceType::class, [
                 'required' => true,
                 'choices' => [
-                    '- ton niveau -' => true,
-                    'Junior' => false,
-                    'Confirmé' => false,
-                    'Expert' => false
+                    '- ton niveau -' => false,
+                    'Junior' => 'junior',
+                    'Confirmé' => 'confirmé',
+                    'Expert' => 'expert'
                 ],
                 'attr' => [
                     'class' => 'form-control mb-3'
