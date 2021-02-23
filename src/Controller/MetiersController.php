@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Metiers;
+use App\Form\MetiersType;
 use App\Repository\MetiersRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,10 +24,11 @@ class MetiersController extends AbstractController
     }
 
     /**
-     * @Route("/admin/metiers", name="create_metiers")
+     * @Route("/admin/metiers/create", name="create_metiers")
      */
     public function createMetier(Request $request)
     {
+        
         $metiers = new Metiers();
         $form = $this->createForm(MetiersType::class, $metiers);
         $form->handleRequest($request);
@@ -36,12 +38,18 @@ class MetiersController extends AbstractController
             $manager->persist($metiers);
             $manager->flush();
             // metier ajouté
+            
+            return $this->redirectToRoute('admin_metiers');
         }
         else
         {
             //error
         }
-        return $this->redirectToRoute('admin_metiers');
+
+        return $this->render('admin/metiersForm.html.twig', [
+            'metiersForm'=>$form->createView(),
+        ]);
+       
     }
 
     /**
