@@ -21,7 +21,8 @@
     <div class="background">
       <header>
         <div class="logo">
-          <img src="../public/img/logo.png" alt="logo" />
+          <a href="{{ path('home') }}"><img src="../public/img/logo.png" alt="logo" /></a>
+          
         </div>
         <nav>
           <ul>
@@ -40,7 +41,7 @@
               /></a>
             </li>
             <li class="account-button">
-              <a href=""
+              <a href="{{ path('app_login') }}"
                 ><img
                   class="icon-account"
                   src="../public/img/icons/account 2.png"

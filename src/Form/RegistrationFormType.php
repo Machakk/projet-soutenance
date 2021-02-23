@@ -65,7 +65,6 @@ class RegistrationFormType extends AbstractType
                     'class' => 'form-control mb-3'
                 ]
             ])
-
             ->add('metier', EntityType::class, [
                 'required' => true,
                 'class' => Metiers::class,
