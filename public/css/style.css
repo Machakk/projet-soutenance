@@ -227,3 +227,47 @@ header ul li {
   background: #41826a;
   color: white;
 }
+<<<<<<< HEAD
+=======
+
+/* Partie Login */
+
+.container-login{
+  margin-top: 60px;
+  width: 1200px;
+  background: white;
+  border-radius: 30px;
+  -webkit-box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
+  box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+.container-login h2{
+  font-family: "Sawarabi Gothic", sans-serif;
+  font-size: 38px;
+  color: #184d4d;
+  margin-bottom: 40px;
+}
+.container-login label{
+  color: #4e4e4e;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 600;
+}
+.btn-valider-login{
+  text-align: center;
+  padding: 10px;
+  border: none;
+  color: white;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 18;
+  background: #184d4d;
+  text-align: center;
+  border-radius: 30px;
+}
+.btn-valider-login:hover{
+  background: #41826a;
+  color: white;
+}
+>>>>>>> 0f336e5e356cc7ff587534c624c59e8ca31374ef

@@ -26,21 +26,21 @@
         {% for post in posts %}
             <tr>
                 <td class="align-middle">{{loop.index}}</td>
-                <td class="align-middle">{{post.user_id}}</td>
+                <td class="align-middle">{{post.user.pseudo}}</td>
                 <td class="align-middle">{{post.title}}</td>
                 <td class="align-middle">{{post.content}}</td>
                 <td class="align-middle">{{post.img}}</td>
-                <td class="align-middle">{{post.date}}</td>
-                <td class="align-middle">{{post.metier_id}}</td>
-                <td class="align-middle"> <i class="fas fa-pen"></i> </td>
-                <td class="align-middle"> <i class="fas fa-trash-alt"></i> </td>
+                <td class="align-middle">{{post.date|date("m/d/Y","Europe/Paris")}}</td>
+                <td class="align-middle">{{post.metier.metier}}</td>
+                <td class="align-middle"> <a href="{{ path('post_update' , { 'id': post.id })}}"> <i class="fas fa-pen"></i> </a> </td>
+                <td class="align-middle"> <a href="{{ path('post_delete' , { 'id': post.id })}}"> <i class="fas fa-trash-alt"></i></a>  </td>
             </tr>
         {% endfor %}
     </tbody>
 </table>
 
 <div class="text-right">
-    <a class="btn btn-outline-danger" href="">Ajouter une post</a>
+    <a class="btn btn-outline-danger" href="{{ path('post_create') }}">Ajouter une post</a>
 </div>
 
 {% endblock %}
