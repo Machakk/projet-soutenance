@@ -38,7 +38,6 @@ class MetiersController extends AbstractController
             $manager->persist($metiers);
             $manager->flush();
             // metier ajouté
-            
             return $this->redirectToRoute('admin_metiers');
         }
         else
@@ -53,7 +52,7 @@ class MetiersController extends AbstractController
     }
 
     /**
-     * @Route("/admin/metiers-{id}", name="update_metiers")
+     * @Route("/admin/metiers/update-{id}", name="update_metiers")
      */
     public function updateMetiers(Request $request, $id, MetiersRepository $metiersRepository)
     {
@@ -68,11 +67,14 @@ class MetiersController extends AbstractController
             return $this->redirectToRoute('admin_metiers');
             //métier modifié
         }
+        return $this->render('admin/metiersForm.html.twig', [
+            'metiersForm'=>$form->createView(),
+        ]);
         
     }
 
     /**
-     * @Route("/admin/metiers-{id}", name="delete_metiers")
+     * @Route("/admin/metiers/delete-{id}", name="delete_metiers")
      */
     public function deleteMetiers($id, MetiersRepository $metiersRepository)
     {
