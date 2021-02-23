@@ -24,10 +24,10 @@
         {% for commentaire in commentaires %}
             <tr>
                 <td class="align-middle">{{loop.index}}</td>
-                <td class="align-middle">{{commentaire.user_id}}</td>
-                <td class="align-middle">{{commentaire.post_id}}</td>
+                <td class="align-middle">{{commentaire.user.pseudo}}</td>
+                <td class="align-middle">{{commentaire.post.title}}</td>
                 <td class="align-middle">{{commentaire.content}}</td>
-                <td class="align-middle">{{commentaire.date}}</td>
+                <td class="align-middle">{{commentaire.date| date("m/d/Y")}}</td>
                 <td class="align-middle"> <i class="fas fa-pen"></i> </td>
                 <td class="align-middle"> <i class="fas fa-trash-alt"></i> </td>
             </tr>
@@ -36,7 +36,7 @@
 </table>
 
 <div class="text-right">
-    <a class="btn btn-outline-danger" href="">Ajouter une commentaires</a>
+    <a class="btn btn-outline-danger" href="{{path('commentaire_create')}}">Ajouter une commentaires</a>
 </div>
 
 {% endblock %}
