@@ -187,3 +187,43 @@ header ul li {
 
 /* partie register / login */
 
+/* Partie Register*/
+
+.container-form-register{
+  margin-top: 60px;
+  width: 1200px;
+  background: white;
+  border-radius: 30px;
+  -webkit-box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
+  box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+.container-form-register h2{
+  font-family: "Sawarabi Gothic", sans-serif;
+  font-size: 38px;
+  color: #184d4d;
+}
+.line-register{
+  width: 600px;
+  margin-bottom: 40px;
+}
+.container-form-register label{
+  color: #4e4e4e;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 600;
+}
+.btn-valider-register{
+  color: white;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 18;
+  height: 32px;
+  background: #184d4d;
+  text-align: center;
+}
+.btn-valider-register:hover{
+  background: #41826a;
+  color: white;
+}

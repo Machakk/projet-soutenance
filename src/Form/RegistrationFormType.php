@@ -74,10 +74,10 @@ class RegistrationFormType extends AbstractType
             ->add('niveau', ChoiceType::class, [
                 'required' => true,
                 'choices' => [
-                    '- ton niveau -' => true,
-                    'Junior' => false,
-                    'Confirmé' => false,
-                    'Expert' => false
+                    '- ton niveau -' => false,
+                    'Junior' => 'junior',
+                    'Confirmé' => 'confirmé',
+                    'Expert' => 'expert'
                 ],
                 'attr' => [
                     'class' => 'form-control mb-3'
@@ -93,9 +93,9 @@ class RegistrationFormType extends AbstractType
                     'class' => 'form-control mb-3'
                 ]
             ])
-            ->add('valider', SubmitType::class, [
+            ->add('valider' , SubmitType::class, [
                 'attr' => [
-                    'class' => 'btn btn-primary'
+                    'class' => 'btn-valider-register'
                 ]
             ])
         ;

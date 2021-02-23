@@ -2,9 +2,12 @@
 
 namespace App\Form;
 
+use App\Entity\Metiers;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -16,6 +19,14 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+
+        ->add('pseudo', TextType::class, [
+            'required' => true,
+            'attr' => [
+                'class' => 'form-control mb-3'
+            ]
+            
+        ])
         ->add('email',EmailType::class,[
             'required'=>true,
             'attr' => [
@@ -50,6 +61,28 @@ class UserType extends AbstractType
             'label' => 'Mot de passe',
             'required' => false
         ])
+
+        ->add('metier', EntityType::class, [
+            'required' => true,
+            'class' => Metiers::class,
+            'choice_label' => 'metier',
+            
+        ])
+
+        ->add('niveau', ChoiceType::class, [
+            'required' => true,
+            'choices' => [
+                '- ton niveau -' => false,
+                'Junior' => 'junior',
+                'Confirmé' => 'confirmé',
+                'Expert' => 'expert'
+            ],
+            'attr' => [
+                'class' => 'form-control mb-3'
+            ]
+        ])
+
+        
 
         ->add('valider',SubmitType::class)
 

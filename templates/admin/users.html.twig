@@ -25,11 +25,16 @@
                 <td class="align-middle">{{loop.index}}</td>
                 <td class="align-middle">{{user.pseudo}}</td>
                 <td class="align-middle">{{user.email}}</td>
-                <td class="align-middle">metier</td>
+                <td class="align-middle">{{user.metier.metier}}</td>
+                <td class="align-middle">{{user.niveau}}</td>
                 <td class="align-middle">{{user.description}}</td>
                 <td class="align-middle">{{user.imgprofil}}</td>
-                <td class="align-middle"> <i class="fas fa-pen"></i> </td>
-                <td class="align-middle"> <i class="fas fa-trash-alt"></i> </td>
+                <td class="align-middle"> 
+                    <a href="{{ path('update_user', {'id':user.id}) }}"> <i class="fas fa-pen"></i></a>  
+                </td>
+                <td class="align-middle"> 
+                    <a href="{{ path('delete_user', {'id':user.id}) }}"><i class="fas fa-trash-alt"></i></a>  
+                </td>
             </tr>
         {% endfor %}
     </tbody>
