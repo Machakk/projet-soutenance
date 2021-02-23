@@ -20,7 +20,7 @@
     </div>
     <div class="part-form">
       <div class="form-container">
-        <form action="post">
+        <form action="{{ path('app_login') }}" method="post">
 
           <input
             placeholder="Adresse e-mail"
@@ -55,7 +55,7 @@
           </div>
           <div class="line"></div>
           <div class="create-div">
-            <button class="btn-create" href="{{ path('app_register') }}">Créer un compte</button>
+            <a class="btn-create" href="{{ path('app_register') }}">Créer un compte</a>
           </div>
         </form>
       </div>
