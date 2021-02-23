@@ -93,7 +93,7 @@ class RegistrationFormType extends AbstractType
                     'class' => 'form-control mb-3'
                 ]
             ])
-            ->add('valider', SubmitType::class, [
+            ->add('valider' , SubmitType::class, [
                 'attr' => [
                     'class' => 'btn btn-primary'
                 ]
