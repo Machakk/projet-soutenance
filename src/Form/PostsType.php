@@ -23,6 +23,7 @@ class PostsType extends AbstractType
             ->add('content' , TextType::class)
             ->add('img' , FileType::class , [
                 'required' => false,
+                'mapped' =>false,
             ])
             ->add('date',DateTimeType::class)
 
