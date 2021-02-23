@@ -28,7 +28,7 @@ class MetiersController extends AbstractController
     public function createMetier(Request $request)
     {
         $metiers = new Metiers();
-        $form = $this->createForm(MetiersType::class, $maison);
+        $form = $this->createForm(MetiersType::class, $metiers);
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid())
         {
@@ -50,12 +50,12 @@ class MetiersController extends AbstractController
     public function updateMetiers(Request $request, $id, MetiersRepository $metiersRepository)
     {
         $metiers = $metiersRepository->find($id);
-        $form = $this->createForm(MetiersType::class, $maison);
+        $form = $this->createForm(MetiersType::class, $metiers);
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid())
         {
             $manager = $this->getDoctrine()->getManager();
-            $manager->persist($maison);
+            $manager->persist($metiers);
             $manager->flush();
             return $this->redirectToRoute('admin_metiers');
             //métier modifié
@@ -70,7 +70,7 @@ class MetiersController extends AbstractController
     {
         $metiers = $metiersRepository->find($id);
         $manager = $this->getDoctrine()->getManager();
-        $manager->remove($maison);
+        $manager->remove($metiers);
         $manager->flush();
         return $this->redirectToRoute('admin_metiers');
     }
