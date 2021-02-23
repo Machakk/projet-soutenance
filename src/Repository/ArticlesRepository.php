@@ -47,4 +47,24 @@ class ArticlesRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    //fonction permettant d'afficher 4 derniers articles 
+
+    // /**
+    // * @return Articles[] Returns an array of Articles objects
+    // * ordered by latest insered id
+    // */
+    // public function afficherQuatreArticles($value)
+    // {
+    //     return $this->createQueryBuilder('b')
+    //         ->andWhere('b.id > :val')
+    //         ->setParameter('val', 0)
+    //         ->orderBy('b.id', 'DESC')
+    //         ->setMaxResults(4)
+    //         ->getQuery()
+    //         ->getResult()
+    //     ;
+    // }
+
+    
 }
