@@ -1,38 +1,43 @@
-{% extends 'baseAdmin.html.twig' %}
-
-{% block title %}compétences {% endblock %}
-
+{% extends 'baseAdmin.html.twig' %} {% block title %}compétences {% endblock %}
 {% block body %}
-
-
 
 <h2 class="text-center p-3">Liste des Compétences</h2>
 
 <table class="table">
-    <thead class="thead-dark">
-        <tr>
-            <th>N°</th>
-            <th>Titre</th>
-            <th>Image</th>
-            <th>modifier</th>
-            <th>supprimer</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for skill in skills %}
-            <tr>
-                <td class="align-middle">{{loop.index}}</td>
-                <td class="align-middle">{{skill.title}}</td>
-                <td class="align-middle">{{skill.imageskill}}</td>
-                <td class="align-middle"> <i class="fas fa-pen"></i> </td>
-                <td class="align-middle"> <i class="fas fa-trash-alt"></i> </td>
-            </tr>
-        {% endfor %}
-    </tbody>
+  <thead class="thead-dark">
+    <tr>
+      <th>N°</th>
+      <th>Titre</th>
+      <th>Image</th>
+      <th>modifier</th>
+      <th>supprimer</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for skill in skills %}
+    <tr>
+      <td class="align-middle">{{ loop.index }}</td>
+      <td class="align-middle">{{ skill.title }}</td>
+      <td class="align-middle">{{ skill.imageskill }}</td>
+      <td class="align-middle">
+        <a href="{{ path('skills_update', { 'id': skill.id }) }}"
+          ><i class="fas fa-pen"></i
+        ></a>
+      </td>
+      <td class="align-middle">
+        <a href="{{ path('skills_delete', { 'id': skill.id }) }}"
+          ><i class="fas fa-trash-alt"></i
+        ></a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
 </table>
 
 <div class="text-right">
-    <a class="btn btn-outline-danger" href="{{path('skill_create')}}">Ajouter une compétence</a>
+  <a class="btn btn-outline-danger" href="{{ path('skill_create') }}"
+    >Ajouter une compétence</a
+  >
 </div>
 
 {% endblock %}
