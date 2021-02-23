@@ -3,8 +3,10 @@
 namespace App\Form;
 
 use App\Entity\Users;
+use App\Entity\Metiers;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\ChoiceList\ChoiceList;
 use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
@@ -63,18 +65,11 @@ class RegistrationFormType extends AbstractType
                     'class' => 'form-control mb-3'
                 ]
             ])
-            ->add('metier', ChoiceType::class, [
+            ->add('metier', EntityType::class, [
                 'required' => true,
-                'choices' => [
-                    '- choisir un métier -' => true,
-                    'Développeur Front end' => false,
-                    'Développeur Back end' => false,
-                    'Développeur Full stack' => false,
-                    'Web Designer' => false
-                ],
-                'attr' => [
-                    'class' => 'form-control mb-3'
-                ]
+                'class' => Metiers::class,
+                'choice_label' => 'metier',
+                
             ])
             ->add('niveau', ChoiceType::class, [
                 'required' => true,
@@ -98,7 +93,7 @@ class RegistrationFormType extends AbstractType
                     'class' => 'form-control mb-3'
                 ]
             ])
-            ->add('valider', SubmitType::class, [
+            ->add('valider' , SubmitType::class, [
                 'attr' => [
                     'class' => 'btn btn-primary'
                 ]
