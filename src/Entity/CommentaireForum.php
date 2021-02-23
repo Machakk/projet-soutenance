@@ -28,7 +28,7 @@ class CommentaireForum
     private $date;
 
     /**
-     * @ORM\ManyToOne(targetEntity=users::class, inversedBy="commentaireForums")
+     * @ORM\ManyToOne(targetEntity=Users::class, inversedBy="commentaireForums")
      * @ORM\JoinColumn(nullable=false)
      */
     private $user;
@@ -68,12 +68,12 @@ class CommentaireForum
         return $this;
     }
 
-    public function getUser(): ?users
+    public function getUser(): ?Users
     {
         return $this->user;
     }
 
-    public function setUser(?users $user): self
+    public function setUser(?Users $user): self
     {
         $this->user = $user;
 

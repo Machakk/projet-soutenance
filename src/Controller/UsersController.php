@@ -56,9 +56,9 @@ class UsersController extends AbstractController
     /**
      * @Route("/admin/users/update-{id}", name="update_user")
      */
-    public function updateUser(UserRepository $userRepository, $id, Request $request, UserPasswordEncoderInterface $passwordEncoder)
+    public function updateUser(UsersRepository $usersRepository, $id, Request $request, UserPasswordEncoderInterface $passwordEncoder)
     {
-        $user = $userRepository->find($id);
+        $user = $usersRepository->find($id);
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid())
@@ -85,9 +85,9 @@ class UsersController extends AbstractController
     /**
      * @Route("/admin/users/delete-{id}", name="delete_user")
      */
-    public function deleteUser(UserRepository $userRepository, $id)
+    public function deleteUser(UsersRepository $usersRepository, $id)
     {
-        $user = $userRepository->find($id);
+        $user = $usersRepository->find($id);
         $manager = $this->getDoctrine()->getManager();
         $manager->remove($user);
         $manager->flush();
