@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\PostForumRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -9,12 +10,13 @@ use Symfony\Component\Routing\Annotation\Route;
 class PostsController extends AbstractController
 {
     /**
-     * @Route("/posts", name="posts")
+     * @Route("/admin/posts", name="admin_posts")
      */
-    public function index(): Response
+    public function index(PostForumRepository $postForumRepository): Response
     {
-        return $this->render('posts/index.html.twig', [
-            'controller_name' => 'PostsController',
+        $posts = $postForumRepository->findAll();
+        return $this->render('admin/posts.html.twig', [
+            'posts' => $posts,
         ]);
     }
 }
