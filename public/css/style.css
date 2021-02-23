@@ -187,6 +187,10 @@ header ul li {
 
 
 
+.create-div{
+  display: flex;
+  justify-content: center;
+}
 /* Partie Register*/
 
 .container-form-register{
