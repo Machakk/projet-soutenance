@@ -28,7 +28,6 @@ class SkillsController extends AbstractController
     /**
      * @Route("/admin/skills/create", name="skill_create")
      */
-
      public function createSkill(Request $request){
 
         $skill = new Skills();

@@ -3,9 +3,7 @@
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
-<main class="container-fluid p-5">
-    <div class="col-4 offset-4">
-
+<main class="container-login">
         <h2 class="text-center">Connexion</h2>
 
         <form method="post">
@@ -40,13 +38,12 @@
                 </div>
             #}
 
-            <div class="text-right">
-                <button class="btn btn-primary" type="submit">Connexion</button>
+            <div class="">
+                <button class="btn-valider-login" type="submit">Connexion</button>
             </div>
 
         </form>
         <div class="dropdown-divider my-3"></div>
         <p class="text-center">Pas encore inscrit?<a href="{{ path('app_register') }}" class="badge badge-success">Créez votre compte</a></p>
-    </div>
 </main>
 {% endblock %}
