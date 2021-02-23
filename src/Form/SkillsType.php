@@ -17,7 +17,7 @@ class SkillsType extends AbstractType
     {
         $builder
             ->add('title', TextType::class)
-            ->add('imageskill', FileType::class)
+            ->add('imageskill', FileType::class, array('data_class' => null))
             ->add('valider', SubmitType::class)
         ;
     }
