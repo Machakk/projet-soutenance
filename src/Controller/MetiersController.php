@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Metiers;
+use App\Form\MetiersType;
 use App\Repository\MetiersRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,7 +24,7 @@ class MetiersController extends AbstractController
     }
 
     /**
-     * @Route("/admin/metiers", name="create_metiers")
+     * @Route("/admin/metiers/create", name="create_metiers")
      */
     public function createMetier(Request $request)
     {
@@ -36,16 +37,20 @@ class MetiersController extends AbstractController
             $manager->persist($metiers);
             $manager->flush();
             // metier ajouté
+            return $this->redirectToRoute('admin_metiers');
         }
         else
         {
             //error
         }
-        return $this->redirectToRoute('admin_metiers');
+        return $this->render('admin/metiersForm.html.twig', [
+            'metiersForm'=>$form->createView(),
+        ]);
+       
     }
 
     /**
-     * @Route("/admin/metiers-{id}", name="update_metiers")
+     * @Route("/admin/metiers/update-{id}", name="update_metiers")
      */
     public function updateMetiers(Request $request, $id, MetiersRepository $metiersRepository)
     {
@@ -60,11 +65,14 @@ class MetiersController extends AbstractController
             return $this->redirectToRoute('admin_metiers');
             //métier modifié
         }
+        return $this->render('admin/metiersForm.html.twig', [
+            'metiersForm'=>$form->createView(),
+        ]);
         
     }
 
     /**
-     * @Route("/admin/metiers-{id}", name="delete_metiers")
+     * @Route("/admin/metiers/delete-{id}", name="delete_metiers")
      */
     public function deleteMetiers($id, MetiersRepository $metiersRepository)
     {

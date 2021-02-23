@@ -3,8 +3,9 @@
 {% block body %}
 
     <h2 class="pb-5">Formulaire - métiers</h2>
-    {{ form_start(metiersFrom) }}
+    {{ form_start(metiersForm) }}
         {{ form_row(metiersForm.metier) }}
-    {{ form_end(metiersFrom) }}
+        {{ form_row(metiersForm.valider) }}
+    {{ form_end(metiersForm) }}
 
 {% endblock %}
