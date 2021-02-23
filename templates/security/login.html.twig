@@ -16,7 +16,7 @@
 
             {% if app.user %}
                 <div class="mb-3">
-                    You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}" class="badge badge-danger">Logout</a>
+                    Connecté en tant que {{ app.user.username }}, <a href="{{ path('app_logout') }}" class="badge badge-danger">Logout</a>
                 </div>
             {% endif %}
 
@@ -41,7 +41,7 @@
             #}
 
             <div class="text-right">
-                <button class="btn btn-primary" type="submit">Inscription</button>
+                <button class="btn btn-primary" type="submit">Connexion</button>
             </div>
 
         </form>

@@ -25,9 +25,10 @@ class UsersController extends AbstractController
     }
 
     /**
-     * @Route("/admin/users/create", name="user_create")
+     * @Route("/admin/users/create", name="create_user")
      */
-    public function createUser(Request $request, UserPasswordEncoderInterface $passwordEncoder ){
+    public function createUser(Request $request, UserPasswordEncoderInterface $passwordEncoder )
+    {
         $user = new Users();
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
@@ -50,5 +51,46 @@ class UsersController extends AbstractController
         return $this->render('admin/userForm.html.twig', [
             'userForm'=> $form->createView(),
         ]);
+    }
+
+    /**
+     * @Route("/admin/users/update-{id}", name="update_user")
+     */
+    public function updateUser(UserRepository $userRepository, $id, Request $request, UserPasswordEncoderInterface $passwordEncoder)
+    {
+        $user = $userRepository->find($id);
+        $form = $this->createForm(UserType::class, $user);
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid())
+        {
+            if($form->get('plainPassword')->getData() !== null) 
+            {
+                $user->setPassword(
+                    $passwordEncoder->encodePassword(
+                        $user,
+                        $form->get('plainPassword')->getData()
+                    )
+                );
+            }
+            $manager = $this->getDoctrine()->getManager();
+            $manager->persist($user);
+            $manager->flush();
+            return $this->redirectToRoute('admin_users');
+        }
+        return $this->render('admin/userForm.html.twig', [
+            'userForm' => $form->createView()
+        ]);
+    }
+
+    /**
+     * @Route("/admin/users/delete-{id}", name="delete_user")
+     */
+    public function deleteUser(UserRepository $userRepository, $id)
+    {
+        $user = $userRepository->find($id);
+        $manager = $this->getDoctrine()->getManager();
+        $manager->remove($user);
+        $manager->flush();
+        return $this->redirectToRoute('admin_users');
     }
 }

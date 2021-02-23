@@ -1,0 +1,46 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}posts {% endblock %}
+
+{% block body %}
+
+
+
+<h2 class="text-center p-3">Liste des posts</h2>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>N°</th>
+            <th>User</th>
+            <th>Titre</th>
+            <th>Contenu</th>
+            <th>Image</th>
+            <th>Date</th>
+            <th>Métier</th>
+            <th>modifier</th>
+            <th>supprimer</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for post in posts %}
+            <tr>
+                <td class="align-middle">{{loop.index}}</td>
+                <td class="align-middle">{{post.user_id}}</td>
+                <td class="align-middle">{{post.title}}</td>
+                <td class="align-middle">{{post.content}}</td>
+                <td class="align-middle">{{post.img}}</td>
+                <td class="align-middle">{{post.date}}</td>
+                <td class="align-middle">{{post.metier_id}}</td>
+                <td class="align-middle"> <i class="fas fa-pen"></i> </td>
+                <td class="align-middle"> <i class="fas fa-trash-alt"></i> </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<div class="text-right">
+    <a class="btn btn-outline-danger" href="">Ajouter une post</a>
+</div>
+
+{% endblock %}
