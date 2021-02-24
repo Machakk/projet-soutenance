@@ -19,6 +19,10 @@
       <a href="#" class="btn-plus">En savoir plus</a>
     </div>
     <div class="part-form">
+      {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+      <h1>bla bla bla bla bla</h1>
+        <a class="link" href="{{ path('app_logout') }}">Logout</a>
+      {% else %}
       <div class="form-container">
         <form action="{{ path('app_login') }}" method="post">
 
@@ -59,7 +63,7 @@
           </div>
         </form>
       </div>
+      {% endif %}
     </div>
-  </div>
-</main>
-{% endblock %}
+  </main>
+  {% endblock %}
