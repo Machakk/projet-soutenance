@@ -20,7 +20,8 @@
     </div>
     <div class="part-form">
       {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-      <h1>bla bla bla bla bla</h1>
+        <h1>bla bla bla bla bla</h1>
+        <h5>Connecté en tant que: {{ app.user.pseudo }}</h5>
         <a class="link" href="{{ path('app_logout') }}">Logout</a>
       {% else %}
       <div class="form-container">
