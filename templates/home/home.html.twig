@@ -1,64 +1,69 @@
 {% extends 'base.html.twig' %} {% block title %}Hello HomeController!{% endblock
-  %} {% block body %}
-  <main class="all-main">
-    <div class="content-home">
-      <div class="part-text">
-        <h1>DEV NATION</h1>
-        <h2>La plateforme qui réunit les métiers du web</h2>
-        <p class="b-mots">
-          ECHANGER <br />
-          DEMANDER <br />
-          RENCONTRER <br />
-        </p>
-        <p class="paragraphe-home">
-          Maecenas a tincidunt mauris. Duis mollis rutrum sem vitae iaculis.
-          Curabitur elementum interdum viverra. Quisque feugiat fermentum sem in
-          pretium. Phasellus eu diam turpis. Nam bibendum non nisi sit amet
-          semper.
-        </p>
-        <a href="#" class="btn-plus">En savoir plus</a>
+%} {% block body %}
+<main class="all-main">
+  <div class="content-home">
+    <div class="part-text">
+      <h1>DEV NATION</h1>
+      <h2>La plateforme qui réunit les métiers du web</h2>
+      <p class="b-mots">
+        ECHANGER <br />
+        DEMANDER <br />
+        RENCONTRER <br />
+      </p>
+      <p class="paragraphe-home">
+        Maecenas a tincidunt mauris. Duis mollis rutrum sem vitae iaculis.
+        Curabitur elementum interdum viverra. Quisque feugiat fermentum sem in
+        pretium. Phasellus eu diam turpis. Nam bibendum non nisi sit amet
+        semper.
+      </p>
+      <a href="#" class="btn-plus">En savoir plus</a>
+    </div>
+    <div class="part-form">
+      {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+      <h1>bla bla bla bla bla</h1>
+        <a class="link" href="{{ path('app_logout') }}">Logout</a>
+      {% else %}
+      <div class="form-container">
+        <form action="{{ path('app_login') }}" method="post">
+
+          <input
+            placeholder="Adresse e-mail"
+            type="email"
+            value=""
+            name="email"
+            id="inputEmail"
+            class="form-control mb-3"
+            required
+            autofocus
+          />
+  
+          <input
+            placeholder="Mot de passe"
+            type="password"
+            name="password"
+            id="inputPassword"
+            class="form-control mb-3"
+            required
+          />
+  
+          <input
+            type="hidden"
+            name="_csrf_token"
+            value="{{ csrf_token('authenticate') }}"
+          />
+          <div class="connex-div">
+            <button class="btn-connexion" type="submit">Connexion</button>
+          </div>
+          <div class="mdp">
+            <a href="">Mot de passe oublié ?</a>
+          </div>
+          <div class="line"></div>
+          <div class="create-div">
+            <a class="btn-create" href="{{ path('app_register') }}">Créer un compte</a>
+          </div>
+        </form>
       </div>
-      <div class="part-form">
-        <div class="form-container">
-          <form action="{{ path('app_login') }}" method="post">  
-            <input
-              placeholder="Adresse e-mail"
-              type="email"
-              value=""
-              name="email"
-              id="inputEmail"
-              class="form-control mb-3"
-              required
-              autofocus
-            />
-    
-            <input
-              placeholder="Mot de passe"
-              type="password"
-              name="password"
-              id="inputPassword"
-              class="form-control mb-3"
-              required
-            />
-    
-            <input
-              type="hidden"
-              name="_csrf_token"
-              value="{{ csrf_token('authenticate') }}"
-            />
-            <div class="connex-div">
-              <button class="btn-connexion" type="submit">Connexion</button>
-            </div>
-            <div class="mdp">
-              <a href="">Mot de passe oublié ?</a>
-            </div>
-            <div class="line"></div>
-            <div class="create-div">
-              <button class="btn-create" href="">Créer un compte</button>
-            </div>
-          </form>
-        </div>
-      </div>
+      {% endif %}
     </div>
   </main>
   {% endblock %}
