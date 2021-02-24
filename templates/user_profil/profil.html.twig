@@ -3,29 +3,69 @@
 {% block title %}Hello UserProfilController!{% endblock %}
 
 {% block body %}
-<div class="profil-part-up">
-    <div class="profil-info">
-        <p class="pseudo">
-            Pseudo
-        </p>
-        <div class="profil-metier">
-            <img src="../../public/img/metier/design.png" alt="hero-design">
-            <p class="profil-metier">
-                Developpeur Front-end
-            </p>
+<div class="container-profil">
+
+    <div class="profil-part-up">
+        <div class="profil-left">
+            <h3 class="pseudo">
+                Pseudo
+            </h3>
+            <div class="profil-metier">
+                <img src="{{ asset('img/metier/design.png') }}" alt="hero-design">
+                <p>
+                    Developpeur Front-end
+                </p>
+            </div>
+            <p class="profil-niveau">Junior</p>
+            <a href="#" class="profil-btn-follow">S'abonner</a>
+            <a href="#" class="profil-btn-message"><img src="{{ asset('img/icons/chatting.png') }}" alt="">Message</a>
         </div>
-        <p class="profil-niveau">Junior</p>
-        <a href="#" class="profil-btn-follow">S'abonner</a>
-        <a href="#" class="profil-btn-message"><img src="../../public/img/icons/chatting.png" alt="">Message</a>
+        <div class="profil-middle">
+            <img class="img-profil-middle" src="{{ asset('img/icons/profil.png') }}" alt="profil-icon">
+            <a href="#">monsite.com</a>
+            <div class="reseaux">
+                <a href="#"><img src="{{ asset('img/icons/fb.png') }}" alt="fb-icon"></a>
+                <a href="#"><img src="{{ asset('img/icons/linkedin.png') }}" alt="linkedin-icon"></a>
+                <a href="#"><img src="{{ asset('img/icons/git-hub.png') }}" alt="github-icon"></a>
+            </div>
+        </div>
+        <div class="profil-right">
+            <h3>Technos et logiciels utilisées</h3>
+            <div class="profil-skills">
+                <img src="{{ asset('img/skills/1-1614077567.png') }}" alt="">
+                <img src="{{ asset('img/skills/1-1614077567.png') }}" alt="">
+                <img src="{{ asset('img/skills/1-1614077567.png') }}" alt="">
+                <img src="{{ asset('img/skills/1-1614077567.png') }}" alt="">
+                <img src="{{ asset('img/skills/1-1614077567.png') }}" alt="">
+                <img src="{{ asset('img/skills/1-1614077567.png') }}" alt="">
+                <img src="{{ asset('img/skills/1-1614077567.png') }}" alt="">
+                <img src="{{ asset('img/skills/1-1614077567.png') }}" alt="">
+                <img src="{{ asset('img/skills/1-1614077567.png') }}" alt="">
+                <img src="{{ asset('img/skills/1-1614077567.png') }}" alt="">
+                <img src="{{ asset('img/skills/1-1614077567.png') }}" alt="">
+                <img src="{{ asset('img/skills/1-1614077567.png') }}" alt="">
+                <img src="{{ asset('img/skills/1-1614077567.png') }}" alt="">
+                <img src="{{ asset('img/skills/1-1614077567.png') }}" alt="">
+                <img src="{{ asset('img/skills/1-1614077567.png') }}" alt="">
+                <img src="{{ asset('img/skills/1-1614077567.png') }}" alt="">
+                <img src="{{ asset('img/skills/1-1614077567.png') }}" alt="">
+    
+            </div>
+        </div>
     </div>
-    <div class="profil-middle">
-        <img src="../../public/img/icons/profil.png" alt="profil-icon">
-        <a href="#">monsite.com</a>
-        <div class="reseaux">
-            <a href="#"><img src="" alt="fb-icon"></a>
-            <a href="#"><img src="../../public/img/icons/linkedin.png" alt="linkedin-icon"></a>
-            <a href="#"><img src="../../public/img/icons/git-hub.png" alt="github-icon"></a>
+    <div class="container-profil-img">
+        <div class="line-profil"></div>
+        <h2>Images</h2>
+        <div class="profil-img-post">
+            <img src="{{ asset('img/posts/rectangle.png') }}" alt="">
+            <img src="{{ asset('img/posts/rectangle.png') }}" alt="">
+            <img src="{{ asset('img/posts/rectangle.png') }}" alt="">
+            <img src="{{ asset('img/posts/rectangle.png') }}" alt="">
         </div>
+        <div class="line-profil"></div>
+    </div>
+    <div class="container-profil-post">
+        <h2>Derniers post(s) dans le forum</h2>
     </div>
 </div>
 {% endblock %}
