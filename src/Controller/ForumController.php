@@ -19,4 +19,14 @@ class ForumController extends AbstractController
             'posts' => $posts,
         ]);
     }
+    /**
+     * @Route("/forum/post", name="forum_post")
+     */
+    public function index2(PostForumRepository $postForumRepository): Response
+    {
+        $posts = $postForumRepository->findAll();
+        return $this->render('forum/post.html.twig', [
+            'posts' => $posts,
+        ]);
+    }
 }
