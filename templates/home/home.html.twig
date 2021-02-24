@@ -19,8 +19,13 @@
       <a href="#" class="btn-plus">En savoir plus</a>
     </div>
     <div class="part-form">
+      {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <h1>bla bla bla bla bla</h1>
+        <h5>Connecté en tant que: {{ app.user.pseudo }}</h5>
+        <a class="link" href="{{ path('app_logout') }}">Logout</a>
+      {% else %}
       <div class="form-container">
-        <form action="post">
+        <form action="{{ path('app_login') }}" method="post">
 
           <input
             placeholder="Adresse e-mail"
@@ -51,15 +56,15 @@
             <button class="btn-connexion" type="submit">Connexion</button>
           </div>
           <div class="mdp">
-            <a href="">Mot de passe oublié ?</a>
+            <a class="mdp-forget" href="">Mot de passe oublié ?</a>
           </div>
           <div class="line"></div>
           <div class="create-div">
-            <button class="btn-create" href="{{ path('app_register') }}">Créer un compte</button>
+            <a class="btncreate" href="{{ path('app_register') }}">Créer un compte</a>
           </div>
         </form>
       </div>
+      {% endif %}
     </div>
-  </div>
-</main>
-{% endblock %}
+  </main>
+  {% endblock %}

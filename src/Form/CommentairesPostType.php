@@ -20,12 +20,7 @@ class CommentairesPostType extends AbstractType
         $builder
             ->add('content', TextType::class)
             ->add('date', DateTimeType::class)
-            ->add('user', EntityType::class, [
-                'required' => true,
-                'class' => Users::class,
-                'choice_label' => 'pseudo',
-                
-            ])
+            
             ->add('post', EntityType::class, [
                 'required' => true,
                 'class' => PostForum::class,

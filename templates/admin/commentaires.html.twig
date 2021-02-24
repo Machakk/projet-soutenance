@@ -5,7 +5,6 @@
 {% block body %}
 
 
-
 <h2 class="text-center p-3">Liste des Commentaires</h2>
 
 <table class="table">
@@ -28,8 +27,13 @@
                 <td class="align-middle">{{commentaire.post.title}}</td>
                 <td class="align-middle">{{commentaire.content}}</td>
                 <td class="align-middle">{{commentaire.date| date("m/d/Y")}}</td>
-                <td class="align-middle"> <i class="fas fa-pen"></i> </td>
-                <td class="align-middle"> <i class="fas fa-trash-alt"></i> </td>
+                {% if commentaire.user.id == app.user.id %}
+                <td class="align-middle"> <a href="{{ path('commentaire_update' , { 'id': commentaire.id })}}"> <i class="fas fa-pen"></i> </a> </td>
+                {% else %}
+                <td class="align-middle">  <i class="fas fa-pen"></i> </td>
+
+                {% endif %}
+                <td class="align-middle"> <a href="{{ path('commentaire_delete' , { 'id': commentaire.id })}}"> <i class="fas fa-trash-alt"></i></a>  </td>
             </tr>
         {% endfor %}
     </tbody>

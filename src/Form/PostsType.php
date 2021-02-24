@@ -34,12 +34,12 @@ class PostsType extends AbstractType
                 
             ])
 
-            ->add('user', EntityType::class, [
-                'required' => true,
-                'class' => Users::class,
-                'choice_label' => 'pseudo',
+            // ->add('user', EntityType::class, [
+            //     'required' => true,
+            //     'class' => Users::class,
+            //     'choice_label' => 'pseudo',
                 
-            ])
+            // ])
 
             ->add('valider',SubmitType::class)
         ;
