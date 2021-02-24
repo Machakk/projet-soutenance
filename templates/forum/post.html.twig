@@ -7,7 +7,6 @@
         <div class="row">
             <div class="col-9">
                 <h2 class="text-center"> {{posts.title}}</h2>
-
             </div>
             
             <div class="col-3 user ">
@@ -20,9 +19,15 @@
         <div class="content text-center p-4">
             <p>{{posts.content}}</p>
         </div>
-        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-            <h1>bouton et text area pour commenter le post</h1>            
-        {% endif %}
+        <div>
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <h1>bouton et text area pour créer/commenter un post</h1>            
+            {% else %}
+                <a class="link" href="{{ path('app_login') }}">Se connecter</a>
+                
+            {% endif %}
+        </div>
     </div>
 {% endblock %}
+
 

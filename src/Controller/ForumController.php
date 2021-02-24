@@ -48,9 +48,18 @@ class ForumController extends AbstractController
     public function post(PostForumRepository $postForumRepository, $id): Response
     {
         $posts = $postForumRepository->find($id);
+
+        /*
+            - récupérer le login form
+            - if submit et valid
+                - vérif utilisateur mdp-login
+                - si ok : return new RedirectResponse($request->headers->get('referer'));
+            - générer le formulaire
+        */
         
         return $this->render('forum/post.html.twig', [
             'posts' => $posts,
+            // passer le formulaire à la vue
         ]);
     }
 }
