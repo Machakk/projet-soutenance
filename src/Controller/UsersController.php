@@ -42,6 +42,21 @@ class UsersController extends AbstractController
                 )
             );
 
+            $infoMetier = $form['metier']->getData();
+
+            if($infoMetier->getMetier()=="Backend"){
+                $nomImg="back-end.png";
+                $user->setImgprofil($nomImg);
+            }
+            else if($infoMetier->getMetier()=="Frontend"){
+                $nomImg="front-end.png";
+                $user->setImgprofil($nomImg);
+            }
+            else if($infoMetier->getMetier()=="Design"){
+                $nomImg="design.png";
+                $user->setImgprofil($nomImg);
+            }
+
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($user);
             $manager->flush();
@@ -87,6 +102,7 @@ class UsersController extends AbstractController
      */
     public function deleteUser(UsersRepository $usersRepository, $id)
     {
+
         $user = $usersRepository->find($id);
         $manager = $this->getDoctrine()->getManager();
         $manager->remove($user);

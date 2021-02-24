@@ -25,7 +25,7 @@ class PostsType extends AbstractType
                 'required' => false,
                 'mapped' =>false,
             ])
-            ->add('date',DateTimeType::class)
+            // ->add('date',DateTimeType::class)
 
             ->add('metier', EntityType::class, [
                 'required' => true,

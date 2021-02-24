@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Users;
+use DateTimeInterface;
 use App\Form\PostsType;
 use App\Entity\PostForum;
 use App\Repository\PostForumRepository;
@@ -49,6 +50,8 @@ class PostsAdminController extends AbstractController
      
                 $post->setImg($nomImg);
             }
+            $date = new \DateTime('@'.strtotime('now'));
+            $post->setDate($date);
             $post->setUser($user);
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($post);
