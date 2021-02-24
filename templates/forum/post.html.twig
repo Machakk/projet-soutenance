@@ -20,6 +20,9 @@
         <div class="content text-center p-4">
             <p>{{posts.content}}</p>
         </div>
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <h1>bouton et text area pour commenter le post</h1>            
+        {% endif %}
     </div>
 {% endblock %}
 
