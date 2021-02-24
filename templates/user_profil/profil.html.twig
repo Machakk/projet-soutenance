@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserProfilController!{% endblock %}
+
+{% block body %}
+<div class="profil-part-up">
+    <div class="profil-info">
+        <p class="pseudo">
+            Pseudo
+        </p>
+        <div class="profil-metier">
+            <img src="../../public/img/metier/design.png" alt="hero-design">
+            <p class="profil-metier">
+                Developpeur Front-end
+            </p>
+        </div>
+        <p class="profil-niveau">Junior</p>
+        <a href="#" class="profil-btn-follow">S'abonner</a>
+        <a href="#" class="profil-btn-message"><img src="../../public/img/icons/chatting.png" alt="">Message</a>
+    </div>
+    <div class="profil-middle">
+        <img src="../../public/img/icons/profil.png" alt="profil-icon">
+        <a href="#">monsite.com</a>
+        <div class="reseaux">
+            <a href="#"><img src="" alt="fb-icon"></a>
+            <a href="#"><img src="../../public/img/icons/linkedin.png" alt="linkedin-icon"></a>
+            <a href="#"><img src="../../public/img/icons/git-hub.png" alt="github-icon"></a>
+        </div>
+    </div>
+</div>
+{% endblock %}
