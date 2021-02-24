@@ -7,6 +7,7 @@ parameters:
     photos_skills: '%kernel.project_dir%/public/img/skills'
     photos_posts: '%kernel.project_dir%/public/img/posts'
     photos_icon: '%kernel.project_dir%/public/img/icons'
+    photos_users: '%kernel.project_dir%/public/img/users'
 
 services:
     # default configuration for services in *this* file

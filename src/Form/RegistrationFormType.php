@@ -19,6 +19,7 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Rollerworks\Component\PasswordStrength\Validator\Constraints\PasswordStrength;
 
 class RegistrationFormType extends AbstractType
 {
@@ -28,14 +29,16 @@ class RegistrationFormType extends AbstractType
             ->add('pseudo', TextType::class, [
                 'required' => true,
                 'attr' => [
-                    'class' => 'form-control mb-3'
+                    'class' => 'form-control mb-3',
+                    'placeholder'=>'nom-prenom'
                 ]
                 
             ])
             ->add('email', EmailType::class, [
                 'required' => true,
                 'attr' => [
-                    'class' => 'form-control mb-3'
+                    'class' => 'form-control mb-3',
+                    'placeholder'=>'prenom.nom@domaine.com'
                 ]
             ])
             ->add('agreeTerms', CheckboxType::class, [
@@ -47,22 +50,22 @@ class RegistrationFormType extends AbstractType
                 ]
             ])
             ->add('plainPassword', PasswordType::class, [
-                // instead of being set onto the object directly,
-                // this is read and encoded in the controller
+
                 'mapped' => false,
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Please enter a password',
+                        'message' => 'Merci de renseigner un mot de passe',
                     ]),
-                    new Length([
-                        'min' => 6,
-                        'minMessage' => 'Your password should be at least {{ limit }} characters',
-                        // max length allowed by Symfony for security reasons
-                        'max' => 4096,
-                    ]),
+                    new PasswordStrength([
+                        'minLength' =>8,
+                        'tooShortMessage' =>' le mot de passe doit contenir au moins 8 caractères',
+                        'minStrength'=>4,
+                        'message'=> 'Le mot de passe doit contenir au moins une lettre minscule, une lettre majuscule, un chiffre et un caractère spécial'
+                    ])
                 ],
                 'attr' => [
-                    'class' => 'form-control mb-3'
+                    'class' => 'form-control mb-3',
+                    'placeholder'=> '••••••••'
                 ]
             ])
             ->add('metier', EntityType::class, [
@@ -83,16 +86,17 @@ class RegistrationFormType extends AbstractType
                     'class' => 'form-control mb-3'
                 ]
             ])
-            ->add ('imgProfil', FileType::class, [
+
+            ->add ('imgprofil', FileType::class, [
                 'required' => false,
                 'mapped' => false,
                 'attr' => [
-                    'placeholder' => 'photo profil'
-                ],
-                'attr' => [
+                    'placeholder' => 'photo profil',
                     'class' => 'form-control mb-3'
                 ]
             ])
+
+            
             ->add('valider' , SubmitType::class, [
                 'attr' => [
                     'class' => 'btn-valider-register'
