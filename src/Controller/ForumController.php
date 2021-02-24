@@ -3,9 +3,10 @@
 namespace App\Controller;
 
 use App\Repository\PostForumRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ForumController extends AbstractController
 {
@@ -19,12 +20,35 @@ class ForumController extends AbstractController
             'posts' => $posts,
         ]);
     }
+
+    // /**
+    //  * @Route("/forum/post-{id}", name="forum_post")
+    //  */
+    // public function post(PostForumRepository $postForumRepository, Request $request, $id): Response
+    // {
+    //     $post = $postForumRepository->find($id);
+    //     $form = $this->createForm(PostType::class, $post);
+    //     $form->handleRequest($request);
+    //     if($form->isSubmitted() && $form->isValid())
+    //     {
+    //         $manager = $this->getDoctrine()->getManager();
+    //         $manager->persist($post);
+    //         $manager->flush();
+    //         return $this->redirectToRoute('forum_post');
+    //     }
+    //     return $this->render('forum/post.html.twig', [
+    //         'postForum' => $form->createView()
+    //     ]);
+    // }
+
+
     /**
-     * @Route("/forum/post", name="forum_post")
+     * @Route("/forum/post-{id}", name="forum_post")
      */
-    public function index2(PostForumRepository $postForumRepository): Response
+    public function post(PostForumRepository $postForumRepository, $id): Response
     {
-        $posts = $postForumRepository->findAll();
+        $posts = $postForumRepository->find($id);
+        
         return $this->render('forum/post.html.twig', [
             'posts' => $posts,
         ]);
