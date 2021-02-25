@@ -3,7 +3,7 @@
 {% block title %}Posts{% endblock %}
 
 {% block body %}
-    <div class="content-post my-4">
+    <div class="content-post">
         <div class="row">
             <div class="col-9">
                 <h2 class="text-center"> {{posts.title}}</h2>
@@ -19,49 +19,52 @@
         <div class="content text-center p-4">
             <p>{{posts.content}}</p>
         </div>
-        <div>
-            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                <h1>bouton et text area pour créer/commenter un post</h1> 
-                {# formulaire pour ajouter un commentaire #}        
-            {% else %}
-            <form action="{{ path('app_login') }}" method="post">
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <h1>bouton et text area pour créer/commenter un post</h1> 
+            {# formulaire pour ajouter un commentaire #}        
+        {% else %}
 
-                <input
-                  placeholder="Adresse e-mail"
-                  type="email"
-                  value=""
-                  name="email"
-                  id="inputEmail"
-                  class="form-control mb-3"
-                  required
-                  autofocus
-                />
-        
-                <input
-                  placeholder="Mot de passe"
-                  type="password"
-                  name="password"
-                  id="inputPassword"
-                  class="form-control mb-3"
-                  required
-                />
-                <input
-                  type="hidden"
-                  name="_csrf_token"
-                  value="{{ csrf_token('authenticate') }}"
-                />
-
-                <div class="connex-div">
-                  <button class="btn-connexion" type="submit">Connexion</button>
-                </div>
-                <div class="line"></div>
-                <div class="create-div">
-                  <a class="btncreate" href="{{ path('app_register') }}">Créer un compte</a>
-                </div>
-              </form>
-            {% endif %}
         </div>
     </div>
+    <div class="post-login-container">
+      <div >
+        <form action="{{ path('app_login') }}" method="post">
+
+            <input
+              placeholder="Adresse e-mail"
+              type="email"
+              value=""
+              name="email"
+              id="inputEmail"
+              class="form-control mb-3"
+              required
+              autofocus
+            />
+    
+            <input
+              placeholder="Mot de passe"
+              type="password"
+              name="password"
+              id="inputPassword"
+              class="form-control mb-3"
+              required
+            />
+            <input
+              type="hidden"
+              name="_csrf_token"
+              value="{{ csrf_token('authenticate') }}"
+            />
+
+            <div class="connex-div">
+              <button class="btn-connexion" type="submit">Connexion</button>
+            </div>
+            <div class="line"></div>
+            <div class="create-div">
+              <a class="btncreate" href="{{ path('app_register') }}">Créer un compte</a>
+            </div>
+          </form>
+      </div>
+      {% endif %}
 {% endblock %}
 
 
