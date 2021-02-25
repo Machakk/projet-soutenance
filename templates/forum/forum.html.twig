@@ -25,7 +25,19 @@
     </nav>
     <hr>
     <div class="row text-center">
-        <a href="{{path('post_createu')}}" class="">Créer un post</a>
+        {% if is_granted('IS_AUTHENTICATED_FULLY')  %}
+            <div class="forum-create-post">
+                <div class="row">
+                    <div class="col-2">
+                        <img src="{{ asset('img/users/') ~ app.user.imgprofil }}" alt="" class="text-left">
+                    </div>
+                    <div class="col-9 text">
+                        <a  href="{{path('post_createu')}}"  >Créer un post</a>
+                    </div>
+                </div>
+            </div>
+            
+        {% endif %}
     </div>
     {% for post in posts %}
 
