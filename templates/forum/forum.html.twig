@@ -28,8 +28,10 @@
         {% if is_granted('IS_AUTHENTICATED_FULLY')  %}
             <div class="forum-create-post">
                 <div class="row">
-                    <div class="col-2">
-                        <img src="{{ asset('img/users/') ~ app.user.imgprofil }}" alt="" class="text-left">
+                    <div class="col-2 ">
+                        <div class="img-perso-profil mb-0">
+                            <img src="{{ asset('img/users/') ~ app.user.imgprofil }}" alt="" class="text-left">
+                        </div>
                     </div>
                     <div class="col-9 text">
                         <a  href="{{path('post_createu')}}"  >Créer un post</a>
@@ -48,7 +50,10 @@
 
                 </div>
                 <div class="col-3 user ">
-                    <a href="{{path('user_profil', {'id': post.user.id })}}"> écrit par <img src="{{ asset('img/users/') ~ post.user.imgprofil }}" alt=""></a>
+                    <a href="{{path('user_profil', {'id': post.user.id })}}" class="img-perso-profil m-2 p-2"> 
+                        écrit par 
+                        <img class=" " src="{{ asset('img/users/') ~ post.user.imgprofil }}" alt="">
+                    </a>
                 </div>
             </div>
 
