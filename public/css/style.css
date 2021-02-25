@@ -418,6 +418,7 @@ hr{
 .profil-left{
   display: flex;
   flex-direction: column;
+  margin-right: -50px;
 
 }
 .profil-left h3{
@@ -488,6 +489,9 @@ hr{
   color: white;
   border: solid #41826a 2px;
 }
+.descri-profil{
+  max-width: 350px;
+}
 
 /*partie du millieu du profile */
 
@@ -499,7 +503,7 @@ hr{
   width: 210px;
 }
 .img-profil-middle{
-  margin-bottom: 150px;
+  margin-bottom: 100px;
 }
 .profil-middle a{
   font-family: 'KoHo', sans-serif;
@@ -512,6 +516,9 @@ hr{
 
 .profil-right{
   width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .profil-right h3{
   font-family: "Sawarabi Gothic", sans-serif;
@@ -527,8 +534,22 @@ hr{
 .profil-skills img{
   margin: 5px;
 }
+.img-perso-profil{
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  margin-bottom: 100px;
+}
+.img-perso-profil img{
+  width: 110px;
+  text-align: center;
+}
 
-/* Partie Images du profile */
+/* Partie line du profile */
 
 .line-profil{
   margin: 35px auto;
@@ -537,21 +558,7 @@ hr{
   background: #184d4d;
 
 }
-.container-profil-img h2{
-  font-family: "Sawarabi Gothic", sans-serif;
-  font-size: 28px;
-  color: #184d4d;
-  margin-bottom: 30px;
-  font-weight: bold;
-}
-.profil-img-post{
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-.profil-img-post img{
-  max-width: 250px;
-}
+
 
 /* Partie post du profile */
 
