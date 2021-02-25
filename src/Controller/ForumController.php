@@ -12,11 +12,48 @@ class ForumController extends AbstractController
 {
     /**
      * @Route("/forum", name="forum")
+     * 
      */
     public function index(PostForumRepository $postForumRepository): Response
     {
         $posts = $postForumRepository->findAll();
         return $this->render('forum/forum.html.twig', [
+            'posts' => $posts,
+        ]);
+    }
+
+    /**
+     * @Route("/back", name="forumBack")
+     * 
+     */
+    public function forumBack(PostForumRepository $postForumRepository): Response
+    {
+        $posts = $postForumRepository->findAll();
+        return $this->render('forum/forumBack.html.twig', [
+            'posts' => $posts,
+        ]);
+    }
+
+    /**
+     * @Route("/forum/design", name="forumDesign")
+     * 
+     */
+    public function forumDes(PostForumRepository $postForumRepository): Response
+    {
+        $posts = $postForumRepository->findAll();
+        return $this->render('forum/forumDesign.html.twig', [
+            'posts' => $posts,
+        ]);
+    }
+
+    /**
+     * @Route("/forum/front", name="forumFront")
+     * 
+     */
+    public function forumFront(PostForumRepository $postForumRepository): Response
+    {
+        $posts = $postForumRepository->findAll();
+        return $this->render('forum/forumFront.html.twig', [
             'posts' => $posts,
         ]);
     }
