@@ -19,7 +19,7 @@ class CommentairesPostType extends AbstractType
     {
         $builder
             ->add('content', TextType::class)
-            ->add('date', DateTimeType::class)
+            // ->add('date', DateTimeType::class)
             
             ->add('post', EntityType::class, [
                 'required' => true,

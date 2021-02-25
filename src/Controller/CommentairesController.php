@@ -35,6 +35,8 @@ class CommentairesController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid())
         {
+            $date = new \DateTime('@'.strtotime('now'));
+            $commentaire->setDate($date);
             $commentaire->setUser($user);
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($commentaire);
