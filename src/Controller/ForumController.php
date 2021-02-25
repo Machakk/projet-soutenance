@@ -14,6 +14,7 @@ class ForumController extends AbstractController
 {
     /**
      * @Route("/forum", name="forum")
+     * 
      */
     public function index(PostForumRepository $postForumRepository): Response
     {
@@ -22,6 +23,63 @@ class ForumController extends AbstractController
             'posts' => $posts,
         ]);
     }
+
+    /**
+     * @Route("/back", name="forumBack")
+     * 
+     */
+    public function forumBack(PostForumRepository $postForumRepository): Response
+    {
+        $posts = $postForumRepository->findAll();
+        return $this->render('forum/forumBack.html.twig', [
+            'posts' => $posts,
+        ]);
+    }
+
+    /**
+     * @Route("/forum/design", name="forumDesign")
+     * 
+     */
+    public function forumDes(PostForumRepository $postForumRepository): Response
+    {
+        $posts = $postForumRepository->findAll();
+        return $this->render('forum/forumDesign.html.twig', [
+            'posts' => $posts,
+        ]);
+    }
+
+    /**
+     * @Route("/forum/front", name="forumFront")
+     * 
+     */
+    public function forumFront(PostForumRepository $postForumRepository): Response
+    {
+        $posts = $postForumRepository->findAll();
+        return $this->render('forum/forumFront.html.twig', [
+            'posts' => $posts,
+        ]);
+    }
+
+    // /**
+    //  * @Route("/forum/post-{id}", name="forum_post")
+    //  */
+    // public function post(PostForumRepository $postForumRepository, Request $request, $id): Response
+    // {
+    //     $post = $postForumRepository->find($id);
+    //     $form = $this->createForm(PostType::class, $post);
+    //     $form->handleRequest($request);
+    //     if($form->isSubmitted() && $form->isValid())
+    //     {
+    //         $manager = $this->getDoctrine()->getManager();
+    //         $manager->persist($post);
+    //         $manager->flush();
+    //         return $this->redirectToRoute('forum_post');
+    //     }
+    //     return $this->render('forum/post.html.twig', [
+    //         'postForum' => $form->createView()
+    //     ]);
+    // }
+
 
     /**
      * @Route("/forum/post-{id}", name="forum_post")

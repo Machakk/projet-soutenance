@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\PostForumRepository;
+use App\Repository\SkillsRepository;
 use App\Repository\UsersRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,19 +14,22 @@ class UserProfilController extends AbstractController
     /**
      * @Route("/profil-{id}", name="user_profil")
      */
-    public function index(UsersRepository $usersRepository, $id, PostForumRepository $postForumRepository): Response
+    public function index(UsersRepository $usersRepository, $id, PostForumRepository $postForumRepository, SkillsRepository $skillsRepository): Response
     {
 
         $user = $usersRepository->find($id);
-        // $posts = $user->getPostForums();
         $posts = $postForumRepository->findAll();
         
         $icon = $this->getParameter('photos_icon');
         $iconFb = $icon . "/fb.png";
-        // var_dump($posts);
+       
+        // $user->getSkills();
+        // var_dump($user);
         // die();
-
-        // $id = 
+        // $skill = $skillsRepository->findAll();
+        // $skills= $skillsRepository->findByUser($user);
+        // var_dump($skills);
+        // die();
         return $this->render('user_profil/profil.html.twig', [
             'user' => $user,
             'posts' => $posts

@@ -16,7 +16,7 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../public/css/style.css" />
+    <link rel="stylesheet" href="{{asset('css/style.css')}}" />
 
     {% block stylesheets %}{% endblock %}
   </head>
@@ -24,20 +24,24 @@
     <div class="background">
       <header>
         <div class="logo">
-          <a href="{{ path('home') }}"><img src="../public/img/logo.png" alt="logo" /></a>
+          <a href="{{ path('home') }}"><img src="{{asset('img/logo.png')}}" alt="logo" /></a>
           
+        </div>
+        <div class="part-search">
+          <input type="text" placeholder="Rechercher un post">
+          <button type="submit"><img src="{{asset('img/icons/search.png')}}" alt=""></button>
         </div>
         <nav>
           <ul>
             <li class="home-button">
               <a href="{{ path('home') }}"
-                ><img src="../public/img/icons/home 1-vert.png" alt="icon-home"
+                ><img src="{{asset('img/icons/home 1-vert.png')}}" alt="icon-home"
               /></a>
             </li>
             <li class="forum-button">
               <a href="{{ path('forum') }}"
                 ><img
-                  src="../public/img/icons/discussion 1.png"
+                  src="{{asset('img/icons/discussion 1.png')}}"
                   alt="icon-home"
                   onmouseover="this.src='..//public/img/icons/discussion 1-vert.png'"
                   onmouseout="this.src='../public/img/icons/discussion 1.png'"
@@ -47,7 +51,7 @@
               <a href="{{ path('app_login') }}"
                 ><img
                   class="icon-account"
-                  src="../public/img/icons/account 2.png"
+                  src="{{asset('img/icons/account 2.png')}}"
                   alt="icon-home"
                   onmouseover="this.src='..//public/img/icons/account 2-vert.png'"
                   onmouseout="this.src='../public/img/icons/account 2.png'"

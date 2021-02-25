@@ -20,9 +20,12 @@
     </div>
     <div class="part-form">
       {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-        <h1>bla bla bla bla bla</h1>
-        <h5>Connecté en tant que: {{ app.user.pseudo }}</h5>
-        <a class="link" href="{{ path('app_logout') }}">Logout</a>
+      <div class="form-container">
+
+        <h2>Bienvenu</h2>
+        <p class="conn-on-home">Connecté en tant que: {{ app.user.pseudo }}</p>
+        <a class="btn-connexion" href="{{ path('app_logout') }}">Se déconnecter</a>
+      </div>
       {% else %}
       <div class="form-container">
         <form action="{{ path('app_login') }}" method="post">
