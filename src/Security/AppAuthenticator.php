@@ -95,8 +95,9 @@ class AppAuthenticator extends AbstractFormLoginAuthenticator implements Passwor
     {
         
         $url = $request->headers->get('referer');
+        $idPost = substr($url, strrpos($url, '-' )+1);
         if (str_contains($url, 'forum/post')){
-            return new RedirectResponse($this->urlGenerator->generate('forum_post'));
+            return new RedirectResponse($this->urlGenerator->generate('forum_post2')  . $idPost);
         }
         if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)) {
             return new RedirectResponse($targetPath);

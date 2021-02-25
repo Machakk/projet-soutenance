@@ -83,6 +83,7 @@ class ForumController extends AbstractController
 
     /**
      * @Route("/forum/post-{id}", name="forum_post")
+     * @Route("/forum/post-", name="forum_post2")
      */
     public function post(PostForumRepository $postForumRepository, $id, Request $request): Response
     {
