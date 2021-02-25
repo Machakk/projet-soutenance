@@ -72,6 +72,18 @@ header ul li {
 .logo img {
   width: 300px;
 }
+.part-search{
+  display: flex;
+}
+.part-search input{
+  width: 300px;
+  font-size: 20px;
+  border:1px solid #8f8f8f;
+}
+.part-search button{
+  border:2px solid #8f8f8f;
+  background: #41826a;
+}
 
 /* Partie de home */
 .all-main {
@@ -190,6 +202,14 @@ header ul li {
 .create-div{
   display: flex;
   justify-content: center;
+}
+.conn-on-home{
+  margin-top: 50px;
+  font-family: 'KoHo', sans-serif;
+  font-size: 25px;
+  color: #184d4d;
+  font-weight: 600;
+  margin-bottom: 80px;
 }
 /* Partie Register*/
 
