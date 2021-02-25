@@ -7,17 +7,17 @@
     <nav class="navbar navbar-expand-lg">
         <div class="">
             <ul class="navbar-nav ">
-                <li class="nav-item test">
-                    <a class=" btn-nav " href="">TOUS </a>
+                <li class="nav-item test active">
+                    <a class=" btn-nav " href="{{path('forum')}}">TOUS </a>
                 </li>
                 <li class="nav-item">
-                    <a class=" btn-nav" href="">FRONTEND </a>
+                    <a class=" btn-nav" href="{{path('forumFront')}}">FRONTEND </a>
                 </li>
                 <li class="nav-item ">
-                    <a class=" btn-nav" href="">BACKEND </a>
+                    <a class=" btn-nav" href="{{path('forumBack')}}">BACKEND </a>
                 </li>
                 <li class="nav-item">
-                    <a class=" btn-nav" href="">DESIGN </a>
+                    <a class=" btn-nav" href="{{path('forumDesign')}}">DESIGN </a>
                 </li>
             </ul>
         </div>
@@ -25,6 +25,7 @@
     </nav>
     <hr>
     {% for post in posts %}
+
         <div class="content-post my-4">
             <div class="row">
                 <div class="col-9">
