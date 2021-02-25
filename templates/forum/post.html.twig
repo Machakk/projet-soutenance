@@ -24,9 +24,12 @@
                 <h1>bouton et text area pour créer/commenter un post</h1> 
                 {# formulaire pour ajouter un commentaire #}        
             {% else %}
+            <script type="text/javascript">
+              document.getElementById('hidden-form').action = 'someact.php';
+            </script>
             
-            <form action="">
-            <div class="connex-div">
+            <form id="hidden-form" method="post">
+              <div class="connex-div">
                 <button class="btn-connexion" type="submit">Commenter</button>
               </div>
             </form>
