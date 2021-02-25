@@ -329,22 +329,22 @@ hr{
 
 }
 
-.content-post h3{
+.content-post h3, .profil-content-post h3{
   color: #184D4D;
   font-family: 'Noto Sans', sans-serif;
   padding: 10px;
 
 }
 
-.content-post .user{
+.content-post .user , .profil-content-post .user{
   padding: 10px;
 }
 
-.content-post .user a{
+.content-post .user a, .profil-content-post .user a{
   color: #41826a;
   font-family: 'Noto Sans', sans-serif;
 }
-.content-post .content{
+.content-post .content, .profil-content-post .content{
   color: #4e4e4e;
   margin: 10px;
   text-align: left;
@@ -352,7 +352,7 @@ hr{
   font-family: 'KoHo', sans-serif;
 }
 
-.content-post a {
+.content-post a , .profil-content-post a{
   color: #184D4D;
   
 }
@@ -541,5 +541,13 @@ hr{
   color: #184d4d;
   margin-bottom: 30px;
   font-weight: bold;
+}
+
+.profil-content-post{
+  background: #f3f3f3;
+  min-width:500px ;
+  max-width:500px ;
+  border-radius: 10px;
+
 }
 

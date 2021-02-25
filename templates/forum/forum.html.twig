@@ -32,7 +32,7 @@
 
                 </div>
                 <div class="col-3 user ">
-                    <a href=""> écrit par <img src="{{ asset('img/users/') ~ post.user.imgprofil }}" alt=""></a>
+                    <a href="{{path('user_profil', {'id': post.user.id })}}"> écrit par <img src="{{ asset('img/users/') ~ post.user.imgprofil }}" alt=""></a>
                 </div>
             </div>
 
