@@ -580,6 +580,7 @@ hr{
 
 
 
+
 /* partie create post */
 
 .content-create-post{
@@ -682,4 +683,26 @@ hr{
   box-shadow: 4px 4px 15px -2px #cacaca;
   align-items: center;
   text-align: center;
+
+}
+/* Partie login post */
+
+.login-post-container{
+  padding: 40px;
+  width: 550px;
+  height: 450px;
+  background-color: white;
+  border-radius: 30px;
+  padding-top: 50px;
+  -webkit-box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
+  box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
+  display: none;
+}
+.login-post-container form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+
 }
