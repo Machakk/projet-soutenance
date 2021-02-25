@@ -116,9 +116,7 @@ class ForumController extends AbstractController
                 - vérif utilisateur mdp-login
                 - si ok : return new RedirectResponse($request->headers->get('referer'));
             - générer le formulaire
-        */
-
-        
+        */       
         
     }
 }

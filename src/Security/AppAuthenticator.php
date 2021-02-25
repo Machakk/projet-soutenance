@@ -93,6 +93,7 @@ class AppAuthenticator extends AbstractFormLoginAuthenticator implements Passwor
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $providerKey)
     {
+        
         $url = $request->headers->get('referer');
         $idPost = substr($url, strrpos($url, '-' )+1);
         if (str_contains($url, 'forum/post')){
