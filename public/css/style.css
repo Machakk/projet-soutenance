@@ -742,3 +742,127 @@ hr{
   flex-direction: column;
 
 }
+/* Partie responsive de base (menu nav) */
+
+@media only screen and (max-width: 1130px){
+  header{
+    flex-wrap: wrap;
+    height: auto;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .logo img{
+    width: 230px;
+    margin-bottom: 30px;
+  }
+  .part-search{
+    margin-bottom: 30px;
+  }
+  .home-button{
+    border-top: none;
+  }
+  .forum-button:hover {
+    border-bottom: 8px #41826a solid;
+    border-top: none;
+  }
+  .account-button:hover {
+    border-bottom: 8px #41826a solid;
+    border-top: none;
+  }
+  header nav img{
+    width: 40px;
+    margin-bottom: 10px;
+  }
+}
+@media only screen and (max-width: 467px){
+  
+  header nav {
+    width: auto;
+  }
+  header ul{
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    margin-right: -100px;
+    padding-right: 100px;
+  }
+  .logo img{
+    width: 180px;
+
+  }
+  .part-search input{
+    width: 100px;
+  }
+}
+
+/* Partie responsive de home */
+
+@media only screen and (max-width: 1250px){
+  .part-text h1{
+    font-size: 40px;
+  }
+  .part-text h2{
+    font-size: 22px
+  }
+  .b-mots{
+    font-size: 60px;
+  }
+  .paragraphe-home{
+    width: 450px;
+  }
+  .part-text{
+    margin-bottom: 50px;
+  }
+  .content-home{
+    width: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 618px){
+  .part-text h1 {
+    font-size: 30px;
+  }
+  .part-text h2 {
+    font-size: 20px;
+  }
+  .b-mots{
+    font-size: 35px;
+  }
+  .paragraphe-home{
+    font-size: 16px;
+    width: auto;
+  }
+  .part-text{
+    padding-left: 15px;
+  }
+  .form-container{
+    width: auto;
+    height: auto;
+    padding: 20px;
+    justify-content: center;
+  }
+  .form-container form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .form-container input{
+    width: auto;
+  }
+  .connex-div{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .btn-connexion{
+    width: 80%;
+  }
+  .line{
+    width: 80%;
+  }
+  .conn-on-home{
+    font-size: 20px;
+  }
+}
