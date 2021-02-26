@@ -62,8 +62,6 @@ class PostsAdminController extends AbstractController
         return $this->render('admin/postsForm.html.twig', [
             'postsForm'=>$form->createView(),
         ]);
-
-    
     }
 
     /**
@@ -120,4 +118,13 @@ class PostsAdminController extends AbstractController
      
         return $this->redirectToRoute('admin_posts');
     }
+
+
+
+
+
+
+
+
+  
 }

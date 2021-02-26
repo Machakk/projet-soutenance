@@ -12,29 +12,45 @@
                 {{user.pseudo}}
             </h3>
             <div class="profil-metier">
-                <img src="{{ asset('img/users/') ~ user.imgprofil }}" alt="hero-design">
+                
                 
                 {% if user.metier.metier == "Frontend" %}
-                    <p>
-                        Developpeur Front-end
-                    </p>
+                
+                    <img src="{{ asset('img/metier/front-end.png') }}" alt="">
+                    <p>Front-end</p>
+                
                 {% elseif user.metier.metier == "Backend" %}
-                    <p>
-                        Developpeur Back-end
-                    </p>
                     
+                    <img src="{{ asset('img/metier/back-end.png') }}" alt="">
+                    <p>Back-end</p>
+                   
+                {% elseif user.metier.metier == "Design" %}
+                    
+                    <img src="{{ asset('img/metier/design.png') }}" alt="">
+                    <p>Design</p>
+                   
                 {% else %}
-                    <p>
-                        {{user.metier.metier}}
-                    </p>
+                    
+                    <img src="{{ asset('img/metier/unknow.png') }}" alt="">
+                    <p>Autre</p>
                 {% endif %}
             </div>
             <p class="profil-niveau"> {{user.niveau}} </p>
             <a href="#" class="profil-btn-follow">S'abonner</a>
             <a href="#" class="profil-btn-message"><img src="{{ asset('img/icons/chatting.png') }}" alt="">Message</a>
+
+            
+            <p class="descri-profil">{{user.description}}</p>
         </div>
         <div class="profil-middle">
             <img class="img-profil-middle" src="{{ asset('img/icons/profil.png') }}" alt="profil-icon">
+            
+            <!-- Pour modifier son profil -->
+            {% if user.id == app.user.id %}
+                <a href="{{path('update_profil', { 'id': user.id })}}" class=""> <b>Modifier</b>  </a>
+            {% endif %}
+
+            <a href="{{user.fichier}}">Mon CV</a>
             <a href="{{user.linksite}}">monsite.com</a>
             <div class="reseaux">
                 <a href="{{user.linkfacebook}}"><img src="{{ asset('img/icons/fb.png') }}" alt="fb-icon"></a>
@@ -43,6 +59,10 @@
             </div>
         </div>
         <div class="profil-right">
+            <div class="img-perso-profil">
+                <img src="{{ asset('img/users/') ~ user.imgprofil }}" alt="hero-design">
+                
+            </div>
             <h3>Technos et logiciels utilisées</h3>
             <div class="profil-skills">
                 <img src="{{ asset('img/skills/1-1614077567.png') }}" alt="">
@@ -57,27 +77,16 @@
                 <img src="{{ asset('img/skills/1-1614077567.png') }}" alt="">
                 <img src="{{ asset('img/skills/1-1614077567.png') }}" alt="">
                 <img src="{{ asset('img/skills/1-1614077567.png') }}" alt="">
-                <img src="{{ asset('img/skills/1-1614077567.png') }}" alt="">
-                <img src="{{ asset('img/skills/1-1614077567.png') }}" alt="">
-                <img src="{{ asset('img/skills/1-1614077567.png') }}" alt="">
-                <img src="{{ asset('img/skills/1-1614077567.png') }}" alt="">
-                <img src="{{ asset('img/skills/1-1614077567.png') }}" alt="">
-    
+                <img src="{{ asset('img/skills/1-1614077567.png') }}" alt=""> 
             </div>
 
         </div>
+
+        
+        
     </div>
-    <div class="container-profil-img">
-        <div class="line-profil"></div>
-        <h2>Images</h2>
-        <div class="profil-img-post">
-            <img src="{{ asset('img/posts/rectangle.png') }}" alt="">
-            <img src="{{ asset('img/posts/rectangle.png') }}" alt="">
-            <img src="{{ asset('img/posts/rectangle.png') }}" alt="">
-            <img src="{{ asset('img/posts/rectangle.png') }}" alt="">
-        </div>
-        <div class="line-profil"></div>
-    </div>
+    <div class="line-profil"></div>
+
     <div class="container-profil-post">
         <h2>Derniers post(s) dans le forum</h2>
         {# posts de cet utilisateur #}
@@ -92,7 +101,9 @@
             
                             </div>
                             <div class="col-3 user ">
-                                <a href="{{path('user_profil', {'id': post.user.id })}}"> écrit par <img src="{{ asset('img/users/') ~ post.user.imgprofil }}" alt=""></a>
+                                <a href="{{path('user_profil', {'id': post.user.id })}}" class="img-perso-profil"> écrit par 
+                                    <img src="{{ asset('img/users/') ~ post.user.imgprofil }}" alt="">
+                                </a>
                             </div>
                         </div>
             
