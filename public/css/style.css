@@ -250,7 +250,8 @@ nav img{
 
 .container-form-register{
   margin-top: 60px;
-  width: 1200px;
+  margin-bottom: 60px;
+  width: 800px;
   background: white;
   border-radius: 30px;
   -webkit-box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
@@ -271,9 +272,9 @@ nav img{
   margin-bottom: 40px;
 }
 .container-form-register label{
-  color: #4e4e4e;
   font-family: 'Noto Sans', sans-serif;
   font-weight: 600px;
+  color: #184d4d;
 }
 .btn-valider-register{
   color: white;
@@ -292,7 +293,8 @@ nav img{
 
 .container-login{
   margin-top: 60px;
-  width: 1200px;
+  margin-bottom: 60px;
+  width: 800px;
   background: white;
   border-radius: 30px;
   -webkit-box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
@@ -309,9 +311,9 @@ nav img{
   margin-bottom: 40px;
 }
 .container-login label{
-  color: #4e4e4e;
   font-family: 'Noto Sans', sans-serif;
-  font-weight: 600;
+  font-weight: 600px;
+  color: #184d4d;
 }
 .btn-valider-login{
   text-align: center;
@@ -1287,3 +1289,45 @@ hr{
 }
 
 /* END Forum media */
+
+
+/* ****************** Partie responsive de register, Login ************************/
+@media (max-width: 1220px) and (min-width:993px ){
+  .container-form-register, .container-login{   
+    width: 500px;
+  }
+  .line-register{
+    width: 80%;
+  }
+
+}
+
+@media (max-width: 992px) and (min-width:769px ){
+  .container-form-register, .container-login{   
+    width: 400px;
+  }
+  .line-register{
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) and (min-width:351px ){
+  .container-form-register, .container-login{   
+    width: 340px;
+  }
+  .line-register{
+    width: 80%;
+  }
+}
+
+@media (max-width: 350px) {
+  .container-form-register, .container-login{   
+    width: 340px;
+  }
+
+  .line-register{
+    width: 80%;
+  }
+}
+
+

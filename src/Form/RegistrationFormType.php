@@ -27,6 +27,7 @@ class RegistrationFormType extends AbstractType
     {
         $builder
             ->add('pseudo', TextType::class, [
+                'label' => 'Pseudo:',
                 'required' => true,
                 'attr' => [
                     'class' => 'form-control mb-3',
@@ -35,6 +36,7 @@ class RegistrationFormType extends AbstractType
                 
             ])
             ->add('email', EmailType::class, [
+                'label' => 'Email:',
                 'required' => true,
                 'attr' => [
                     'class' => 'form-control mb-3',
@@ -42,6 +44,7 @@ class RegistrationFormType extends AbstractType
                 ]
             ])
             ->add('agreeTerms', CheckboxType::class, [
+                'label' => 'Accepter les Conditions .',
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
@@ -50,6 +53,7 @@ class RegistrationFormType extends AbstractType
                 ]
             ])
             ->add('plainPassword', PasswordType::class, [
+                'label' => 'Mot de Passe:',
 
                 'mapped' => false,
                 'constraints' => [
@@ -69,12 +73,14 @@ class RegistrationFormType extends AbstractType
                 ]
             ])
             ->add('metier', EntityType::class, [
+                'label' => 'Métier:',
                 'required' => true,
                 'class' => Metiers::class,
                 'choice_label' => 'metier',
                 
             ])
             ->add('niveau', ChoiceType::class, [
+                'label' => 'Niveau:',
                 'required' => true,
                 'choices' => [
                     '- ton niveau -' => false,
@@ -88,10 +94,11 @@ class RegistrationFormType extends AbstractType
             ])
 
             ->add ('imgprofil', FileType::class, [
+                'label' => 'Photo de profil:',
                 'required' => false,
                 'mapped' => false,
                 'attr' => [
-                    'placeholder' => 'photo profil',
+                    'placeholder' => '.png, .jpeg, jpg',
                     'class' => 'form-control mb-3'
                 ]
             ])
@@ -99,7 +106,7 @@ class RegistrationFormType extends AbstractType
             
             ->add('valider' , SubmitType::class, [
                 'attr' => [
-                    'class' => 'btn-valider-register'
+                    'class' => 'btn-valide-post w-100 '
                 ]
             ])
         ;
