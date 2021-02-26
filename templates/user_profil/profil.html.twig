@@ -36,8 +36,8 @@
                 {% endif %}
             </div>
             <p class="profil-niveau"> {{user.niveau}} </p>
-            <a href="#" class="profil-btn-follow">S'abonner</a>
-            <a href="#" class="profil-btn-message"><img src="{{ asset('img/icons/chatting.png') }}" alt="">Message</a>
+            <!-- <a href="#" class="profil-btn-follow">S'abonner</a>
+            <a href="#" class="profil-btn-message"><img src="" alt="">Message</a> -->
 
             
             <p class="descri-profil">{{user.description}}</p>
@@ -58,6 +58,7 @@
                 <a href="{{user.linkgit}}"><img src="{{ asset('img/icons/git-hub.png') }}" alt="github-icon"></a>
             </div>
         </div>
+        <div class="line-profil line-hidden"></div>
         <div class="profil-right">
             <div class="img-perso-profil">
                 <img src="{{ asset('img/users/') ~ user.imgprofil }}" alt="hero-design">
@@ -90,7 +91,7 @@
     <div class="container-profil-post">
         <h2>Derniers post(s) dans le forum</h2>
         {# posts de cet utilisateur #}
-        <div class="row">
+        <div class="post-container-prof">
 
             {% for post in posts %}
                 {%  if post.user.id == user.id %}
