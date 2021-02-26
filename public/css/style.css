@@ -488,6 +488,8 @@ hr{
 .profil-metier{
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 270px;
   margin-bottom: 10px;
 }
 .profil-metier p{
