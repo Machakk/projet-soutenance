@@ -230,6 +230,7 @@ header ul li {
   font-size: 38px;
   color: #184d4d;
 }
+
 .line-register{
   width: 600px;
   margin-bottom: 40px;
@@ -237,7 +238,7 @@ header ul li {
 .container-form-register label{
   color: #4e4e4e;
   font-family: 'Noto Sans', sans-serif;
-  font-weight: 600;
+  font-weight: 600px;
 }
 .btn-valider-register{
   color: white;
@@ -297,16 +298,16 @@ header ul li {
   background: white;
   margin: 4%;
   border-radius: 30px;
-  width: 1200px;
 }
 
 .au-content {
   margin-top: 7%;
   margin-bottom: 7%;
+  margin: 3%;
   text-align: center;
 }
 
-.au-ul-bg {
+.au-ul {
   background: #41826a;
   width: 100%;
   border-radius: 30px;
@@ -329,6 +330,8 @@ header ul li {
   justify-content: space-evenly;
   align-items: center;
   height: 150px;
+  border-radius: 30px;
+  position: relative;
   color: #ffffff;
 }
 
@@ -503,7 +506,6 @@ hr{
   font-family: "Noto Sans", sans-serif;
   font-size: 16px;
   color: #41826a;
-  margin-left: 65px;
   margin-bottom: 40px;
 }
 .profil-btn-follow{
@@ -557,7 +559,7 @@ hr{
   width: 210px;
 }
 .img-profil-middle{
-  margin-bottom: 100px;
+  margin-bottom: 10px;
 }
 .profil-middle a{
   font-family: 'KoHo', sans-serif;
@@ -612,6 +614,9 @@ hr{
   background: #184d4d;
 
 }
+.line-hidden{
+  display: none;
+}
 
 
 /* Partie post du profile */
@@ -630,6 +635,10 @@ hr{
   max-width:500px ;
   border-radius: 10px;
 
+}
+.post-container-prof{
+  display: flex;
+  flex-wrap: wrap;
 }
 
 
@@ -963,14 +972,17 @@ hr{
     margin-right: 0;
     margin-left: 0;
   }
+
   .img-profil-middle{
     display: none;
   }
+
 }
 @media only screen and (max-width: 1024px){
   .profil-left{
     margin-right: 0;
   }
+
   .profil-content-post{
     width: 80%;
   }
@@ -981,5 +993,3 @@ hr{
     width: 80%;
   }
 }
-
-
