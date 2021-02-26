@@ -862,4 +862,7 @@ hr{
   .line{
     width: 80%;
   }
+  .conn-on-home{
+    font-size: 20px;
+  }
 }
