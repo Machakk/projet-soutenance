@@ -269,3 +269,35 @@ header ul li {
   background: #41826a;
   color: white;
 }
+
+.au-content-bg {
+  background: white;
+  margin: 4%;
+  border-radius: 30px;
+}
+
+.au-content {
+  margin: 3%;
+  text-align: center;
+}
+
+.au-ul {
+  background: #41826a;
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 150px;
+  border-radius: 30px;
+  position: relative;
+  color: #ffffff;
+}
+
+.au-title {
+  color: #184D4D;
+}
+
+.au-title-color2 {
+  color: #C9BBAC;
+}
