@@ -127,26 +127,27 @@ class CommentairesController extends AbstractController
         $form = $this->createForm(CommentairePostUserType::class, $commentaire);
         $form->handleRequest($request);
         $post = $postForumRepository->find($id);
-        $commentaire = $commentaireForumRepository->findAll();
         
-
+        
         if($form->isSubmitted() && $form->isValid())
         {
             $commentaire->setUser($user);
             $commentaire->setPost($post);
-
+            
             $date = new \DateTime('@'.strtotime('now'));
             $commentaire->setDate($date);
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($commentaire);
             $manager->flush();
         }
-
+        
+        $commentaires = $commentaireForumRepository->findAll();
+        
         return $this->render('forum/post.html.twig', [
             'id' => $id,
             'commentaireUserCreate'=>$form->createView(),
             'post'=> $post,
-            'commentaire' => $commentaire
+            'commentaires' => $commentaires
         ]);
     }
 
