@@ -17,13 +17,18 @@ class CommentairePostUserType extends AbstractType
         $builder
             ->add('content', TextareaType::class, [
                 'required' => true,
-                'label' => 'Contenu',
+                'label' => 'Contenu commentaire',
                 'attr' => [
                     'cols' => 30,
                     'rows' => 10
                 ]
             ])
-            ->add('valider', SubmitType::class)
+
+            ->add('valider', SubmitType::class, [
+                'attr' => [
+                    'class' => 'btn btn-outline-success'
+                    ]
+            ])
         ;
     }
 

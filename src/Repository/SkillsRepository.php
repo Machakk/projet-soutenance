@@ -47,20 +47,4 @@ class SkillsRepository extends ServiceEntityRepository
         ;
     }
     */
-
-
-
-
-    public function findskills(){
-        // $em = $this->getContainer()->get('doctrine')->getManager();
-        $repo = $this->getDoctrine()->getManager()->getRepository('Users::class');
-        // $repository = $em->getRepository('Users::class')->findAll();
-        $query = $repo->createQueryBuilder('u')
-                ->innerJoin('u.skills', 's')
-                ->where('s.id = :skills_id')
-                ->setParameter('skills_id',5)
-                ->getQuery()->getResult();
-        return $query;
-    }
-
 }

@@ -2,8 +2,11 @@
 
 namespace App\Controller;
 
+use App\Form\PostsType;
 use App\Entity\CommentaireForum;
 use App\Form\CommentairesPostType;
+use App\Form\CommentairePostUserType;
+use App\Repository\PostForumRepository;
 use Symfony\Component\HttpFoundation\Request;
 use App\Repository\CommentaireForumRepository;
 use Symfony\Component\HttpFoundation\Response;
@@ -85,4 +88,110 @@ class CommentairesController extends AbstractController
      
         return $this->redirectToRoute('admin_commentaires');
     }
+
+    /* test 1 */
+
+    // /**
+    //  * @Route("/forum/post-{id}", name="commentaire_user_create")
+    //  */
+    // public function createCommentaireUser(Request $request){
+
+    //     $user = $this->getUser();
+    //     $commentaire = new CommentaireForum();
+    //     $form = $this->createForm(CommentairePostUserType::class, $commentaire);
+    //     $form->handleRequest($request);
+
+    //     if($form->isSubmitted() && $form->isValid())
+    //     {
+    //         $commentaire->setUser($user);
+    //         $date = new \DateTime('@'.strtotime('now'));
+    //         $commentaire->setDate($date);
+    //         $manager = $this->getDoctrine()->getManager();
+    //         $manager->persist($commentaire);
+    //         $manager->flush();
+    //         return $this->redirectToRoute('commentaire_user_create');
+    //     }
+
+    //     return $this->render('forum/post.html.twig', [
+    //         'commentaireUserCreate'=>$form->createView(),
+    //     ]);
+    // }
+    
+
+    /* test 2 */
+
+    /**
+     * @Route("/forum/post-{id}", name="commentaire_user_create")
+     */
+    public function createCommentaireUser(Request $request, PostForumRepository $postForumRepository, $id){
+
+        $user = $this->getUser();
+        $commentaire = new CommentaireForum();
+        $form = $this->createForm(CommentairePostUserType::class, $commentaire);
+        $form->handleRequest($request);
+        $post = $postForumRepository->find($id);
+
+        if($form->isSubmitted() && $form->isValid())
+        {
+            $commentaire->setUser($user);
+            $commentaire->setPost($post);
+
+            $date = new \DateTime('@'.strtotime('now'));
+            $commentaire->setDate($date);
+            $manager = $this->getDoctrine()->getManager();
+            $manager->persist($commentaire);
+            $manager->flush();
+        }
+
+        return $this->render('forum/post.html.twig', [
+            'id' => $id,
+            'commentaireUserCreate'=>$form->createView(),
+            'post'=> $post
+        ]);
+    }
+
+
+    /* test 3 */
+
+    // /**
+    //  * @Route("/forum/post-{id}", name="commentaire_user_create")
+    //  * @Route("/forum/post-{id}", name="forum_post")
+    //  */
+    // public function createCommentaireUser(Request $request, PostForumRepository $postForumRepository, $id)
+    // {
+
+    //     $user = $this->getUser();
+    //     $commentaire = new CommentaireForum();
+    //     $form = $this->createForm(CommentairePostUserType::class, $commentaire);
+    //     $form->handleRequest($request);
+    //     $post = $postForumRepository->find($id);
+
+    //     $posts = $postForumRepository->find($id);
+    //     $form2 = $this->createForm(PostsType::class, $posts);
+    //     $form2->handleRequest($request);
+
+    //     if($form->isSubmitted() && $form->isValid() && $form2->isSubmitted() && $form2->isValid())
+    //     {
+    //         $commentaire->setUser($user);
+    //         $commentaire->setPost($post);
+
+    //         $date = new \DateTime('@'.strtotime('now'));
+    //         $commentaire->setDate($date);
+    //         $manager = $this->getDoctrine()->getManager();
+    //         $manager->persist($commentaire);
+    //         $manager->flush();
+
+            
+    //         $manager2 = $this->getDoctrine()->getManager();
+    //         $manager2->persist($posts);
+    //         $manager2->flush();
+
+    //         return $this->redirectToRoute('commentaire_user_create', ['id' => $id]);
+    //     }
+
+    //     return $this->render('forum/post.html.twig', [
+    //         'commentaireUserCreate'=>$form->createView(),
+    //         'posts' => $posts,
+    //     ]);
+    // }
 }

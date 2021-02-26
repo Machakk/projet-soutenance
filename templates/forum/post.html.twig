@@ -8,7 +8,9 @@
   <div class="content-post">
       <div class="row">
           <div class="col-9">
-            <h2 class="text-center"> {{posts.title}}</h2> 
+
+            <h2 class="text-center"> {{post.title}}</h2>
+
           </div>
               
           <div class="col-3 user ">
@@ -19,10 +21,8 @@
           </div>
       </div>
       <div class="content text-center p-4">
-        <p>{{posts.content}}</p>
-      </div>
-      <div class="container">
-        
+
+        <p>{{post.content}}</p>
       </div>
           {% if is_granted('IS_AUTHENTICATED_FULLY') %}
               <div class="part-commentaire">
@@ -33,7 +33,7 @@
                 </form> -->
                 
                 {{ form_start(commentaireUserCreate)}}
-                {{ form_row(commentaireUserCreate._token) }}
+
                 {{ form_end(commentaireUserCreate)}}
               </div> 
               {# formulaire pour ajouter un commentaire #}        
