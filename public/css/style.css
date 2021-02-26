@@ -341,12 +341,17 @@ hr{
   text-align: center;
 }
 
+/* Partie post ?? */
+
 .content-post{
-  background: #f3f3f3;
+  background: #ffffff;
   min-width:1100px ;
   max-width:1100px ;
   border-radius: 10px;
-
+  padding: 30px;
+  margin-top: 50px;
+  -webkit-box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
+  box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
 }
 
 .content-post h3, .profil-content-post h3{
@@ -361,7 +366,7 @@ hr{
 }
 
 .content-post .user a, .profil-content-post .user a{
-  color: #41826a;
+
   font-family: 'Noto Sans', sans-serif;
 }
 .content-post .content, .profil-content-post .content{
@@ -372,10 +377,6 @@ hr{
   font-family: 'KoHo', sans-serif;
 }
 
-.content-post a , .profil-content-post a{
-  color: #184D4D;
-  
-}
 
 .content-post  .suite {
   color: white;
@@ -394,6 +395,7 @@ hr{
 
   
 }
+
  
 
 
@@ -587,9 +589,13 @@ hr{
   background-color: white;
   border-radius: 30px;
   padding-top: 50px;
-  -webkit-box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
-  box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
+  -webkit-box-shadow: 0px 0px 243px 134px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 243px 134px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 243px 134px rgba(0,0,0,0.75);
   display: none;
+  position: absolute;
+  top: 40%;
+  left: 20%;
 }
 .login-post-container form{
   display: flex;
@@ -597,4 +603,34 @@ hr{
   align-items: center;
   justify-content: space-around;
   height: 100%;
+}
+.btn-commenter{
+  text-align: center;
+  padding: 5px;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 18;
+  background: #41826a;
+  text-align: center;
+  border-radius: 30px;
+  width: 150px;
+  margin-top: 15px;
+  color: white;
+  cursor: pointer;
+}
+.btncreate{
+  text-align: center;
+}
+.all-post{
+  position: relative;
+}
+.part-commentaire{
+  width: 100%;
+  border: 2px solid rgb(133, 133, 133);
+  border-radius: 30px;
+  background: rgb(231, 231, 231);
+  padding: 30px;
+}
+.part-commentaire form{
+  display: flex;
+  flex-direction: column;
 }
