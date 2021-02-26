@@ -27,12 +27,13 @@
       <div class="container-commentaire p-3">
         <h2>afficher commentaire ici:</h2>
         <div class="commentaire">
-            {% for com in commentaires %}
-            <div class="row justify-content-md-center" style="border: 1px solid #000;">
-              {{com.content}}
-            </div>  
-
-            {% endfor %}
+          {% for com in commentaires %}
+            {% if com.post.id == post.id %}
+              <div class="row justify-content-md-center" style="border: 1px solid #000;">
+                {{com.content}}
+              </div>  
+            {% endif %}
+          {% endfor %}
         </div>
       </div>
           {% if is_granted('IS_AUTHENTICATED_FULLY') %}
