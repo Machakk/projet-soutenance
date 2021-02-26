@@ -17,9 +17,20 @@
           <div class="text-right p-2 m-2 mb-3">
                   <a href="{{ path('forum') }}" <i class="fas fa-arrow-circle-left"></i></a>
           </div>
-      </div>
+        </div>
       <div class="content text-center p-4">
         <p>{{post.content}}</p>
+      </div>
+      <div class="container-commentaire p-3">
+        <h2>afficher commentaire ici:</h2>
+        <div class="commentaire">
+            {% for com in commentaire %}
+            <div class="row justify-content-md-center" style="border: 1px solid #000;">
+              {{com.content}}
+            </div>  
+
+            {% endfor %}
+        </div>
       </div>
           {% if is_granted('IS_AUTHENTICATED_FULLY') %}
               <div class="part-commentaire">
