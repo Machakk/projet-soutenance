@@ -710,7 +710,6 @@ hr{
   align-items: center;
   justify-content: space-around;
   height: 100%;
-<<<<<<< HEAD
 }
 .btn-commenter{
   text-align: center;
@@ -741,7 +740,5 @@ hr{
 .part-commentaire form{
   display: flex;
   flex-direction: column;
-=======
 
->>>>>>> 0216a03b961f0b9f4a69332cd52501f8465e3919
 }
