@@ -47,22 +47,4 @@ class SkillsRepository extends ServiceEntityRepository
         ;
     }
     */
-
-    // /**
-    //  *  @return Skills[]
-    //  */
-    // public function findByUser($user){
-    //     return $query = $this->createQueryBuilder('n')
-    //     ->join('n.id', 's', 'WITH', 's := id')
-    //     ->setParameter('user',$user)
-    //     ->getQuery()
-    //     ->getResult();
-    // }
-
-    /*
-    SELECT skills.id, skills.imageskill, skills.title 
-    FROM skills, users, skills_users
-    WHERE skills.id = skills_users.skills_id 
-    AND users.id = skills_users.users_id 
-     */
 }

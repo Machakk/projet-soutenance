@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Users;
+use App\Entity\Skills;
 use App\Entity\Metiers;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -123,7 +124,15 @@ class ProfilUserType extends AbstractType
                 ]
                 
             ])
-            // ->add('skills')
+            // peut-être avec checkbox
+            ->add('skills', EntityType::class, [
+                'required' => false,
+                'class' => Skills::class,
+                'choice_label' => 'title',
+                'multiple' => true
+
+                
+            ])
             // ->add('abonne')
             // ->add('users_abonnes')
             ->add('valider',SubmitType::class)
