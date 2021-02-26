@@ -20,7 +20,7 @@ class CommentairePostUserType extends AbstractType
                 'label' => 'Contenu commentaire',
                 'attr' => [
                     'cols' => 30,
-                    'rows' => 10
+                    'rows' => 5
                 ]
             ])
 

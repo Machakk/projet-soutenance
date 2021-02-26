@@ -123,30 +123,34 @@ class CommentairesController extends AbstractController
     /**
      * @Route("/forum/post-{id}", name="commentaire_user_create")
      */
-    public function createCommentaireUser(Request $request, PostForumRepository $postForumRepository, $id){
+    public function createCommentaireUser(Request $request, PostForumRepository $postForumRepository, CommentaireForumRepository $commentaireForumRepository, $id){
 
         $user = $this->getUser();
         $commentaire = new CommentaireForum();
         $form = $this->createForm(CommentairePostUserType::class, $commentaire);
         $form->handleRequest($request);
         $post = $postForumRepository->find($id);
-
+        
+        
         if($form->isSubmitted() && $form->isValid())
         {
             $commentaire->setUser($user);
             $commentaire->setPost($post);
-
+            
             $date = new \DateTime('@'.strtotime('now'));
             $commentaire->setDate($date);
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($commentaire);
             $manager->flush();
         }
-
+        
+        $commentaires = $commentaireForumRepository->findAll();
+        
         return $this->render('forum/post.html.twig', [
             'id' => $id,
             'commentaireUserCreate'=>$form->createView(),
-            'post'=> $post
+            'post'=> $post,
+            'commentaires' => $commentaires
         ]);
     }
 
