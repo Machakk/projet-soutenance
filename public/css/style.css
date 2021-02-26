@@ -230,7 +230,6 @@ header ul li {
   font-size: 38px;
   color: #184d4d;
 }
-
 .line-register{
   width: 600px;
   margin-bottom: 40px;
@@ -238,7 +237,7 @@ header ul li {
 .container-form-register label{
   color: #4e4e4e;
   font-family: 'Noto Sans', sans-serif;
-  font-weight: 600px;
+  font-weight: 600;
 }
 .btn-valider-register{
   color: white;
@@ -298,22 +297,18 @@ header ul li {
   background: white;
   margin: 4%;
   border-radius: 30px;
+  width: 1200px;
 }
 
 .au-content {
-<<<<<<< HEAD
   margin-top: 7%;
   margin-bottom: 7%;
-=======
-  margin: 3%;
->>>>>>> e19d252fe02118bb97ea976cce2e00ade96a225d
   text-align: center;
 }
 
-.au-ul {
+.au-ul-bg {
   background: #41826a;
   width: 100%;
-<<<<<<< HEAD
   border-radius: 30px;
 }
 
@@ -329,15 +324,11 @@ header ul li {
 
 .au-ul {
   
-=======
->>>>>>> e19d252fe02118bb97ea976cce2e00ade96a225d
   list-style: none;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   height: 150px;
-  border-radius: 30px;
-  position: relative;
   color: #ffffff;
 }
 
@@ -494,6 +485,8 @@ hr{
 .profil-metier{
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 270px;
   margin-bottom: 10px;
 }
 .profil-metier p{
@@ -510,6 +503,7 @@ hr{
   font-family: "Noto Sans", sans-serif;
   font-size: 16px;
   color: #41826a;
+  margin-left: 65px;
   margin-bottom: 40px;
 }
 .profil-btn-follow{
@@ -563,7 +557,7 @@ hr{
   width: 210px;
 }
 .img-profil-middle{
-  margin-bottom: 10px;
+  margin-bottom: 100px;
 }
 .profil-middle a{
   font-family: 'KoHo', sans-serif;
@@ -618,9 +612,6 @@ hr{
   background: #184d4d;
 
 }
-.line-hidden{
-  display: none;
-}
 
 
 /* Partie post du profile */
@@ -639,10 +630,6 @@ hr{
   max-width:500px ;
   border-radius: 10px;
 
-}
-.post-container-prof{
-  display: flex;
-  flex-wrap: wrap;
 }
 
 
@@ -929,62 +916,5 @@ hr{
   }
   .conn-on-home{
     font-size: 20px;
-  }
-}
-
-
-/* Partie responsive profile */
-@media only screen and (max-width: 1260px){
-  .container-profil{
-    width: 80%;
-  }
-  .profil-part-up{
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-  }
-  .profil-left{
-    align-items: center;
-  }
-  .profil-middle{
-    margin: 0 40px;
-  }
-  .descri-profil{
-    width: 80%;
-    max-width: none;
-  }
-  .img-perso-profil{
-    margin-bottom: 10px;
-  }
-  .profil-right{
-    width: 80%;
-  }
-  .profil-right h3{
-    width: 80%;
-  }
-  .line-hidden{
-    display: block;
-  }
-  .container-profil-post{
-    justify-content: center;
-  }
-  .post-container-prof{
-    justify-content: center;
-  }
-  .line-profil{
-    margin-right: 0;
-    margin-left: 0;
-  }
-}
-@media only screen and (max-width: 1024px){
-  .profil-left{
-    margin-right: 0;
-  }
-  .img-profil-middle{
-  width: 130px;
-  }
-  .profil-content-post{
-    width: 80%;
   }
 }
