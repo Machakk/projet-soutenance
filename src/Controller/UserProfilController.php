@@ -22,6 +22,15 @@ class UserProfilController extends AbstractController
 
         $user = $usersRepository->find($id);
         $posts = $postForumRepository->findAll();
+        $skills= $user->getSkills();
+        // echo '<pre>';
+        // var_dump($user);
+        // echo '</pre>';
+        // die();
+        
+
+        // var_dump($skills);
+        // die();
         
         $icon = $this->getParameter('photos_icon');
         $iconFb = $icon . "/fb.png";
@@ -35,8 +44,9 @@ class UserProfilController extends AbstractController
     /**
      * @Route("/profil/updateprofil-{id}", name="update_profil")
      */
-    public function updateProfil(UsersRepository $usersRepository, $id, Request $request, UserPasswordEncoderInterface $passwordEncoder){
+    public function updateProfil(UsersRepository $usersRepository, $id, Request $request, UserPasswordEncoderInterface $passwordEncoder, SkillsRepository $skillsRepository ){
         $user = $usersRepository->find($id);
+        // $skills = $skillsRepository->findAll();
         $form = $this->createForm(ProfilUserType::class, $user);
         $form->handleRequest($request);
 
