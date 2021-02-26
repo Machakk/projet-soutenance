@@ -433,8 +433,6 @@ hr{
 .profil-metier{
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 270px;
   margin-bottom: 10px;
 }
 .profil-metier p{
@@ -451,7 +449,6 @@ hr{
   font-family: "Noto Sans", sans-serif;
   font-size: 16px;
   color: #41826a;
-  margin-left: 65px;
   margin-bottom: 40px;
 }
 .profil-btn-follow{
@@ -505,7 +502,7 @@ hr{
   width: 210px;
 }
 .img-profil-middle{
-  margin-bottom: 100px;
+  margin-bottom: 10px;
 }
 .profil-middle a{
   font-family: 'KoHo', sans-serif;
@@ -560,6 +557,9 @@ hr{
   background: #184d4d;
 
 }
+.line-hidden{
+  display: none;
+}
 
 
 /* Partie post du profile */
@@ -578,6 +578,10 @@ hr{
   max-width:500px ;
   border-radius: 10px;
 
+}
+.post-container-prof{
+  display: flex;
+  flex-wrap: wrap;
 }
 
 
@@ -864,5 +868,62 @@ hr{
   }
   .conn-on-home{
     font-size: 20px;
+  }
+}
+
+
+/* Partie responsive profile */
+@media only screen and (max-width: 1260px){
+  .container-profil{
+    width: 80%;
+  }
+  .profil-part-up{
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .profil-left{
+    align-items: center;
+  }
+  .profil-middle{
+    margin: 0 40px;
+  }
+  .descri-profil{
+    width: 80%;
+    max-width: none;
+  }
+  .img-perso-profil{
+    margin-bottom: 10px;
+  }
+  .profil-right{
+    width: 80%;
+  }
+  .profil-right h3{
+    width: 80%;
+  }
+  .line-hidden{
+    display: block;
+  }
+  .container-profil-post{
+    justify-content: center;
+  }
+  .post-container-prof{
+    justify-content: center;
+  }
+  .line-profil{
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+@media only screen and (max-width: 1024px){
+  .profil-left{
+    margin-right: 0;
+  }
+  .img-profil-middle{
+  width: 130px;
+  }
+  .profil-content-post{
+    width: auto;
   }
 }
