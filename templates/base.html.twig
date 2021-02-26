@@ -27,15 +27,19 @@
           <a href="{{ path('home') }}"><img src="{{asset('img/logo.png')}}" alt="logo" /></a>
           
         </div>
-        <div class="part-search">
+        <!-- <div class="part-search">
           <input type="text" placeholder="Rechercher un post">
-          <button type="submit"><img src="{{asset('img/icons/search.png')}}" alt=""></button>
-        </div>
+          <button type="submit"><img src="" alt=""></button>
+        </div> -->
         <nav>
           <ul>
             <li class="home-button">
               <a href="{{ path('home') }}"
-                ><img src="{{asset('img/icons/home 1-vert.png')}}" alt="icon-home"
+                ><img 
+                src="{{asset('img/icons/home 1.png')}}" 
+                alt="icon-home"
+                onmouseover="this.src='{{asset('img/icons/home-vert.png')}}'"
+                onmouseout="this.src='{{asset('img/icons/home 1.png')}}'"
               /></a>
             </li>
             <li class="forum-button">

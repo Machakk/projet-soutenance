@@ -10,22 +10,22 @@
         DEMANDER <br />
         RENCONTRER <br />
       </p>
-      <p class="paragraphe-home">
+      <!-- <p class="paragraphe-home">
         Maecenas a tincidunt mauris. Duis mollis rutrum sem vitae iaculis.
         Curabitur elementum interdum viverra. Quisque feugiat fermentum sem in
         pretium. Phasellus eu diam turpis. Nam bibendum non nisi sit amet
         semper.
-      </p>
-      <a href="#" class="btn-plus">En savoir plus</a>
+      </p> -->
+      <a href="{{ path('aboutus') }}" class="btn-plus">En savoir plus</a>
     </div>
     <div class="part-form">
       {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-      <div class="form-container">
+      <div class="form-container form-container-2">
 
         <h2>Bienvenue</h2>
-        <p class="conn-on-home">Connecté en tant que : {{ app.user.pseudo }}</p>
-        <a class="btn-connexion" href="{{ path('app_logout') }}">Se déconnecter</a>
-        <a href="{{path('user_profil', {'id': app.user.id })}}" class="text-center">Mon Profil</a>
+        <p class="conn-on-home">Connecté en tant que : <br> <span>{{ app.user.pseudo }}</span> </p>
+        <a class="btn-logout-home" href="{{ path('app_logout') }}">Se déconnecter</a>
+        <a class="btn-mon-profil-home" href="{{path('user_profil', {'id': app.user.id })}}" class="text-center">Mon Profil</a>
       </div>
       
       {% else %}
