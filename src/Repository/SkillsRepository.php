@@ -65,4 +65,14 @@ class SkillsRepository extends ServiceEntityRepository
     WHERE skills.id = skills_users.skills_id 
     AND users.id = skills_users.users_id 
      */
+
+    public function findskills(){
+        $em = $this->getContainer()->get('doctrine')->getManager();
+        $repository = $em->getRepository('Users::class');
+        $query = $repository->createQueryBuilder('u')
+                ->innerJoin('u.skills', 's')
+                ->where('s.id = :skills_id')
+                ->setParameter('skills_id',5)
+                ->getQuery()->getResult();
+    }
 }
