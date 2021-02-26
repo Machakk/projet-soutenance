@@ -14,7 +14,7 @@ body {
   background-color: #f3f3f3;
 }
 
-/* Partie de Base */
+/*************************** Partie de Base ****************************/
 
 .background {
   background: url(../img/back.png);
@@ -85,7 +85,7 @@ header ul li {
   background: #41826a;
 }
 
-/* Partie de home */
+/********************************** Partie de home ****************************/
 .all-main {
   padding-top: 80px;
   margin-top: -20px;
@@ -211,7 +211,7 @@ header ul li {
   font-weight: 600;
   margin-bottom: 80px;
 }
-/* Partie Register*/
+/********************************** Partie Register*******************************/
 
 .container-form-register{
   margin-top: 60px;
@@ -253,7 +253,7 @@ header ul li {
   color: white;
 }
 
-/* Partie Login */
+/********************************** Partie Login ****************************/
 
 .container-login{
   margin-top: 60px;
@@ -347,7 +347,7 @@ header ul li {
   padding: 4%;
 }
 
-/*  Partie Forum */
+/********************************  Partie Forum ***************************/
 .container-forum{
   margin-top: 60px;
   margin-bottom: 60px;  
@@ -364,20 +364,18 @@ header ul li {
 }
 
 .btn-nav{
-  color: white;
   background: #184d4d;
   text-align: center;
+  padding: 10px;
+  border-radius: 15px;
+  min-width:150px ;
+}
+.btn-nav a{
+  color: white;
   font-family: "Noto Sans", sans-serif;
   font-size: 25px;
-  padding: 10px;
-  
-  border-radius: 15px;
-  padding-left:50px ;
-  margin-left: 50px;
-  padding-right:50px ;
-  min-width:50px ;
-
 }
+
 .test{
   min-width:50px ;
 }
@@ -396,7 +394,26 @@ hr{
   text-align: center;
 }
 
-/* Partie post ?? */
+/*** Partie post ?? ***/
+
+.img-perso-profil-posts{
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  margin-bottom: 100px;
+  color: #184D4D;
+}
+
+
+.img-perso-profil-posts img{
+  width: 35px;
+  text-align: center;
+}
+
 
 .content-post{
   background: #ffffff;
@@ -440,21 +457,21 @@ hr{
   font-family: 'KoHo', sans-serif;
   font-size: 18px;
   padding: 10px;
-  padding-left: 20px;
-  
   border-radius: 15px;
   margin: 20px;
-  padding-right:50px ;
   min-width:40px ;
   text-decoration: none;
 
-  
 }
 
+.content-post a{
+  color: #41826a;
+  font-size: 12px;
+}
  
 
 
-/* Partie Profil */
+/********************************* Partie Profil *********************************/
 .container-profil{
   margin-top: 60px;
   width: 1200px;
@@ -642,61 +659,9 @@ hr{
 }
 
 
-/*  VERSION PROFIL */
-@media (max-width: 1220px) and (min-width:993px ){
-  .container-profil{ 
-    max-width: 1000px; 
-  }
-
-  .profil-content-post{
-    min-width:400px ;
-    max-width:400px ;
-  }
-}
-
-@media (max-width: 992px) and (min-width:769px ){
-  .container-profil{ 
-    max-width: 680px; 
-  }
-}
-
-@media (max-width: 768px) and (min-width:577px ){
-  .container-profil{ 
-    max-width: 450px; 
-  }
-
-  .profil-content-post{
-    min-width:300px ;
-    max-width:300px ;
-  }
-}
-
-@media (max-width: 576px) and (min-width:351px ){
-  .container-profil{ 
-    max-width: 350px; 
-  }
-
-  .profil-content-post{
-    min-width:250px ;
-    max-width:250px ;
-  }
-}
-
-@media (max-width: 350px) {
-  .container-profil{ 
-    max-width: 330px; 
-  }
-
-  .profil-content-post{
-    min-width:200px ;
-    max-width:200px ;
-  }
-}
-/* END VERSION  PROFIL */
 
 
-
-/* partie create post */
+/****************************** partie create post **************************/
 
 .content-create-post{
   margin-top: 60px;
@@ -708,11 +673,6 @@ hr{
   box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
   
   padding: 50px;
-  /* padding: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 30px; */
 }
 .create-post{
 
@@ -782,6 +742,26 @@ hr{
   padding: 20px;
 
 }
+.commentaire {
+  font-size: 20px !important;
+}
+
+.img-perso-profil-forum{
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  margin-bottom: 100px;
+}
+
+.img-perso-profil-forum img{
+  width: 110px;
+  text-align: center;
+}
+
 
 .forum-create-post a{
   font-family: 'KoHo', sans-serif;
@@ -800,7 +780,7 @@ hr{
   text-align: center;
 
 }
-/* Partie login post */
+/***************************** Partie login post **********************************/
 
 .login-post-container{
   padding: 40px;
@@ -855,7 +835,7 @@ hr{
   flex-direction: column;
 
 }
-/* Partie responsive de base (menu nav) */
+/************************ Partie responsive de base (menu nav) **************************/
 
 @media only screen and (max-width: 1130px){
   header{
@@ -909,7 +889,7 @@ hr{
   }
 }
 
-/* Partie responsive de home */
+/*************************** Partie responsive de home ******************************/
 
 @media only screen and (max-width: 1250px){
   .part-text h1{
@@ -981,7 +961,7 @@ hr{
 }
 
 
-/* Partie responsive profile */
+/************************* Partie responsive profile ***************************/
 @media only screen and (max-width: 1260px){
   .container-profil{
     width: 80%;
@@ -1045,3 +1025,221 @@ hr{
     width: 80%;
   }
 }
+
+/*******************  VERSION PROFIL *********************/
+@media (max-width: 1220px) and (min-width:993px ){
+  .container-profil{ 
+    max-width: 1000px; 
+  }
+
+  .profil-content-post{
+    min-width:400px ;
+    max-width:400px ;
+  }
+}
+
+@media (max-width: 992px) and (min-width:769px ){
+  .container-profil{ 
+    max-width: 680px; 
+  }
+}
+
+@media (max-width: 768px) and (min-width:577px ){
+  .container-profil{ 
+    max-width: 450px; 
+  }
+
+  .profil-content-post{
+    min-width:300px ;
+    max-width:300px ;
+  }
+}
+
+@media (max-width: 576px) and (min-width:351px ){
+  .container-profil{ 
+    max-width: 350px; 
+  }
+
+  .profil-content-post{
+    min-width:250px ;
+    max-width:250px ;
+  }
+}
+
+@media (max-width: 350px) {
+  .container-profil{ 
+    max-width: 330px; 
+  }
+
+  .profil-content-post{
+    min-width:200px ;
+    max-width:200px ;
+  }
+}
+/* END VERSION  PROFIL */
+
+
+
+/* **************************FORUM MEDIA *******************************/
+
+@media (max-width: 1220px) and (min-width:993px ){
+  .container-forum{ 
+    max-width: 1000px; 
+  }
+
+  .content-post{
+    min-width:850px ;
+    max-width:850px ;
+  }
+
+  .content-post  .suite {
+    font-size: 12px;
+  }
+  
+  .forum-create-post {
+    max-width: 830px;
+  }
+
+  hr{
+    width: 820px;
+  }
+ 
+}
+
+@media (max-width: 992px) and (min-width:769px ){
+  .container-forum{ 
+    max-width: 680px; 
+  }
+  .content-post{
+    min-width:600px ;
+    max-width:600px ;
+  }
+  .content-post  .suite {
+    font-size: 12px;
+  }
+
+  .forum-create-post {
+    max-width: 580px;
+  }
+  .forum-create-post  .img-perso-profil-forum {
+    display: none;
+  }
+  hr{
+    width: 550px;
+  }
+}
+
+@media (max-width: 768px) and (min-width:577px ){
+  .container-forum{ 
+    max-width: 450px; 
+  }
+
+  .content-post{
+    min-width:400px ;
+    max-width:400px ;
+  }
+  .content-post  .suite {
+    font-size: 12px;
+  }
+
+  .forum-create-post {
+    max-width: 380px;
+  }
+
+  .forum-create-post  .img-perso-profil-forum {
+    display: none;
+  }
+  hr{
+    width: 380px;
+  }
+  /* .somthing{
+    display: none;
+  } */
+}
+
+@media (max-width: 576px) and (min-width:351px ){
+  .container-forum{ 
+    max-width: 350px; 
+  }
+
+  .content-post{
+    min-width:340px ;
+    max-width:340px ;
+  }
+  .content-post  .suite {
+    font-size: 12px;
+  }
+
+  h3{
+    font-size: 1.2em;
+  }
+
+  .forum-create-post {
+    max-width: 320px;
+  }
+
+  .forum-create-post  .img-perso-profil-forum {
+    display: none;
+  }
+
+  hr{
+    width: 300px;
+  }
+
+  .btn-nav{
+    min-width:100px ;
+  }
+  .btn-nav a{
+    font-size: 18px;
+  }
+  .somthing{
+    display: none;
+  }
+
+}
+
+@media (max-width: 350px) {
+  .container-forum{ 
+    max-width: 330px; 
+  }
+
+  .content-post{
+    min-width:320px ;
+    max-width:320px ;
+  }
+  .content-post  .suite {
+    font-size: 12px;
+  }
+
+  h3{
+    font-size: 1rem;
+  }
+
+  .forum-create-post {
+    max-width: 300px;
+  }
+
+  .forum-create-post a{
+    font-size: 12px;
+  }
+
+  .forum-create-post  .img-perso-profil-forum {
+    display: none;
+  }
+  hr{
+    width: 300px;
+  }
+
+  .btn-nav{
+    min-width:100px ;
+  }
+  .btn-nav a{
+    font-size: 18px;
+  }
+  .somthing{
+    display: none;
+  }
+}
+
+/* END Forum media */
+

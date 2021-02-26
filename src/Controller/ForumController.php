@@ -28,7 +28,7 @@ class ForumController extends AbstractController
     }
 
     /**
-     * @Route("/back", name="forumBack")
+     * @Route("/forum/back", name="forumBack")
      * 
      */
     public function forumBack(PostForumRepository $postForumRepository): Response
