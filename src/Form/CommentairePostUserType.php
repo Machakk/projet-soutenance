@@ -23,6 +23,7 @@ class CommentairePostUserType extends AbstractType
                     'rows' => 5
                 ]
             ])
+
             ->add('valider', SubmitType::class, [
                 'attr' => [
                     'class' => 'btn btn-outline-success'
