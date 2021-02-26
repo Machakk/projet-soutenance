@@ -742,3 +742,56 @@ hr{
   flex-direction: column;
 
 }
+/* Partie responsive de base (menu nav) */
+
+@media only screen and (max-width: 1130px){
+  header{
+    flex-wrap: wrap;
+    height: auto;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .logo img{
+    width: 230px;
+    margin-bottom: 30px;
+  }
+  .part-search{
+    margin-bottom: 30px;
+  }
+  .home-button{
+    border-top: none;
+  }
+  .forum-button:hover {
+    border-bottom: 8px #41826a solid;
+    border-top: none;
+  }
+  .account-button:hover {
+    border-bottom: 8px #41826a solid;
+    border-top: none;
+  }
+  header nav img{
+    width: 40px;
+    margin-bottom: 10px;
+  }
+}
+@media only screen and (max-width: 467px){
+  
+  header nav {
+    width: auto;
+  }
+  header ul{
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    margin-right: -100px;
+    padding-right: 100px;
+  }
+  .logo img{
+    width: 180px;
+
+  }
+  .part-search input{
+    width: 100px;
+  }
+}
