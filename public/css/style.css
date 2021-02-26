@@ -795,3 +795,71 @@ hr{
     width: 100px;
   }
 }
+
+/* Partie responsive de home */
+
+@media only screen and (max-width: 1250px){
+  .part-text h1{
+    font-size: 40px;
+  }
+  .part-text h2{
+    font-size: 22px
+  }
+  .b-mots{
+    font-size: 60px;
+  }
+  .paragraphe-home{
+    width: 450px;
+  }
+  .part-text{
+    margin-bottom: 50px;
+  }
+  .content-home{
+    width: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 618px){
+  .part-text h1 {
+    font-size: 30px;
+  }
+  .part-text h2 {
+    font-size: 20px;
+  }
+  .b-mots{
+    font-size: 35px;
+  }
+  .paragraphe-home{
+    font-size: 16px;
+    width: auto;
+  }
+  .part-text{
+    padding-left: 15px;
+  }
+  .form-container{
+    width: auto;
+    height: auto;
+    padding: 20px;
+    justify-content: center;
+  }
+  .form-container form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .form-container input{
+    width: auto;
+  }
+  .connex-div{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .btn-connexion{
+    width: 80%;
+  }
+  .line{
+    width: 80%;
+  }
+}
