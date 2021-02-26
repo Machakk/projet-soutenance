@@ -34,8 +34,33 @@ class RegistrationController extends AbstractController
                         $form->get('plainPassword')->getData()
                     )
                 );
-    
                 
+                $infoImg = $form['imgprofil']->getData();
+                $infoMetier = $form['metier']->getData();
+                // var_dump($infoMetier->getMetier());
+                // die();
+                if($infoImg!=null){
+                    
+                    $extebsionImg = $infoImg->guessExtension();
+                    $nomImg = 'user-'. time() .'.'. $extebsionImg;// compose un nom d'image unique
+                    $infoImg->move($this->getParameter('photos_users') ,$nomImg); //déplace l'image dans le dossier
+                    
+                    $user->setImgprofil($nomImg);
+                } 
+                else {
+                    if($infoMetier->getMetier()=="Backend"){
+                        $nomImg="back-end.png";
+                        $user->setImgprofil($nomImg);
+                    }
+                    else if($infoMetier->getMetier()=="Frontend"){
+                        $nomImg="front-end.png";
+                        $user->setImgprofil($nomImg);
+                    }
+                    else if($infoMetier->getMetier()=="Design"){
+                        $nomImg="design.png";
+                        $user->setImgprofil($nomImg);
+                    }
+                }
                 $entityManager = $this->getDoctrine()->getManager();
                 $entityManager->persist($user);
                 $entityManager->flush();

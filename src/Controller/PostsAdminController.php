@@ -2,8 +2,10 @@
 
 namespace App\Controller;
 
-use App\Entity\PostForum;
+use App\Entity\Users;
+use DateTimeInterface;
 use App\Form\PostsType;
+use App\Entity\PostForum;
 use App\Repository\PostForumRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -27,7 +29,11 @@ class PostsAdminController extends AbstractController
      * @Route("/admin/posts/create", name="post_create")
      */
     public function createPost(Request $request){
-
+        // $user = new Users();
+        
+        // $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+        $user = $this->getUser();
+        
         $post = new PostForum();
         $form = $this->createForm(PostsType::class, $post);
         $form->handleRequest($request);
@@ -44,7 +50,9 @@ class PostsAdminController extends AbstractController
      
                 $post->setImg($nomImg);
             }
-
+            $date = new \DateTime('@'.strtotime('now'));
+            $post->setDate($date);
+            $post->setUser($user);
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($post);
             $manager->flush();
@@ -54,14 +62,12 @@ class PostsAdminController extends AbstractController
         return $this->render('admin/postsForm.html.twig', [
             'postsForm'=>$form->createView(),
         ]);
-
-    
     }
 
     /**
      * @Route("/admin/posts/update-{id}", name="post_update")
      */
-    public function updateSkills(PostForumRepository $postForumRepository, $id, Request $request)
+    public function updatePosts(PostForumRepository $postForumRepository, $id, Request $request)
     {
         $post = $postForumRepository->find($id);
         $form = $this->createForm(PostsType::class, $post);
@@ -99,7 +105,7 @@ class PostsAdminController extends AbstractController
     /**
      * @Route("/admin/posts/delete-{id}", name="post_delete")
      */
-    public function deleteSkills(PostForumRepository $postForumRepository, $id) {
+    public function deletePosts(PostForumRepository $postForumRepository, $id) {
         $post = $postForumRepository->find($id);
         $oldNomImg1 = $post->getImg();
         $oldCheminImg1 = $this->getParameter('photos_posts') . '/' . $oldNomImg1;
@@ -112,4 +118,13 @@ class PostsAdminController extends AbstractController
      
         return $this->redirectToRoute('admin_posts');
     }
+
+
+
+
+
+
+
+
+  
 }
