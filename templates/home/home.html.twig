@@ -22,10 +22,10 @@
       {% if is_granted('IS_AUTHENTICATED_FULLY') %}
       <div class="form-container">
 
-        <h2>Bienvenu</h2>
-        <p class="conn-on-home">Connecté en tant que: {{ app.user.pseudo }}</p>
+        <h2>Bienvenue</h2>
+        <p class="conn-on-home">Connecté en tant que : {{ app.user.pseudo }}</p>
         <a class="btn-connexion" href="{{ path('app_logout') }}">Se déconnecter</a>
-        <a href="{{path('user_profil', {'id': app.user.id })}}" class="text-center">Mon Profile</a>
+        <a href="{{path('user_profil', {'id': app.user.id })}}" class="text-center">Mon Profil</a>
       </div>
       
       {% else %}
