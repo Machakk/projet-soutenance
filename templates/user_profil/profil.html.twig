@@ -12,28 +12,44 @@
                 {{user.pseudo}}
             </h3>
             <div class="profil-metier">
-                <img src="{{ asset('img/users/') ~ user.imgprofil }}" alt="hero-design">
+                
                 
                 {% if user.metier.metier == "Frontend" %}
-                <p>Front-end</p>
+                
                     <img src="{{ asset('img/metier/front-end.png') }}" alt="">
+                    <p>Front-end</p>
                 
                 {% elseif user.metier.metier == "Backend" %}
-                <p>Back-end</p>
-                    <img src="{{ asset('img/metier/back-end-end.png') }}" alt="">
                     
+                    <img src="{{ asset('img/metier/back-end.png') }}" alt="">
+                    <p>Back-end</p>
+                   
+                {% elseif user.metier.metier == "Design" %}
+                    
+                    <img src="{{ asset('img/metier/design.png') }}" alt="">
+                    <p>Design</p>
+                   
                 {% else %}
-                <p>Autre</p>
+                    
                     <img src="{{ asset('img/metier/unknow.png') }}" alt="">
+                    <p>Autre</p>
                 {% endif %}
             </div>
             <p class="profil-niveau"> {{user.niveau}} </p>
             <a href="#" class="profil-btn-follow">S'abonner</a>
             <a href="#" class="profil-btn-message"><img src="{{ asset('img/icons/chatting.png') }}" alt="">Message</a>
+
+            
             <p class="descri-profil">{{user.description}}</p>
         </div>
         <div class="profil-middle">
             <img class="img-profil-middle" src="{{ asset('img/icons/profil.png') }}" alt="profil-icon">
+            
+            <!-- Pour modifier son profil -->
+            {% if user.id == app.user.id %}
+                <a href="{{path('update_profil', { 'id': user.id })}}" class=""> <b>Modifier</b>  </a>
+            {% endif %}
+
             <a href="{{user.fichier}}">Mon CV</a>
             <a href="{{user.linksite}}">monsite.com</a>
             <div class="reseaux">
@@ -44,7 +60,8 @@
         </div>
         <div class="profil-right">
             <div class="img-perso-profil">
-                <img src="{{ asset('img/user_profil/elon.jpg') }}" alt="">
+                <img src="{{ asset('img/users/') ~ user.imgprofil }}" alt="hero-design">
+                
             </div>
             <h3>Technos et logiciels utilisées</h3>
             <div class="profil-skills">
@@ -64,6 +81,9 @@
             </div>
 
         </div>
+
+        
+        
     </div>
     <div class="line-profil"></div>
 
@@ -81,7 +101,9 @@
             
                             </div>
                             <div class="col-3 user ">
-                                <a href="{{path('user_profil', {'id': post.user.id })}}"> écrit par <img src="{{ asset('img/users/') ~ post.user.imgprofil }}" alt=""></a>
+                                <a href="{{path('user_profil', {'id': post.user.id })}}" class="img-perso-profil"> écrit par 
+                                    <img src="{{ asset('img/users/') ~ post.user.imgprofil }}" alt="">
+                                </a>
                             </div>
                         </div>
             

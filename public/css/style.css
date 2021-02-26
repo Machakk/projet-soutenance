@@ -578,6 +578,113 @@ hr{
 
 }
 
+
+
+
+/* partie create post */
+
+.content-create-post{
+  margin-top: 60px;
+  margin-bottom: 60px;
+  width: 1200px;
+  background: white;
+  border-radius: 30px;
+  -webkit-box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
+  box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
+  
+  padding: 50px;
+  /* padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px; */
+}
+.create-post{
+
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.content-create-post a {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 28px;
+  color: #184d4d;
+  margin-bottom: 30px;
+  /* font-weight: ; */
+}
+
+.create-post h2{
+  margin-bottom: 70px;
+  font-weight:400;
+  font-family: "Sawarabi Gothic", sans-serif;
+  font-size: 38px;
+  color: #184d4d;
+  border-radius: 0px;
+  box-shadow: 4px 4px 15px 4px #184D4D;
+  padding: 20px;
+
+}
+
+.create-post label{
+  color: #184d4d;
+  font-size: 28px;
+  font-family: "Sawarabi Gothic", sans-serif;
+  font-weight: 200;
+}
+
+.create-post textarea{
+  width: 500px;
+  height: 200px;
+}
+
+.btn-valide-post{
+  border: none;
+  background: #184d4d;
+  width: 400px;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  color: white;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 18;
+  height: 32px;
+  padding: 10px;
+  padding-bottom: 30px;
+  border-radius: 10px;
+}
+
+
+.forum-create-post {
+  margin-bottom: 70px;
+  font-weight:400;
+  width: 1000px;
+  font-family: 'KoHo', sans-serif;
+  font-size: 20px;
+  border-radius: 0px;
+  box-shadow: 4px 4px 15px 0px #184D4D;
+  padding: 20px;
+
+}
+
+.forum-create-post a{
+  font-family: 'KoHo', sans-serif;
+  font-size: 20px;
+  color: #184d4d;
+  padding: 20px;
+ 
+
+
+
+}
+.forum-create-post .text{
+  background-color: #eee;
+  box-shadow: 4px 4px 15px -2px #cacaca;
+  align-items: center;
+  text-align: center;
+
+}
 /* Partie login post */
 
 .login-post-container{
@@ -597,4 +704,5 @@ hr{
   align-items: center;
   justify-content: space-around;
   height: 100%;
+
 }

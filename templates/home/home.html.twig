@@ -25,7 +25,9 @@
         <h2>Bienvenu</h2>
         <p class="conn-on-home">Connecté en tant que: {{ app.user.pseudo }}</p>
         <a class="btn-connexion" href="{{ path('app_logout') }}">Se déconnecter</a>
+        <a href="{{path('user_profil', {'id': app.user.id })}}" class="text-center">Mon Profile</a>
       </div>
+      
       {% else %}
       <div class="form-container">
         <form action="{{ path('app_login') }}" method="post">
