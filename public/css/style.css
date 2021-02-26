@@ -953,15 +953,21 @@ hr{
     margin-right: 0;
     margin-left: 0;
   }
+  .img-profil-middle{
+    display: none;
+  }
 }
 @media only screen and (max-width: 1024px){
   .profil-left{
     margin-right: 0;
   }
-  .img-profil-middle{
-  width: 130px;
-  }
   .profil-content-post{
+    width: 80%;
+  }
+  .post-container-prof{
+    width: 90%;
+  }
+  .post-container-prof .content{
     width: 80%;
   }
 }
