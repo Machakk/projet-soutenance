@@ -581,6 +581,58 @@ hr{
 }
 
 
+/*  VERSION PROFIL */
+@media (max-width: 1220px) and (min-width:993px ){
+  .container-profil{ 
+    max-width: 1000px; 
+  }
+
+  .profil-content-post{
+    min-width:400px ;
+    max-width:400px ;
+  }
+}
+
+@media (max-width: 992px) and (min-width:769px ){
+  .container-profil{ 
+    max-width: 680px; 
+  }
+}
+
+@media (max-width: 768px) and (min-width:577px ){
+  .container-profil{ 
+    max-width: 450px; 
+  }
+
+  .profil-content-post{
+    min-width:300px ;
+    max-width:300px ;
+  }
+}
+
+@media (max-width: 576px) and (min-width:351px ){
+  .container-profil{ 
+    max-width: 350px; 
+  }
+
+  .profil-content-post{
+    min-width:250px ;
+    max-width:250px ;
+  }
+}
+
+@media (max-width: 350px) {
+  .container-profil{ 
+    max-width: 330px; 
+  }
+
+  .profil-content-post{
+    min-width:200px ;
+    max-width:200px ;
+  }
+}
+/* END VERSION  PROFIL */
+
 
 
 /* partie create post */

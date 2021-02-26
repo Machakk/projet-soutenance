@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Form\PostsType;
 use App\Entity\PostForum;
+use App\Entity\CommentaireForum;
+use App\Form\CommentairePostUserType;
 use App\Repository\PostForumRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -132,42 +134,92 @@ class ForumController extends AbstractController
     // }
 
 
+    // /**
+    //  * @Route("/forum/post-{id}", name="forum_post")
+    //  * @Route("/forum/post-", name="forum_post2")
+    //  */
+    // public function post(PostForumRepository $postForumRepository, $id, Request $request): Response
+    // {
+    //     $posts = $postForumRepository->find($id);
+    //     $form = $this->createForm(PostsType::class, $posts);
+    //     $form->handleRequest($request);
+    //     if($form->isSubmitted() && $form->isValid())
+    //     {
+    //         $user->setPassword(
+    //             $passwordEncoder->encodePassword(
+    //                 $user,
+    //                 $form->get('plainPassword')->getData()
+    //             )
+    //         );
+    //         $manager = $this->getDoctrine()->getManager();
+    //         $manager->persist($posts);
+    //         $manager->flush();
+            
+    //         $referer = $request->headers->get('referer');
+    //         return new RedirectResponse($referer);
+    //     }
+    //     return $this->render('forum/post.html.twig', [
+    //         'posts' => $posts,
+    //         // passer le formulaire à la vue
+    //     ]);
+
+    //     /*
+    //         - récupérer le login form
+    //         - if submit et valid
+    //             - vérif utilisateur mdp-login
+    //             - si ok : return new RedirectResponse($request->headers->get('referer'));
+    //         - générer le formulaire
+    //     */       
+        
+    // }
+
     /**
+     * 
      * @Route("/forum/post-{id}", name="forum_post")
      * @Route("/forum/post-", name="forum_post2")
+     * 
      */
-    public function post(PostForumRepository $postForumRepository, $id, Request $request): Response
-    {
-        $posts = $postForumRepository->find($id);
-        $form = $this->createForm(PostsType::class, $posts);
+    public function createCommentaireUser(Request $request, PostForumRepository $postForumRepository, $id){
+
+        $user = $this->getUser();
+        $commentaire = new CommentaireForum();
+        $form = $this->createForm(CommentairePostUserType::class, $commentaire);
         $form->handleRequest($request);
-        if($form->isSubmitted() && $form->isValid())
+        $post = $postForumRepository->find($id);
+
+        $posts = $postForumRepository->find($id);
+        $form2 = $this->createForm(PostsType::class, $posts);
+        $form2->handleRequest($request);
+
+        
+        if($form->isSubmitted() && $form->isValid() && $form2->isSubmitted() && $form2->isValid())
         {
-            $user->setPassword(
-                $passwordEncoder->encodePassword(
-                    $user,
-                    $form->get('plainPassword')->getData()
-                )
-            );
+            $commentaire->setUser($user);
+            $commentaire->setPost($post);
+
+            $date = new \DateTime('@'.strtotime('now'));
+            $commentaire->setDate($date);
+
+            
+            $manager = $this->getDoctrine()->getManager();
+            $manager->persist($commentaire);
+            $manager->flush();
+
+            
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($posts);
             $manager->flush();
-            
-            $referer = $request->headers->get('referer');
-            return new RedirectResponse($referer);
+
+
+            return $this->redirectToRoute('forum_post',['id' => $id]);
         }
+
         return $this->render('forum/post.html.twig', [
             'posts' => $posts,
-            // passer le formulaire à la vue
+            'commentaireUserCreate'=>$form->createView(),
+            
         ]);
 
-        /*
-            - récupérer le login form
-            - if submit et valid
-                - vérif utilisateur mdp-login
-                - si ok : return new RedirectResponse($request->headers->get('referer'));
-            - générer le formulaire
-        */       
         
     }
 }

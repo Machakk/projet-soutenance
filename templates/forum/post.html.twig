@@ -8,7 +8,7 @@
   <div class="content-post">
       <div class="row">
           <div class="col-9">
-            <h2 class="text-center"> {{posts.title}}</h2>
+            <h2 class="text-center"> {{posts.title}}</h2> 
           </div>
               
           <div class="col-3 user ">
@@ -20,16 +20,21 @@
       </div>
       <div class="content text-center p-4">
         <p>{{posts.content}}</p>
-    </div>
-  
-  
+      </div>
+      <div class="container">
+        
+      </div>
           {% if is_granted('IS_AUTHENTICATED_FULLY') %}
               <div class="part-commentaire">
-                <form action="">
+                <!-- <form action="">
                   <label for="commentaire">Votre commentaire</label>
                   <textarea name="commentaire" id="" cols="30" rows="10"></textarea>
                   <button type="submit" class="btn btn-outline-success">Valider</button>
-                </form>
+                </form> -->
+                
+                {{ form_start(commentaireUserCreate)}}
+                {{ form_row(commentaireUserCreate._token) }}
+                {{ form_end(commentaireUserCreate)}}
               </div> 
               {# formulaire pour ajouter un commentaire #}        
           {% else %}

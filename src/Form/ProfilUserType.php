@@ -124,15 +124,15 @@ class ProfilUserType extends AbstractType
                 ]
                 
             ])
-            // peut-être avec checkbox
-            ->add('skills', EntityType::class, [
-                'required' => false,
-                'class' => Skills::class,
-                'choice_label' => 'title',
-                'multiple' => true
+            // // peut-être avec checkbox
+            // ->add('skills', EntityType::class, [
+            //     'required' => false,
+            //     'class' => Skills::class,
+            //     'choice_label' => 'title',
+            //     'multiple' => true
 
                 
-            ])
+            // ])
             // ->add('abonne')
             // ->add('users_abonnes')
             ->add('valider',SubmitType::class)
