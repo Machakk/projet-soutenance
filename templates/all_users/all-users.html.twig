@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AllUsersController!{% endblock %}
+
+{% block body %}
+
+<div class="container-all-users">
+    <div class="au-content">
+
+        
+         <div class="row">
+
+            {# <div class="col-6 col-lg-3  my-2">                           
+                    <div class="btn-nav">
+                        <a class="   " href="">TOUS </a>
+                    </div>                     
+                </div> #}
+
+              <div class="col-6 col-lg-3  my-2">  
+                <div class="btn-nav">
+                    <a class=" " href="">FRONTEND </a>                       
+                </div>                         
+            </div>   
+
+            <div class="col-6 col-lg-3 my-2">
+                <div class="btn-nav">                    
+                    <a class=" " href="">BACKEND </a>             
+                </div>                       
+            </div>
+
+            <div class="col-6 col-lg-3 my-2">
+                <div class="btn-nav">
+                    <a class=" " href="">DESIGN </a>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+
+    <p class="h1-all-users">
+        Personnes qui seraient suceptibles de vous intéresser :
+        </p>
+
+        <div class="container-users-all">
+            
+            <p class="nom-users">Phil GUENEUX</p>
+
+            <p class="metier-users">Développeur-web</p>
+
+            <a href="" class="btn-nav">Voir profil</a>
+              </div> 
+    
+              
+    <div class="row text-center"></div>
+    
+    <hr>        
+        <p class="recherche-users">
+        Rechercher parmi les utilisateurs :
+        </p>
+
+        
+        <p class="lien-lexique">
+        <a href=""> Tout voir </a>
+        </p>
+
+    </div>
+</div>
+
+{% endblock %}
