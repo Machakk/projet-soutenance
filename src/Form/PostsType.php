@@ -21,15 +21,26 @@ class PostsType extends AbstractType
     {
         $builder
             ->add('title', TextType::class, [
-                'label' => 'Titre:'
+                'required' => true,
+                'label' => 'Titre:',
+                'help' => 'Un titre est obligatoire'
             ])
             ->add('content' , TextareaType::class, [
+                'required' => true,
                 'label' => 'Contenu:',
+                'attr' => [
+                    'minlength' => 20,
+                    'maxlength' => 1000
+                ],
+                'help' => 'Maximum 1000 caractères'
             ])
             ->add('img' , FileType::class , [
                 'label' => 'Image:',
                 'required' => false,
                 'mapped' =>false,
+                'attr' => [
+                    'placeholder' => 'Image du post'
+                ]
             ])
             // ->add('date',DateTimeType::class)
 
