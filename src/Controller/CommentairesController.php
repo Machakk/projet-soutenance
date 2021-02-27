@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Form\PostsType;
 use App\Entity\CommentaireForum;
 use App\Form\CommentairesPostType;
+use App\Repository\UsersRepository;
 use App\Form\CommentairePostUserType;
 use App\Repository\PostForumRepository;
 use Symfony\Component\HttpFoundation\Request;
@@ -123,7 +124,7 @@ class CommentairesController extends AbstractController
     /**
      * @Route("/forum/post-{id}", name="commentaire_user_create")
      */
-    public function createCommentaireUser(Request $request, PostForumRepository $postForumRepository, CommentaireForumRepository $commentaireForumRepository, $id){
+    public function createCommentaireUser(Request $request, PostForumRepository $postForumRepository, CommentaireForumRepository $commentaireForumRepository, UsersRepository $usersRepository, $id){
 
         $user = $this->getUser();
         $commentaire = new CommentaireForum();
@@ -136,7 +137,6 @@ class CommentairesController extends AbstractController
         {
             $commentaire->setUser($user);
             $commentaire->setPost($post);
-            
             $date = new \DateTime('@'.strtotime('now'));
             $commentaire->setDate($date);
             $manager = $this->getDoctrine()->getManager();
