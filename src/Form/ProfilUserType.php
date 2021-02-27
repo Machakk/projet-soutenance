@@ -23,6 +23,7 @@ class ProfilUserType extends AbstractType
     {
         $builder
             ->add('pseudo', TextType::class, [
+                'label' => 'Pseudo:',
                 'required' => true,
                 'attr' => [
                     'class' => 'form-control mb-3'
@@ -42,11 +43,12 @@ class ProfilUserType extends AbstractType
                 'attr' => [
                     'placeholder' => '••••••••'
                 ],
-                'label' => 'Mot de passe',
+                'label' => 'Mot de passe:',
                 'required' => false
             ])
 
             ->add('metier', EntityType::class, [
+                'label' => 'Métier:',
                 'required' => true,
                 'class' => Metiers::class,
                 'choice_label' => 'metier',
@@ -54,6 +56,7 @@ class ProfilUserType extends AbstractType
             ])
     
             ->add('niveau', ChoiceType::class, [
+                'label' => 'Niveau:',
                 'required' => true,
                 'choices' => [
                     '- ton niveau -' => false,
@@ -68,7 +71,7 @@ class ProfilUserType extends AbstractType
 
             ->add('fichier' , FileType::class ,[
                 'mapped' => false,
-                'label' => 'CV',
+                'label' => 'Votre CV',
                 'required' => false,
                 'attr' => [
                     'class' => 'form-control mb-3'
@@ -76,8 +79,8 @@ class ProfilUserType extends AbstractType
                 
             ])
             ->add('linksite' , TextType::class, [
+                'label' => 'Site:',
                 'required' => false,
-                'label' => 'Site',
                 'attr' => [
                     'class' => 'form-control mb-3'
                 ]
@@ -85,7 +88,7 @@ class ProfilUserType extends AbstractType
             ])
             ->add('linkgit' , TextType::class, [
                 'required' => false,
-                'label' => 'Git',
+                'label' => 'Git:',
                 'attr' => [
                     'class' => 'form-control mb-3'
                 ]
@@ -93,7 +96,7 @@ class ProfilUserType extends AbstractType
             ])
             ->add('linkfacebook' , TextType::class, [
                 'required' => false,
-                'label' => 'Facebook',
+                'label' => 'Facebook:',
                 'attr' => [
                     'class' => 'form-control mb-3'
                 ]
@@ -101,7 +104,7 @@ class ProfilUserType extends AbstractType
             ])
             ->add('linkedin' , TextType::class, [
                 'required' => false,
-                'label' => 'Linkedin',
+                'label' => 'Linkedin:',
                 'attr' => [
                     'class' => 'form-control mb-3'
                 ]
@@ -110,7 +113,7 @@ class ProfilUserType extends AbstractType
             ->add('imgprofil' , FileType::class  , [
                 'mapped' => false,
                 'required' => false,
-                'label' => 'Image Profil',
+                'label' => 'Photo de Profil:',
                 'attr' => [
                     'class' => 'form-control mb-3'
                 ]
@@ -118,7 +121,7 @@ class ProfilUserType extends AbstractType
             ])
             ->add('description' , TextareaType::class, [
                 'required' => false,
-                'label' => 'Description',
+                'label' => 'Description:',
                 'attr' => [
                     'class' => 'form-control mb-3'
                 ]
@@ -135,7 +138,11 @@ class ProfilUserType extends AbstractType
             // ])
             // ->add('abonne')
             // ->add('users_abonnes')
-            ->add('valider',SubmitType::class)
+            ->add('valider',SubmitType::class, [
+                'attr' => [
+                    'class' => 'btn-valide-post w-100 '
+                ]
+            ])
         ;
     }
 

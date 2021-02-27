@@ -63,18 +63,23 @@ class UserProfilController extends AbstractController
             }
 
             // image profil
-            $oldNomImg1 = $user->getImgprofil();
-    
-            $oldCheminImg1 = $this->getParameter('photos_users') . '/' . $oldNomImg1;       
-            if (file_exists($oldCheminImg1)) 
-            {
-                unlink($oldCheminImg1);
-            }
+
+            
             $infoImg1 = $form['imgprofil']->getData();
-            $extensionImg1 = $infoImg1->guessExtension();
-            $nomImg1 = '1-' . time() . '.' . $extensionImg1;
-            $infoImg1->move($this->getParameter('photos_users'), $nomImg1);
-            $user->setImgprofil($nomImg1);
+            $oldNomImg1 = $user->getImgprofil();
+
+            if($infoImg1!=null){
+                $oldCheminImg1 = $this->getParameter('photos_users') . '/' . $oldNomImg1;       
+                if (file_exists($oldCheminImg1)) 
+                {
+                    unlink($oldCheminImg1);
+                }
+                $extensionImg1 = $infoImg1->guessExtension();
+                $nomImg1 = '1-' . time() . '.' . $extensionImg1;
+                $infoImg1->move($this->getParameter('photos_users'), $nomImg1);
+                $user->setImgprofil($nomImg1);
+            }
+            
 
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($user);

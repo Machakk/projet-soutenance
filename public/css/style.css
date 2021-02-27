@@ -289,6 +289,10 @@ nav img{
   color: white;
 }
 
+a.login-register{
+  color: #41826a !important;
+}
+
 /********************************** Partie Login ****************************/
 
 .container-login{
@@ -872,6 +876,46 @@ hr{
   flex-direction: column;
 
 }
+
+
+/* ********************  ******Modifie Profil ******************************** */
+
+.modifier-profil-container{
+  margin-top: 60px;
+  margin-bottom: 60px;
+  width: 800px;
+  background: white;
+  border-radius: 30px;
+  -webkit-box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
+  box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  
+}
+
+.modifier-profil-container a {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 28px;
+  color: #184d4d;
+  margin-bottom: 30px;
+  /* font-weight: ; */
+}
+
+.modifier-profil-container h2{
+  font-family: "Sawarabi Gothic", sans-serif;
+  font-size: 38px;
+  color: #184d4d;
+  margin-bottom: 40px;
+}
+.modifier-profil-container label{
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 600px;
+  color: #184d4d;
+}
+
+
 /************************ Partie responsive de base (menu nav) **************************/
 
 @media only screen and (max-width: 1130px){
@@ -1331,3 +1375,52 @@ hr{
 }
 
 
+/* ****************** Partie responsive Modifier profil ****************** */
+@media (max-width: 1220px) and (min-width:993px ){
+  .modifier-profil-container{   
+    width: 500px;
+  }
+  h2{
+    font-size: 28px;
+  }
+
+}
+
+@media (max-width: 992px) and (min-width:769px ){
+  .modifier-profil-container{   
+    width: 400px;
+  }
+  .modifier-profil-container h2{
+    font-size: 25px;
+  }
+  .modifier-profil-container a {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) and (min-width:351px ){
+  .modifier-profil-container{   
+    width: 340px;
+  }
+  .modifier-profil-container h2{
+    font-size: 25px;
+  }
+  .modifier-profil-container a {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 350px) {
+  
+  .modifier-profil-container{   
+    width: 340px;
+  }
+  
+  .modifier-profil-container h2{
+    font-size: 25px;
+  }
+
+  .modifier-profil-container a {
+    font-size: 18px;
+  }
+}
