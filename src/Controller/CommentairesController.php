@@ -132,22 +132,22 @@ class CommentairesController extends AbstractController
         $post = $postForumRepository->find($id);
         
         
-        if($form->isSubmitted() && $form->isValid())
-        {
-            $commentaire->setUser($user);
-            $commentaire->setPost($post);
+        // if($form->isSubmitted() && $form->isValid())
+        // {
+        //     $commentaire->setUser($user);
+        //     $commentaire->setPost($post);
             
-            $date = new \DateTime('@'.strtotime('now'));
-            $commentaire->setDate($date);
-            $manager = $this->getDoctrine()->getManager();
-            $manager->persist($commentaire);
-            $manager->flush();
-            $this->addFlash('success', 'Vous avez commenté ce post!');
-        }
-        else
-        {
-            $this->addFlash('danger', 'Un problème est survenu lors de création de commentaire!');
-        }
+        //     $date = new \DateTime('@'.strtotime('now'));
+        //     $commentaire->setDate($date);
+        //     $manager = $this->getDoctrine()->getManager();
+        //     $manager->persist($commentaire);
+        //     $manager->flush();
+        //     $this->addFlash('success', 'Vous avez commenté ce post!');
+        // }
+        // else
+        // {
+        //     $this->addFlash('danger', 'Un problème est survenu lors de création de commentaire!');
+        // }
         
         $commentaires = $commentaireForumRepository->findAll();
         
@@ -158,6 +158,7 @@ class CommentairesController extends AbstractController
             'commentaires' => $commentaires
         ]);
     }
+
 
 
     /* test 3 */

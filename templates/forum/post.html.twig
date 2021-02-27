@@ -49,10 +49,13 @@
                     <textarea name="commentaire" id="" cols="30" rows="10"></textarea>
                     <button type="submit" class="btn btn-outline-success">Valider</button>
                     </form> -->
-                    
-                    {{ form_start(commentaireUserCreate)}}
+                        <form action="post-commentaire" method="post">
+                            {{ form_start(commentaireUserCreate)}}
 
-                    {{ form_end(commentaireUserCreate)}}
+                            {{ form_end(commentaireUserCreate)}}  
+                        </form>
+
+
                 </div> 
                 {# formulaire pour ajouter un commentaire #}        
             {% else %}
