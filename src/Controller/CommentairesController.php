@@ -121,17 +121,18 @@ class CommentairesController extends AbstractController
 
     /* test 2 */
 
+
     /**
      * @Route("/forum/post-{id}", name="commentaire_user_create")
      */
-    public function createCommentaireUser(Request $request, PostForumRepository $postForumRepository, CommentaireForumRepository $commentaireForumRepository, UsersRepository $usersRepository, $id){
+    public function createCommentaireUser(Request $request, PostForumRepository $postForumRepository, CommentaireForumRepository $commentaireForumRepository, UsersRepository $usersRepository, $id)
+    {
 
         $user = $this->getUser();
         $commentaire = new CommentaireForum();
         $form = $this->createForm(CommentairePostUserType::class, $commentaire);
         $form->handleRequest($request);
         $post = $postForumRepository->find($id);
-        
         
         if($form->isSubmitted() && $form->isValid())
         {
@@ -144,29 +145,60 @@ class CommentairesController extends AbstractController
             $manager->flush();
             $this->addFlash('success', 'Vous avez commenté ce post!');
         }
-        else
-        {
-            $this->addFlash('danger', 'Un problème est survenu lors de création de commentaire!');
-        }
-        
         $commentaires = $commentaireForumRepository->findAll();
+        
         
         return $this->render('forum/post.html.twig', [
             'id' => $id,
             'commentaireUserCreate'=>$form->createView(),
             'post'=> $post,
             'commentaires' => $commentaires
-        ]);
+            ]);
+        
     }
 
+    // /**
+    //  * @Route("/forum/showpost-{id}", name="showpost")
+    //  */
+    // public function showPost(Request $request, PostForumRepository $postForumRepository, CommentaireForumRepository $commentaireForumRepository, $id)
+    // {
+
+    //     $user = $this->getUser();
+    //     $commentaire = new CommentaireForum();
+    //     $form = $this->createForm(CommentairePostUserType::class, $commentaire);
+    //     $form->handleRequest($request);
+    //     $post = $postForumRepository->find($id);
+        
+    //     if($form->isSubmitted() && $form->isValid())
+    //     {
+    //         $commentaire->setUser($user);
+    //         $commentaire->setPost($post);
+    //         $date = new \DateTime('@'.strtotime('now'));
+    //         $commentaire->setDate($date);
+    //         $manager = $this->getDoctrine()->getManager();
+    //         $manager->persist($commentaire);
+    //         $manager->flush();
+    //         $this->addFlash('success', 'Vous avez commenté ce post!');
+    //     }
+    //     $commentaires = $commentaireForumRepository->findAll();
+        
+        
+    //     return $this->render('forum/post.html.twig', [
+    //         'id' => $id,
+    //         'commentaireUserCreate'=>$form->createView(),
+    //         'post'=> $post,
+    //         'commentaires' => $commentaires
+    //         ]);
+    // }
+
+    
 
     /* test 3 */
 
     // /**
-    //  * @Route("/forum/post-{id}", name="commentaire_user_create")
-    //  * @Route("/forum/post-{id}", name="forum_post")
+    //  * @Route("/forum/showpost", name="showpost")
     //  */
-    // public function createCommentaireUser(Request $request, PostForumRepository $postForumRepository, $id)
+    // public function showPost(Request $request, PostForumRepository $postForumRepository, $id)
     // {
 
     //     $user = $this->getUser();
