@@ -4,9 +4,15 @@
 
 {% block body %}
 <div class="all-post">
-
+{# {% for label, messages in app.flashes(['success', 'danger']) %}
+    {% for message in messages %}
+        <div class="flash-{{ label }}">
+            {{ message }}
+        </div>
+    {% endfor %} #}
+{% endfor %}
   <div class="content-post">
-      <div class="row">
+    <div class="row">
           <div class="col-9">
 
             <h2 class="text-center"> {{post.title}}</h2>

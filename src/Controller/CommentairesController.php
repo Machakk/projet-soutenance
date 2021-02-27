@@ -142,6 +142,7 @@ class CommentairesController extends AbstractController
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($commentaire);
             $manager->flush();
+            // $this->addFlash('success', 'Vous avez commenté ce post!');
         }
         
         $commentaires = $commentaireForumRepository->findAll();
