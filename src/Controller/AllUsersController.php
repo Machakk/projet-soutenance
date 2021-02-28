@@ -12,12 +12,13 @@ class AllUsersController extends AbstractController
     /**
      * @Route("/all-users", name="all_users")
      */
-    public function index(): Response
+    public function index(UsersRepository $usersRepository): Response
     {
         // $user = $usersRepository->find($id);
         // $skills= $user->getSkills();
+        $users = $usersRepository->findAll();
         return $this->render('all_users/all-users.html.twig', [
-            'controller_name' => 'AllUsersController',
+            'users' => $users
         ]);
     }
 }
