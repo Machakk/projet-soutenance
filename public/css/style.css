@@ -874,19 +874,18 @@ box-shadow: -10px 0px 13px -7px #a3a3a3, 10px 0px 13px -7px #c2c2c2, inset 0px -
 /***************************** Partie login post **********************************/
 
 .login-post-container{
+  margin-top: -600px;
   padding: 40px;
   width: 550px;
   height: 450px;
   background-color: white;
   border-radius: 30px;
   padding-top: 50px;
+  display: none;
+  position: relative;
   -webkit-box-shadow: 0px 0px 243px 134px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 0px 243px 134px rgba(0,0,0,0.75);
   box-shadow: 0px 0px 243px 134px rgba(0,0,0,0.75);
-  display: none;
-  position: absolute;
-  top: 40%;
-  left: 40%;
 }
 .login-post-container form{
   display: flex;
@@ -911,9 +910,6 @@ box-shadow: -10px 0px 13px -7px #a3a3a3, 10px 0px 13px -7px #c2c2c2, inset 0px -
 .btncreate{
   text-align: center;
 }
-.all-post{
-  position: relative;
-}
 .part-commentaire{
   width: 100%;
   border: 2px solid rgb(133, 133, 133);
@@ -927,6 +923,11 @@ box-shadow: -10px 0px 13px -7px #a3a3a3, 10px 0px 13px -7px #c2c2c2, inset 0px -
 
 }
 
+@media only screen and (max-width:680px ){
+  .login-post-container{
+    width: 80%;
+  }
+}
 
 /* ********************  ******Modifie Profil ******************************** */
 
@@ -1877,6 +1878,7 @@ a.btn-profil {
 }
 .btn-commenter{
   margin-left: 110px;
+  position: relative;
 }
 
 /* Responsive partie post */
