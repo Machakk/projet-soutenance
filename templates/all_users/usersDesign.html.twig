@@ -53,44 +53,46 @@
 
     <div class="row">
         {% for user in users %}
-        <div class="col-12 col-md-6 col-lg-6 col-xl-4 text-center my-4">
-            <div class="container-users-all">
- 
-                {% if user.metier.metier == "Frontend" %}
-            
-                    <img  class="photo-users" src="{{ asset('img/metier/front-end.png') }}" alt="">
+            {% if user.metier.metier == "Design" %}
+                <div class="col-12 col-md-6 col-lg-6 col-xl-4 text-center my-4">
+                    <div class="container-users-all">
+        
+                        {% if user.metier.metier == "Frontend" %}
                     
-                    <p class="nom-users">{{user.pseudo}}</p>
-                    <p class="metier-users"> Développeur Front-end</p>
-            
-                {% elseif user.metier.metier == "Backend" %}
-                        
-                    <img  class="photo-users" src="{{ asset('img/metier/back-end.png') }}" alt="">
+                            <img  class="photo-users" src="{{ asset('img/metier/front-end.png') }}" alt="">
+                            
+                            <p class="nom-users">{{user.pseudo}}</p>
+                            <p class="metier-users"> Développeur Front-end</p>
                     
-                    <p class="nom-users">{{user.pseudo}}</p>
-                    <p class="metier-users">Développeur Back-end</p>
-                
-                {% elseif user.metier.metier == "Design" %}
+                        {% elseif user.metier.metier == "Backend" %}
+                                
+                            <img  class="photo-users" src="{{ asset('img/metier/back-end.png') }}" alt="">
+                            
+                            <p class="nom-users">{{user.pseudo}}</p>
+                            <p class="metier-users">Développeur Back-end</p>
                         
-                    <img  class="photo-users" src="{{ asset('img/metier/design.png') }}" alt="">
-            
-                    <p class="nom-users">{{user.pseudo}}</p>
-                    <p class="metier-users">Design</p>
-                
-                {% else %}
+                        {% elseif user.metier.metier == "Design" %}
+                                
+                            <img  class="photo-users" src="{{ asset('img/metier/design.png') }}" alt="">
+                    
+                            <p class="nom-users">{{user.pseudo}}</p>
+                            <p class="metier-users">Design</p>
                         
-                    <img  class="photo-users" src="{{ asset('img/metier/unknow.png') }}" alt="">
-                    <p class="nom-users">{{user.pseudo}}</p>
-                    <p class="metier-users">Autre</p>
-                {% endif %}
+                        {% else %}
+                                
+                            <img  class="photo-users" src="{{ asset('img/metier/unknow.png') }}" alt="">
+                            <p class="nom-users">{{user.pseudo}}</p>
+                            <p class="metier-users">Autre</p>
+                        {% endif %}
 
-                    
-                <a href="{{path('user_profil', {'id': user.id })}}" class="btn-profil">VOIR PROFIL</a>
-            </div> 
-        </div>
+                        
+                        <a href="{{path('user_profil', {'id': user.id })}}" class="btn-profil">VOIR PROFIL</a>
+                    </div> 
+                </div>
+            {% endif %}
         {% endfor %}
     </div>
-
+        
 </div>
 
 {% endblock %}

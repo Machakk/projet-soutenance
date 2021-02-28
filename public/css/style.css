@@ -334,6 +334,8 @@ a.login-register{
   color: white;
 }
 
+/* ******************** About us ****************** */
+
 .au-content-bg {
   background: white;
   margin: 4%;
@@ -341,22 +343,63 @@ a.login-register{
 }
 
 .au-content {
-  margin-top: 7%;
-  margin-bottom: 7%;
-  margin: 3%;
+  margin-top: 4%;
+  margin-bottom: 6%;
+  /* margin: 3%; */
   text-align: center;
 }
 
-.au-ul {
-  background: #41826a;
-  width: 100%;
-  border-radius: 30px;
+.au-header-nav {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 28px;
+  list-style: none;
+}
+
+.au-a {
+  text-decoration: none;
+  color: #41826a;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.au-a:hover {
+ 
+  color: #41826a;
+}
+
+.au-a:active {
+  text-decoration: none;
+  color: #C9BBAC;
+}
+
+.au-separator {
+    display: inline-block;
+    height: 38px;
+    width: 2px;
+    color: #41826A;
+    background: currentColor;
+    margin: auto 17px;
+}
+
+.au-h1 {
+  color: #41826A;
+  padding: 10%;
+  font-family: 'Sawarabi Gothic', sans-serif;
+}
+
+.au-hr {
+  color: #41826a;
+  margin: auto;
+  max-width: 85%;
 }
 
 .au-title {
   color: #41826a;
   font-size: 60px;
   padding: 3%;
+  padding-top: 10%;
+  font-family: 'Sawarabi Gothic', sans-serif;
 }
 
 .au-title-color2 {
@@ -364,8 +407,9 @@ a.login-register{
 }
 
 .au-ul {
-  
+  background: #41826a;
   list-style: none;
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -1266,7 +1310,6 @@ box-shadow: -10px 0px 13px -7px #a3a3a3, 10px 0px 13px -7px #c2c2c2, inset 0px -
 /* END VERSION  PROFIL */
 
 
-
 /* **************************FORUM MEDIA *******************************/
 
 @media (max-width: 1220px) and (min-width:993px ){
@@ -1613,7 +1656,7 @@ font-weight:bold ;
 .container-users-all {
   width: 300px;
   height: 450px;
-  margin-left: 40px;
+  /* margin-left: 40px; */
   background-color: #91BFAF;
   border-radius: 30px;
   display: line;
@@ -1930,3 +1973,36 @@ a.btn-profil {
   }
 }
                                                  
+
+
+
+
+/* ************************ Partie responsive All users */
+
+
+@media (max-width: 1220px) and (min-width:993px ){
+  .container-all-users{
+    width: 950px;
+  }
+}
+@media (max-width: 992px) and (min-width:769px ){
+  .container-all-users{
+    width: 700px;
+  }
+}
+@media (max-width: 768px) and (min-width:577px ){
+  .container-all-users{
+    width: 500px;
+  }
+}
+@media (max-width: 576px) and (min-width:351px ){
+  .container-all-users{
+    width: 340px;
+  }
+}
+@media (max-width: 350px) {
+  .container-all-users{
+    width: 340px;
+  }
+  
+}
