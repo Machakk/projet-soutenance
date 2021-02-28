@@ -121,17 +121,18 @@ class CommentairesController extends AbstractController
 
     /* test 2 */
 
+
     /**
      * @Route("/forum/post-{id}", name="commentaire_user_create")
      */
-    public function createCommentaireUser(Request $request, PostForumRepository $postForumRepository, CommentaireForumRepository $commentaireForumRepository, UsersRepository $usersRepository, $id){
+    public function createCommentaireUser(Request $request, PostForumRepository $postForumRepository, CommentaireForumRepository $commentaireForumRepository, UsersRepository $usersRepository, $id)
+    {
 
         $user = $this->getUser();
         $commentaire = new CommentaireForum();
         $form = $this->createForm(CommentairePostUserType::class, $commentaire);
         $form->handleRequest($request);
         $post = $postForumRepository->find($id);
-        
         
         if($form->isSubmitted() && $form->isValid())
         {
@@ -142,66 +143,17 @@ class CommentairesController extends AbstractController
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($commentaire);
             $manager->flush();
-
             $this->addFlash('success', 'Vous avez commenté ce post!');
+            return $this->redirectToRoute('commentaire_user_create', array('id' => $id));
         }
-        else
-        {
-            $this->addFlash('danger', 'Un problème est survenu lors de création de commentaire!');
-        }
-        
         $commentaires = $commentaireForumRepository->findAll();
+        
         
         return $this->render('forum/post.html.twig', [
             'id' => $id,
             'commentaireUserCreate'=>$form->createView(),
             'post'=> $post,
             'commentaires' => $commentaires
-        ]);
+            ]);        
     }
-
-
-    /* test 3 */
-
-    // /**
-    //  * @Route("/forum/post-{id}", name="commentaire_user_create")
-    //  * @Route("/forum/post-{id}", name="forum_post")
-    //  */
-    // public function createCommentaireUser(Request $request, PostForumRepository $postForumRepository, $id)
-    // {
-
-    //     $user = $this->getUser();
-    //     $commentaire = new CommentaireForum();
-    //     $form = $this->createForm(CommentairePostUserType::class, $commentaire);
-    //     $form->handleRequest($request);
-    //     $post = $postForumRepository->find($id);
-
-    //     $posts = $postForumRepository->find($id);
-    //     $form2 = $this->createForm(PostsType::class, $posts);
-    //     $form2->handleRequest($request);
-
-    //     if($form->isSubmitted() && $form->isValid() && $form2->isSubmitted() && $form2->isValid())
-    //     {
-    //         $commentaire->setUser($user);
-    //         $commentaire->setPost($post);
-
-    //         $date = new \DateTime('@'.strtotime('now'));
-    //         $commentaire->setDate($date);
-    //         $manager = $this->getDoctrine()->getManager();
-    //         $manager->persist($commentaire);
-    //         $manager->flush();
-
-            
-    //         $manager2 = $this->getDoctrine()->getManager();
-    //         $manager2->persist($posts);
-    //         $manager2->flush();
-
-    //         return $this->redirectToRoute('commentaire_user_create', ['id' => $id]);
-    //     }
-
-    //     return $this->render('forum/post.html.twig', [
-    //         'commentaireUserCreate'=>$form->createView(),
-    //         'posts' => $posts,
-    //     ]);
-    // }
 }
