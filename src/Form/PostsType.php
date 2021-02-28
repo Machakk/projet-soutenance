@@ -42,7 +42,9 @@ class PostsType extends AbstractType
                     'placeholder' => 'Image du post'
                 ]
             ])
-            // ->add('date',DateTimeType::class)
+            ->add('date', DateTimeType::class, [
+                'date_label' => 'Starts On'
+            ])
 
             ->add('metier', EntityType::class, [
                 'label' => 'Métier:',

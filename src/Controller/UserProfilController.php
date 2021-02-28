@@ -23,20 +23,14 @@ class UserProfilController extends AbstractController
         $user = $usersRepository->find($id);
         $posts = $postForumRepository->findAll();
         $skills= $user->getSkills();
-        // echo '<pre>';
-        // var_dump($user);
-        // echo '</pre>';
-        // die();
-        
 
-        // var_dump($skills);
-        // die();
         
         $icon = $this->getParameter('photos_icon');
         $iconFb = $icon . "/fb.png";
         return $this->render('user_profil/profil.html.twig', [
             'user' => $user,
-            'posts' => $posts
+            'posts' => $posts,
+            'skills' => $skills
         ]);
 
     }
