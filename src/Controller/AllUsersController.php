@@ -2,9 +2,10 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\UsersRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class AllUsersController extends AbstractController
 {
@@ -13,6 +14,8 @@ class AllUsersController extends AbstractController
      */
     public function index(): Response
     {
+        // $user = $usersRepository->find($id);
+        // $skills= $user->getSkills();
         return $this->render('all_users/all-users.html.twig', [
             'controller_name' => 'AllUsersController',
         ]);

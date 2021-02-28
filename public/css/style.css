@@ -411,6 +411,7 @@ nav img{
   color: white;
   font-family: "Noto Sans", sans-serif;
   font-size: 25px;
+  font-size:bold;
 }
 
 .test{
@@ -1358,6 +1359,7 @@ font-weight:bold ;
 }
 
 .nom-users {
+  margin-bottom: 0px;
   font-size: 25px;
   color: #184D4D;
   font-weight: bold;
@@ -1376,7 +1378,7 @@ font-weight:bold ;
   margin-left: 40px;
   background-color: #91BFAF;
   border-radius: 30px;
-  display: flex;
+  display: line;
   flex-direction: column;
   align-items: center;
   padding-top: 50px;
@@ -1386,7 +1388,28 @@ font-weight:bold ;
 
 .metier-users {
   color: white;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
+}
+
+.btn-profil{
+  background: #184d4d;
+  text-align: center;
+  padding: 10px;
+  border-radius: 30px;
+  min-width:200px;
+  margin-top: 210px;
+  }
+
+.btn-profil a{
+  color: white;
+  font-family: "Noto Sans", sans-serif;
+  text-decoration: none; 
+  font-size: 25px;
+  font-size:bold;
+}
+
+.photo-users {
+  
 }
