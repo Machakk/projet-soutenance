@@ -44,7 +44,7 @@
 
         <div class="row">
             {% for user in users %}
-            <div class="col-4 text-center my-2">
+            <div class="col-4 text-center my-4">
                 <div class="container-users-all">
 
                     {# <img class="photo-users" src="{{asset('img/users/1-1614461613.jpg')}}" alt=""1-1614461613.jpg"> #} 
@@ -54,18 +54,21 @@
                     {% if user.metier.metier == "Frontend" %}
                 
                         <img  class="photo-users" src="{{ asset('img/metier/front-end.png') }}" alt="">
+                       
                         <p class="nom-users">{{user.pseudo}}</p>
                         <p class="metier-users"> Développeur Front-end</p>
                 
                     {% elseif user.metier.metier == "Backend" %}
                         
                         <img  class="photo-users" src="{{ asset('img/metier/back-end.png') }}" alt="">
+                        
                         <p class="nom-users">{{user.pseudo}}</p>
                         <p class="metier-users">Développeur Back-end</p>
                     
                     {% elseif user.metier.metier == "Design" %}
                         
                         <img  class="photo-users" src="{{ asset('img/metier/design.png') }}" alt="">
+                
                         <p class="nom-users">{{user.pseudo}}</p>
                         <p class="metier-users">Design</p>
                     
@@ -88,10 +91,8 @@
               
     <div class="row text-center"></div>
     
-    <hr>        
-        <p class="recherche-users">
-        Rechercher parmi les utilisateurs :
-        </p>
+           
+        
 
         
         
