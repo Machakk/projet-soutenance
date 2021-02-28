@@ -27,9 +27,7 @@ class CommentairePostUserType extends AbstractType
 
             ->add('valider', SubmitType::class, [
                 'attr' => [
-                    'type' => 'submit',
-                    'href' => "{{ path('post-commentaire') }}",
-                    'class' => 'btn btn-outline-success'
+                    'class' => 'btn btn-outline-success',
                     ]
             ])
         ;

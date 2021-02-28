@@ -5,9 +5,11 @@
 {% block body %}
 <div class="all-post">
 
+
     <div class="content-post">
         <div class="row">
             <div class="col-9">
+
 
                 <h2 class="text-center"> {{post.title}}</h2>
 
@@ -38,6 +40,7 @@
                     <div class="row justify-content-md-center" style="border: 1px solid #000;">
                         {{com.content}}
                     </div>  
+                    <p>Ecrit par: {{ com.user.pseudo}}</p>
                     {% endif %}
                 {% endfor %}
             </div>
@@ -49,12 +52,9 @@
                     <textarea name="commentaire" id="" cols="30" rows="10"></textarea>
                     <button type="submit" class="btn btn-outline-success">Valider</button>
                     </form> -->
-                        <form action="post-commentaire" method="post">
-                            {{ form_start(commentaireUserCreate)}}
+                    {{ form_start(commentaireUserCreate) }}
 
-                            {{ form_end(commentaireUserCreate)}}  
-                        </form>
-
+                    {{ form_end(commentaireUserCreate) }}
 
                 </div> 
                 {# formulaire pour ajouter un commentaire #}        
