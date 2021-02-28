@@ -64,6 +64,30 @@ class ForumController extends AbstractController
     }
 
     /**
+     * @Route("/forum/fullstack", name="forumFullstack")
+     * 
+     */
+    public function forumFullstack(PostForumRepository $postForumRepository): Response
+    {
+        $posts = $postForumRepository->findAll();
+        return $this->render('forum/forumFullstack.html.twig', [
+            'posts' => $posts,
+        ]);
+    }
+
+    /**
+     * @Route("/forum/autre", name="forumAutre")
+     * 
+     */
+    public function forumAutre(PostForumRepository $postForumRepository): Response
+    {
+        $posts = $postForumRepository->findAll();
+        return $this->render('forum/forumAutre.html.twig', [
+            'posts' => $posts,
+        ]);
+    }
+
+    /**
      * @Route("/forum/create", name="post_createu")
      */
     public function createPostu(Request $request){

@@ -56,6 +56,10 @@ class UsersController extends AbstractController
                 $nomImg="design.png";
                 $user->setImgprofil($nomImg);
             }
+            else {
+                $nomImg="unknow.png";
+                $user->setImgprofil($nomImg);
+            }
 
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($user);
