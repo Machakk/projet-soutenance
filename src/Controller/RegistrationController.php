@@ -60,6 +60,10 @@ class RegistrationController extends AbstractController
                         $nomImg="design.png";
                         $user->setImgprofil($nomImg);
                     }
+                    else {
+                        $nomImg="unknow.png";
+                        $user->setImgprofil($nomImg);
+                    }
                 }
                 $entityManager = $this->getDoctrine()->getManager();
                 $entityManager->persist($user);

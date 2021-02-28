@@ -64,6 +64,30 @@ class ForumController extends AbstractController
     }
 
     /**
+     * @Route("/forum/fullstack", name="forumFullstack")
+     * 
+     */
+    public function forumFullstack(PostForumRepository $postForumRepository): Response
+    {
+        $posts = $postForumRepository->findAll();
+        return $this->render('forum/forumFullstack.html.twig', [
+            'posts' => $posts,
+        ]);
+    }
+
+    /**
+     * @Route("/forum/autre", name="forumAutre")
+     * 
+     */
+    public function forumAutre(PostForumRepository $postForumRepository): Response
+    {
+        $posts = $postForumRepository->findAll();
+        return $this->render('forum/forumAutre.html.twig', [
+            'posts' => $posts,
+        ]);
+    }
+
+    /**
      * @Route("/forum/create", name="post_createu")
      */
     public function createPostu(Request $request){
@@ -97,10 +121,11 @@ class ForumController extends AbstractController
                 $manager = $this->getDoctrine()->getManager();
                 $manager->persist($post);
                 $manager->flush();
+                $this->addFlash('success', 'Vous avez créé un nouveau post!');
                 return $this->redirectToRoute('forum');
             } 
             else {
-                
+                $this->addFlash('danger', 'Error');
             }
         
         } 
