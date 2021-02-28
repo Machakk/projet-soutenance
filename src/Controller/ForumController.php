@@ -97,10 +97,11 @@ class ForumController extends AbstractController
                 $manager = $this->getDoctrine()->getManager();
                 $manager->persist($post);
                 $manager->flush();
+                $this->addFlash('success', 'Vous avez créé un nouveau post!');
                 return $this->redirectToRoute('forum');
             } 
             else {
-                
+                $this->addFlash('danger', 'Error');
             }
         
         } 

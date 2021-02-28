@@ -1,12 +1,61 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} user - formulaire {% endblock title %}
+{% block title %} user - modifier profil {% endblock title %}
 
 {% block body %}
     
-<h2 class="pb-5"> Formulaire - user</h2>
+
 
 {{ form_start(userProfilForm)}}
+    <div class="modifier-profil-container">
+        <a href="{{path('user_profil', {'id': app.user.id })}}" class="align-items-start"> <b><</b>  Retour au Profil </a>
+        <h2 class="p-3"> Modifier votre profil </h2>
+        <div class="line line-register"></div>
+        <div class="">
+            <form>
+                <div class="contain-input">
+                    {{ form_row(userProfilForm.pseudo) }}
+                </div>
+                <div class="contain-input">
+                    {{ form_row(userProfilForm.plainPassword) }}
+                </div>
+                <div class="contain-input">
+                    {{ form_row(userProfilForm.description) }}
+                </div>
+                <div class="contain-input">
+                    {{ form_row(userProfilForm.metier) }}
+                </div>
+                <div class="contain-input">
+                    {{ form_row(userProfilForm.niveau) }}
+                </div>
+                <div class="contain-input">
+                    {{ form_row(userProfilForm.imgprofil) }}
+                </div>
+                <div class="contain-input">
+                    {{ form_row(userProfilForm.fichier) }}
+                </div>
+                <div class="contain-input">
+                    {{ form_row(userProfilForm.linksite) }}
+                </div>
+                <div class="contain-input">
+                    {{ form_row(userProfilForm.linkfacebook) }}
+                </div>
+                <div class="contain-input">
+                    {{ form_row(userProfilForm.linkedin) }}
+                </div>
+                <div class="contain-input">
+                    {{ form_row(userProfilForm.linkgit) }}
+                </div>
+                <div class="contain-input">
+                    {{ form_row(userProfilForm.skills) }}
+                </div>
+                <div class="text-center">
+                    {{ form_row(userProfilForm._token) }}
+                    {{ form_row(userProfilForm.valider) }}
+                </div>
+            </form>
+        </div>
+    </div>
 {{ form_end(userProfilForm)}}
 
 {% endblock body %}

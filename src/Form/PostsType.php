@@ -21,17 +21,30 @@ class PostsType extends AbstractType
     {
         $builder
             ->add('title', TextType::class, [
-                'label' => 'Titre:'
+                'required' => true,
+                'label' => 'Titre:',
+                'help' => 'Un titre est obligatoire'
             ])
             ->add('content' , TextareaType::class, [
+                'required' => true,
                 'label' => 'Contenu:',
+                'attr' => [
+                    'minlength' => 20,
+                    'maxlength' => 1000
+                ],
+                'help' => 'Maximum 1000 caractères'
             ])
             ->add('img' , FileType::class , [
                 'label' => 'Image:',
                 'required' => false,
                 'mapped' =>false,
+                'attr' => [
+                    'placeholder' => 'Image du post'
+                ]
             ])
-            // ->add('date',DateTimeType::class)
+            // ->add('date', DateTimeType::class, [
+            //     'date_label' => 'Starts On'
+            // ])
 
             ->add('metier', EntityType::class, [
                 'label' => 'Métier:',
@@ -43,7 +56,7 @@ class PostsType extends AbstractType
 
             ->add('valider',SubmitType::class, [
                 'attr' => [
-                    'class' => 'btn-valide-post w-100 ',
+                    'class' => 'btn-valide-post w-100',
                 ]
             ])
         ;

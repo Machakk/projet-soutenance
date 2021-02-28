@@ -233,7 +233,6 @@ nav img{
 }
 
 
-
 .create-div{
   display: flex;
   justify-content: center;
@@ -287,6 +286,10 @@ nav img{
 .btn-valider-register:hover{
   background: #41826a;
   color: white;
+}
+
+a.login-register{
+  color: #41826a !important;
 }
 
 /********************************** Partie Login ****************************/
@@ -431,11 +434,37 @@ hr{
   height: 1px;
   text-align: center;
 }
+.forum-create-post{
+  border-radius: 20px;
+}
+.create-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+.create-post{
+  height: auto;
+}
+.btn-create-post{
+  padding: 5px;
+  border-radius: 20px;
+  -webkit-box-shadow: -10px 0px 13px -7px #cecece, 10px 0px 13px -7px #cecece, inset 0px -4px 38px 8px #41826A; 
+  box-shadow: -10px 0px 13px -7px #cecece, 10px 0px 13px -7px #cecece, inset 0px -4px 38px 8px #41826A;
+}
+.btn-create-post:hover{
+  text-decoration: none;
+  color: white;
+  -webkit-box-shadow: -10px 0px 13px -7px #a1a1a1, 10px 0px 13px -7px #cecece, inset 0px -4px 38px 8px #184D4D; 
+box-shadow: -10px 0px 13px -7px #a3a3a3, 10px 0px 13px -7px #c2c2c2, inset 0px -4px 38px 8px #184D4D;
+}
+
+
 
 /*** Partie post ?? ***/
 
 .img-perso-profil-posts{
-  width: 80px;
+  /* width: 80px; */
   height: 80px;
   overflow: hidden;
   display: flex;
@@ -478,6 +507,8 @@ hr{
 .content-post .user a, .profil-content-post .user a{
 
   font-family: 'Noto Sans', sans-serif;
+  color: #41826a;
+  font-size: 12px;
 }
 .content-post .content, .profil-content-post .content{
   color: #4e4e4e;
@@ -518,6 +549,26 @@ hr{
   -webkit-box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
   box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
   padding: 50px;
+}
+
+.container-profil  .suite {
+  color: white;
+  background: #41826a;
+  text-align: center;
+  font-family: 'KoHo', sans-serif;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 15px;
+  margin: 20px;
+  min-width: 40px;
+  text-decoration: none;
+}
+
+.container-profil .commentaire {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 28px;
+  color: #41826a;
+  margin-bottom: 30px;
 }
 
 /*partie left du profile */
@@ -704,14 +755,18 @@ hr{
 .content-create-post{
   margin-top: 60px;
   margin-bottom: 60px;
-  width: 1200px;
+  width: 800px;
   background: white;
   border-radius: 30px;
   -webkit-box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
   box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
   
-  padding: 50px;
 }
+
 .create-post{
 
   padding: 50px;
@@ -729,27 +784,23 @@ hr{
   /* font-weight: ; */
 }
 
-.create-post h2{
-  margin-bottom: 70px;
-  font-weight:400;
+.content-create-post h2{
   font-family: "Sawarabi Gothic", sans-serif;
   font-size: 38px;
   color: #184d4d;
-  border-radius: 0px;
-  box-shadow: 4px 4px 15px 4px #184D4D;
-  padding: 20px;
-
+  margin-bottom: 40px;
 }
 
-.create-post label{
+
+
+.content-create-post label{
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 600px;
   color: #184d4d;
-  font-size: 28px;
-  font-family: "Sawarabi Gothic", sans-serif;
-  font-weight: 200;
 }
 
-.create-post textarea{
-  width: 500px;
+
+.content-create-post textarea{
   height: 200px;
 }
 
@@ -766,6 +817,7 @@ hr{
   padding: 10px;
   padding-bottom: 30px;
   border-radius: 10px;
+  text-align: center;
 }
 
 
@@ -777,7 +829,7 @@ hr{
   font-size: 20px;
   border-radius: 0px;
   box-shadow: 4px 4px 15px 0px #184D4D;
-  padding: 20px;
+  padding: 5px;
 
 }
 .commentaire {
@@ -873,6 +925,46 @@ hr{
   flex-direction: column;
 
 }
+
+
+/* ********************  ******Modifie Profil ******************************** */
+
+.modifier-profil-container{
+  margin-top: 60px;
+  margin-bottom: 60px;
+  width: 800px;
+  background: white;
+  border-radius: 30px;
+  -webkit-box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
+  box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  
+}
+
+.modifier-profil-container a {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 28px;
+  color: #184d4d;
+  margin-bottom: 30px;
+  /* font-weight: ; */
+}
+
+.modifier-profil-container h2{
+  font-family: "Sawarabi Gothic", sans-serif;
+  font-size: 38px;
+  color: #184d4d;
+  margin-bottom: 40px;
+}
+.modifier-profil-container label{
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 600px;
+  color: #184d4d;
+}
+
+
 /************************ Partie responsive de base (menu nav) **************************/
 
 @media only screen and (max-width: 1130px){
@@ -1080,8 +1172,8 @@ hr{
   }
 
   .profil-content-post{
-    min-width:400px ;
-    max-width:400px ;
+    min-width:500px ;
+    max-width:500px ;
   }
 }
 
@@ -1100,6 +1192,27 @@ hr{
     min-width:300px ;
     max-width:300px ;
   }
+
+  .profil-content-post{
+    min-width:300px ;
+    max-width:300px ;
+  }
+
+  .container-profil-post h2{
+    font-size: 22px;
+  }
+
+  .user .img-post-user {
+    display: none;
+  }
+
+  .profil-content-post  .suite {
+    font-size: 12px;
+  }
+
+  .profil-content-post h3 {
+    font-size: 1rem !important;
+  }
 }
 
 @media (max-width: 576px) and (min-width:351px ){
@@ -1111,6 +1224,19 @@ hr{
     min-width:250px ;
     max-width:250px ;
   }
+
+  .container-profil-post h2{
+    font-size: 22px;
+  }
+
+  .user .img-post-user {
+    display: none;
+  }
+
+  .profil-content-post h3 {
+    font-size: 1rem !important;
+  }
+
 }
 
 @media (max-width: 350px) {
@@ -1121,6 +1247,18 @@ hr{
   .profil-content-post{
     min-width:200px ;
     max-width:200px ;
+  }
+
+  .container-profil-post h2{
+    font-size: 22px;
+  }
+
+  .user .img-post-user {
+    display: none;
+  }
+
+  .profil-content-post h3 {
+    font-size: 1rem !important;
   }
 }
 /* END VERSION  PROFIL */
@@ -1291,6 +1429,109 @@ hr{
 
 /* END Forum media */
 
+/* Partie FAQ */
+
+.container-faq{
+  margin-top: 60px;
+  width: 80%;
+  background: white;
+  border-radius: 30px;
+  -webkit-box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
+  box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container-faq h2{
+  font-family: 'Sawarabi Gothic', sans-serif;
+  font-size: 35px;
+  color: #184D4D;
+  margin-bottom: 60px;
+}
+.ask-container{
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  background: #F9F9F9;
+  -webkit-box-shadow: 0px 0px 7px -3px rgba(0,0,0,0.82); 
+  box-shadow: 0px 0px 7px -3px rgba(0,0,0,0.82);
+  padding: 10px;
+  height: 80px;
+  align-items: center;
+  margin-bottom: 40px;
+  cursor: pointer;
+}
+.ask-container h3{
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 20px;
+  color: #184d4d;
+  padding-top: 5px;
+  width: 90%;
+}
+.ask-container img{
+  width: 30px;
+  height: 30px;
+}
+.content-faq{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.answer-faq{
+  width: 50%;
+  font-family: 'KoHo', sans-serif;
+  display: none;
+  margin-top: -20px;
+}
+.container-faq h4{
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 40px;
+  margin-bottom: 35px;
+  color: #184d4d ;
+}
+.container-btn-faq a{
+  color: white;
+  background: #184d4d;
+  border-radius: 30px;
+  padding: 15px;
+  text-align: center;
+}
+.container-btn-faq a:hover{
+  background: #41826a;
+  text-decoration: none;
+}
+
+/* Partie responsive de FAQ */
+@media only screen and (max-width: 1216px){
+  .ask-container{
+    width: 80%;
+  }
+  .answer-faq{
+    width: 80%;
+  }
+  .ask-container h3{
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 680px){
+  .container-faq{
+    width: 95%;
+    padding:30px 10px;
+  }
+  .ask-container{
+    width: 100%;
+  }
+  .answer-faq{
+    width: 100%;
+  }
+  .container-faq h4{
+    font-size: 16px;
+  }
+}
 
 /* ****************** Partie responsive de register, Login ************************/
 @media (max-width: 1220px) and (min-width:993px ){
@@ -1333,6 +1574,7 @@ hr{
 
 /* Partie all-users  */
 
+<<<<<<< HEAD
 .container-all-users{
   margin-top: 60px;
   margin-bottom: 60px;  
@@ -1412,4 +1654,105 @@ font-weight:bold ;
 
 .photo-users {
   
+=======
+/* ****************** Partie responsive Modifier profil ****************** */
+@media (max-width: 1220px) and (min-width:993px ){
+  .modifier-profil-container{   
+    width: 500px;
+  }
+  h2{
+    font-size: 28px;
+  }
+
+}
+
+@media (max-width: 992px) and (min-width:769px ){
+  .modifier-profil-container{   
+    width: 400px;
+  }
+  .modifier-profil-container h2{
+    font-size: 25px;
+  }
+  .modifier-profil-container a {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) and (min-width:351px ){
+  .modifier-profil-container{   
+    width: 340px;
+  }
+  .modifier-profil-container h2{
+    font-size: 25px;
+  }
+  .modifier-profil-container a {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 350px) {
+  
+  .modifier-profil-container{   
+    width: 340px;
+  }
+  
+  .modifier-profil-container h2{
+    font-size: 25px;
+  }
+
+  .modifier-profil-container a {
+    font-size: 18px;
+  }
+}
+
+
+/* ****************** Partie responsive create-post****************** */
+@media (max-width: 1220px) and (min-width:993px ){
+  .content-create-post{   
+    width: 500px;
+  }
+
+  .content-create-post h2{
+    font-size: 25px;
+  }
+  .content-create-post a {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 992px) and (min-width:769px ){
+  .content-create-post{   
+    width: 400px;
+  }  
+  .content-create-post h2{
+    font-size: 25px;
+  }
+  .content-create-post a {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) and (min-width:351px ){
+  .content-create-post{   
+    width: 340px;
+  }
+  .content-create-post h2{
+    font-size: 25px;
+  }
+  .content-create-post a {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 350px) {
+  .content-create-post{   
+    width: 340px;
+  }
+  .content-create-post h2{
+    font-size: 25px;
+  }
+  .content-create-post a {
+    font-size: 18px;
+  }
+>>>>>>> 102f8eca631cfb6ab02317db648fbc3a4be31b19
 }
