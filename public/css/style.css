@@ -409,6 +409,7 @@ a.login-register{
   padding: 10px;
   border-radius: 15px;
   min-width:150px ;
+  
 }
 .btn-nav a{
   color: white;
@@ -1604,15 +1605,10 @@ font-weight:bold ;
   font-size: 25px;
   color: #184D4D;
   font-weight: bold;
+  text-align: center;
 }
 
-.lien-lexique {
-  font-size: 18px;
-  text-align: right;
-  margin-right: 40px;
-  
-}
-
+ 
 .container-users-all {
   width: 300px;
   height: 450px;
@@ -1623,6 +1619,7 @@ font-weight:bold ;
   flex-direction: column;
   align-items: center;
   padding-top: 50px;
+  border: solid 2px black;
   -webkit-box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
   box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
 }
@@ -1631,28 +1628,37 @@ font-weight:bold ;
   color: white;
   font-size: 25px;
   font-weight: bold;
-  margin-bottom: 50px;
+  margin-bottom: 200px;
+  text-align:center;
 }
 
 .btn-profil{
   background: #184d4d;
   text-align: center;
   padding: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
   border-radius: 30px;
-  min-width:200px;
-  margin-top: 210px;
+  border: solid 2px black;
+  min-width:600px;
+  text-align:center;
+  -webkit-box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
+  box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
   }
 
-.btn-profil a{
+a.btn-profil {
   color: white;
   font-family: "Noto Sans", sans-serif;
   text-decoration: none; 
-  font-size: 25px;
-  font-size:bold;
+  font-size: 20px;
+  font-weight:bold;
+  text-align:center;
 }
 
 .photo-users {
   
+  text-align: center;
+}
 /* ****************** Partie responsive Modifier profil ****************** */
 @media (max-width: 1220px) and (min-width:993px ){
   .modifier-profil-container{   
