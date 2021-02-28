@@ -1574,7 +1574,6 @@ box-shadow: -10px 0px 13px -7px #a3a3a3, 10px 0px 13px -7px #c2c2c2, inset 0px -
 
 /* Partie all-users  */
 
-<<<<<<< HEAD
 .container-all-users{
   margin-top: 60px;
   margin-bottom: 60px;  
@@ -1654,7 +1653,6 @@ font-weight:bold ;
 
 .photo-users {
   
-=======
 /* ****************** Partie responsive Modifier profil ****************** */
 @media (max-width: 1220px) and (min-width:993px ){
   .modifier-profil-container{   
@@ -1754,5 +1752,4 @@ font-weight:bold ;
   .content-create-post a {
     font-size: 18px;
   }
->>>>>>> 102f8eca631cfb6ab02317db648fbc3a4be31b19
 }
