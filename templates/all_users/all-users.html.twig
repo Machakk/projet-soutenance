@@ -54,18 +54,21 @@
                     {% if user.metier.metier == "Frontend" %}
                 
                         <img  class="photo-users" src="{{ asset('img/metier/front-end.png') }}" alt="">
+                       
                         <p class="nom-users">{{user.pseudo}}</p>
                         <p class="metier-users"> Développeur Front-end</p>
                 
                     {% elseif user.metier.metier == "Backend" %}
                         
                         <img  class="photo-users" src="{{ asset('img/metier/back-end.png') }}" alt="">
+                        
                         <p class="nom-users">{{user.pseudo}}</p>
                         <p class="metier-users">Développeur Back-end</p>
                     
                     {% elseif user.metier.metier == "Design" %}
                         
                         <img  class="photo-users" src="{{ asset('img/metier/design.png') }}" alt="">
+                
                         <p class="nom-users">{{user.pseudo}}</p>
                         <p class="metier-users">Design</p>
                     

@@ -1628,8 +1628,9 @@ font-weight:bold ;
   color: white;
   font-size: 25px;
   font-weight: bold;
-  margin-bottom: 200px;
+  margin-bottom: 120px;
   text-align:center;
+
 }
 
 .btn-profil{
@@ -1658,6 +1659,7 @@ a.btn-profil {
 .photo-users {
   
   text-align: center;
+  padding-bottom: 30px;
 }
 /* ****************** Partie responsive Modifier profil ****************** */
 @media (max-width: 1220px) and (min-width:993px ){
@@ -1925,3 +1927,4 @@ a.btn-profil {
     padding: 20px;
   }
 }
+                                                 
