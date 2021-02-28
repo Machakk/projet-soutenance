@@ -9,7 +9,14 @@
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
     {% endfor %}
 
-    
+    {% for label, messages in app.flashes(['success', 'danger']) %}
+        {% for message in messages %}
+            <div class="flash-{{ label }} bg-{{ label }} text-light p-3 rounded">
+                {{ message }}
+            </div>
+        {% endfor %}
+        
+    {% endfor %}
     {{ form_start(registrationForm) }}
     <div class="container-form-register">
         

@@ -6,6 +6,13 @@
     
 <h2 class="pb-5"> Formulaire - user</h2>
 
+{% for label, messages in app.flashes(['success', 'danger']) %}
+    {% for message in messages %}
+        <div class="flash-{{ label }} bg-{{ label }} text-light p-3 rounded">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endfor %}
 {{ form_start(userForm)}}
 {{ form_end(userForm)}}
 
