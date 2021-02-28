@@ -13,6 +13,8 @@ class AppFixtures extends Fixture
         $metier = new Metiers();
         $metier2 = new Metiers();
         $metier3 = new Metiers();
+        $metier4 = new Metiers();
+        $metier5 = new Metiers();
 
         $metier->setMetier('Frontend');
         $manager->persist($metier);
@@ -24,6 +26,21 @@ class AppFixtures extends Fixture
 
         $metier3->setMetier('Design');
         $manager->persist($metier3);
+
+        $manager->flush();
+
+        $metier3->setMetier('Design');
+        $manager->persist($metier3);
+
+        $manager->flush();
+
+        $metier4->setMetier('Fullstack');
+        $manager->persist($metier4);
+
+        $manager->flush();
+
+        $metier5->setMetier('Autre');
+        $manager->persist($metier5);
 
         $manager->flush();
     }

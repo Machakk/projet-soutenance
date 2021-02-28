@@ -4,28 +4,32 @@
 
 {% block body %}
 <div class="all-post">
-
-
     <div class="content-post">
-
-        <div class="row">
-            <div class="col-9">
-                <h2 class="text-center"> {{post.title}}</h2>
+        <div class="up-post">
+            <div class="retour-sur-forum">
+                <img src="{{asset('img/icons/back.png')}}" alt="icon-back">
+                <a href="{{ path('forum') }}">Retour sur le forum</a>
             </div>
-                
-            <div class="col-3 user ">
-                <a href=""> écrit par <img src="{{ asset('img/metier/design.png') }}" alt=""></a>
-            </div>
-            <div class="text-right p-2 m-2 mb-3">
-                <a href="{{ path('forum') }}" <i class="fas fa-arrow-circle-left"></i></a>
+            <div class="info-post">
+                <div class="info1-post">
+                    <a href="{{path('user_profil', {'id': post.user.id })}}" >
+                        <img class="img-user-sur-post" src="{{ asset('img/users/') ~ post.user.imgprofil }}" alt="">
+                    </a>
+                </div>
+                <div class="info2">
+                    <p>le <span>{{ post.date|date('d/m/Y') }}</span></p>
+                </div>
             </div>
         </div>
-
-        <div class="content text-center p-4">
-            <p>{{post.content}}</p>
+        <div class="post-content2">
+            <h2 class="text-center"> {{post.title}}</h2>
+            <img src="{{post.img}}" alt="" class="post-img">
+            <p class="text-post">
+                {{post.content}}
+            </p>
         </div>
-
-        <div class="container-commentaire p-3">
+        <div class="line-post"></div>
+        <div class="container-commentaire">
             {% for label, messages in app.flashes(['success', 'danger']) %}
                 {% for message in messages %}
                     <div class="flash-{{ label }} bg-{{ label }} text-light p-3 rounded">
@@ -33,38 +37,45 @@
                     </div>
                 {% endfor %}
             {% endfor %}
-            <h2>Commentaires</h2>
-            <div class="commentaire">
+            <h2>Commentaires:</h2>
+            <div class="commentaire-container-all">
                 {% for com in commentaires %}
-                    {% if com.post.id == post.id %}
-                    <div class="row justify-content-md-center" style="border: 1px solid #000;">
+                
+                {% if com.post.id == post.id %}
+                <div class="commentaire">
+                    <p class="auteur-post">Ecrit par: <span>{{ com.user.pseudo}}</span> </p>
+                    <div class="com">
                         {{com.content}}
+                    </div>
+                    <div class="date-post">
+                        <p>Le: <span>{{ com.date|date('d/m/Y') }}</span></p>
                     </div>  
-                    <p>Ecrit par: {{ com.user.pseudo}}</p>
-                    <p>Le: {{ com.date|date }}</p>
+                </div>
                     {% endif %}
                 {% endfor %}
             </div>
         </div>
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                <div class="part-commentaire">
-                    <!-- <form action="">
-                    <label for="commentaire">Votre commentaire</label>
-                    <textarea name="commentaire" id="" cols="30" rows="10"></textarea>
-                    <button type="submit" class="btn btn-outline-success">Valider</button>
-                    </form> -->
-                    {{ form_start(commentaireUserCreate) }}
+            <div class="part-commentaire">
+                <!-- <form action="">
+                <label for="commentaire">Votre commentaire</label>
+                <textarea name="commentaire" id="" cols="30" rows="10"></textarea>
+                <button type="submit" class="btn btn-outline-success">Valider</button>
+                </form> -->
+                {{ form_start(commentaireUserCreate) }}
 
-                    {{ form_end(commentaireUserCreate) }}
+                {{ form_end(commentaireUserCreate) }}
 
-                </div> 
-                {# formulaire pour ajouter un commentaire #}        
-            {% else %}
-            <div class="part-bouton-commenter">
-                <p class="btn-commenter" href="" onclick="changeStyle('block');">Commenter</p>
-            </div>
-    </div>        
-    <div class="login-post-container" id="login-post-all" >
+            </div> 
+            {# formulaire pour ajouter un commentaire #}        
+        {% else %}
+        <div class="part-bouton-commenter">
+            <p class="btn-commenter" href="" onclick="changeStyle('block');">Commenter</p>
+        </div>
+
+    </div>
+</div>
+<div class="login-post-container" id="login-post-all">
     <form action="{{ path('app_login') }}" method="post">
 
         <input
@@ -102,7 +113,8 @@
         </div>
     </form>
 
-    </div>
+</div>
+
         {% endif %}
 </div>
 
