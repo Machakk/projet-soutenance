@@ -334,6 +334,8 @@ a.login-register{
   color: white;
 }
 
+/* ******************** About us ****************** */
+
 .au-content-bg {
   background: white;
   margin: 4%;
@@ -341,22 +343,63 @@ a.login-register{
 }
 
 .au-content {
-  margin-top: 7%;
-  margin-bottom: 7%;
-  margin: 3%;
+  margin-top: 4%;
+  margin-bottom: 6%;
+  /* margin: 3%; */
   text-align: center;
 }
 
-.au-ul {
-  background: #41826a;
-  width: 100%;
-  border-radius: 30px;
+.au-header-nav {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 28px;
+  list-style: none;
+}
+
+.au-a {
+  text-decoration: none;
+  color: #41826a;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.au-a:hover {
+ 
+  color: #41826a;
+}
+
+.au-a:active {
+  text-decoration: none;
+  color: #C9BBAC;
+}
+
+.au-separator {
+    display: inline-block;
+    height: 38px;
+    width: 2px;
+    color: #41826A;
+    background: currentColor;
+    margin: auto 17px;
+}
+
+.au-h1 {
+  color: #41826A;
+  padding: 10%;
+  font-family: 'Sawarabi Gothic', sans-serif;
+}
+
+.au-hr {
+  color: #41826a;
+  margin: auto;
+  max-width: 85%;
 }
 
 .au-title {
   color: #41826a;
   font-size: 60px;
   padding: 3%;
+  padding-top: 10%;
+  font-family: 'Sawarabi Gothic', sans-serif;
 }
 
 .au-title-color2 {
@@ -364,8 +407,9 @@ a.login-register{
 }
 
 .au-ul {
-  
+  background: #41826a;
   list-style: none;
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -409,6 +453,7 @@ a.login-register{
   padding: 10px;
   border-radius: 15px;
   min-width:150px ;
+  
 }
 .btn-nav a{
   color: white;
@@ -873,19 +918,18 @@ box-shadow: -10px 0px 13px -7px #a3a3a3, 10px 0px 13px -7px #c2c2c2, inset 0px -
 /***************************** Partie login post **********************************/
 
 .login-post-container{
+  margin-top: -600px;
   padding: 40px;
   width: 550px;
   height: 450px;
   background-color: white;
   border-radius: 30px;
   padding-top: 50px;
+  display: none;
+  position: relative;
   -webkit-box-shadow: 0px 0px 243px 134px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 0px 243px 134px rgba(0,0,0,0.75);
   box-shadow: 0px 0px 243px 134px rgba(0,0,0,0.75);
-  display: none;
-  position: absolute;
-  top: 40%;
-  left: 40%;
 }
 .login-post-container form{
   display: flex;
@@ -910,9 +954,6 @@ box-shadow: -10px 0px 13px -7px #a3a3a3, 10px 0px 13px -7px #c2c2c2, inset 0px -
 .btncreate{
   text-align: center;
 }
-.all-post{
-  position: relative;
-}
 .part-commentaire{
   width: 100%;
   border: 2px solid rgb(133, 133, 133);
@@ -926,6 +967,11 @@ box-shadow: -10px 0px 13px -7px #a3a3a3, 10px 0px 13px -7px #c2c2c2, inset 0px -
 
 }
 
+@media only screen and (max-width:680px ){
+  .login-post-container{
+    width: 80%;
+  }
+}
 
 /* ********************  ******Modifie Profil ******************************** */
 
@@ -1262,7 +1308,6 @@ box-shadow: -10px 0px 13px -7px #a3a3a3, 10px 0px 13px -7px #c2c2c2, inset 0px -
   }
 }
 /* END VERSION  PROFIL */
-
 
 
 /* **************************FORUM MEDIA *******************************/
@@ -1607,23 +1652,18 @@ font-weight:bold ;
   text-align: center;
 }
 
-.lien-lexique {
-  font-size: 18px;
-  text-align: right;
-  margin-right: 40px;
-  
-}
-
+ 
 .container-users-all {
   width: 300px;
   height: 450px;
-  margin-left: 40px;
+  /* margin-left: 40px; */
   background-color: #91BFAF;
   border-radius: 30px;
   display: line;
   flex-direction: column;
   align-items: center;
   padding-top: 50px;
+  border: solid 2px black;
   -webkit-box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
   box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
 }
@@ -1632,31 +1672,38 @@ font-weight:bold ;
   color: white;
   font-size: 25px;
   font-weight: bold;
-  margin-bottom: 50px;
+  margin-bottom: 120px;
   text-align:center;
+
 }
 
 .btn-profil{
   background: #184d4d;
   text-align: center;
   padding: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
   border-radius: 30px;
-  min-width:200px;
-  margin-top: 210px;
+  border: solid 2px black;
+  min-width:600px;
   text-align:center;
+  -webkit-box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
+  box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
   }
 
-.btn-profil a{
+a.btn-profil {
   color: white;
   font-family: "Noto Sans", sans-serif;
   text-decoration: none; 
-  font-size: 25px;
-  font-size:bold;
+  font-size: 20px;
+  font-weight:bold;
   text-align:center;
 }
 
 .photo-users {
+  
   text-align: center;
+  padding-bottom: 30px;
 }
 /* ****************** Partie responsive Modifier profil ****************** */
 @media (max-width: 1220px) and (min-width:993px ){
@@ -1876,6 +1923,7 @@ font-weight:bold ;
 }
 .btn-commenter{
   margin-left: 110px;
+  position: relative;
 }
 
 /* Responsive partie post */
@@ -1925,4 +1973,38 @@ font-weight:bold ;
   .content-post{
     padding: 20px;
   }
+}
+                                                 
+
+
+
+
+/* ************************ Partie responsive All users */
+
+
+@media (max-width: 1220px) and (min-width:993px ){
+  .container-all-users{
+    width: 950px;
+  }
+}
+@media (max-width: 992px) and (min-width:769px ){
+  .container-all-users{
+    width: 700px;
+  }
+}
+@media (max-width: 768px) and (min-width:577px ){
+  .container-all-users{
+    width: 500px;
+  }
+}
+@media (max-width: 576px) and (min-width:351px ){
+  .container-all-users{
+    width: 340px;
+  }
+}
+@media (max-width: 350px) {
+  .container-all-users{
+    width: 340px;
+  }
+  
 }

@@ -35,36 +35,50 @@ class UsersController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()){
 
-            $user->setPassword(
-                $passwordEncoder->encodePassword(
-                    $user,
-                    $form->get('plainPassword')->getData()
-                )
-            );
 
-            $infoMetier = $form['metier']->getData();
+            /* vérifier que tous les champs obligatoire sont remplis*/
+            if($form['pseudo']->getData()!=null && 
+                $form['email']->getData()!=null  &&  
+                $form['plainPassword']->getData()!=null &&
+                $form['metier']->getData()!=null && 
+                $form['niveau']->getData()!=null)
+            {
+                /**password  */
+                $user->setPassword(
+                    $passwordEncoder->encodePassword(
+                        $user,
+                        $form->get('plainPassword')->getData()
+                    )
+                );
+    
+                /** Image de profil par défaut */
+                $infoMetier = $form['metier']->getData();
 
-            if($infoMetier->getMetier()=="Backend"){
-                $nomImg="back-end.png";
-                $user->setImgprofil($nomImg);
-            }
-            else if($infoMetier->getMetier()=="Frontend"){
-                $nomImg="front-end.png";
-                $user->setImgprofil($nomImg);
-            }
-            else if($infoMetier->getMetier()=="Design"){
-                $nomImg="design.png";
-                $user->setImgprofil($nomImg);
+                if($infoMetier->getMetier()=="Backend"){
+                    $nomImg="back-end.png";
+                    $user->setImgprofil($nomImg);
+                }
+                else if($infoMetier->getMetier()=="Frontend"){
+                    $nomImg="front-end.png";
+                    $user->setImgprofil($nomImg);
+                }
+                else if($infoMetier->getMetier()=="Design"){
+                    $nomImg="design.png";
+                    $user->setImgprofil($nomImg);
+                }
+                else {
+                    $nomImg="unknow.png";
+                    $user->setImgprofil($nomImg);
+                }
+    
+                $manager = $this->getDoctrine()->getManager();
+                $manager->persist($user);
+                $manager->flush();
+                return $this->redirectToRoute('admin_users'); 
             }
             else {
-                $nomImg="unknow.png";
-                $user->setImgprofil($nomImg);
+                $this->addFlash('danger', 'Vous devez remplir tous les champs!');
             }
-
-            $manager = $this->getDoctrine()->getManager();
-            $manager->persist($user);
-            $manager->flush();
-            return $this->redirectToRoute('admin_users'); 
         }
 
         return $this->render('admin/userForm.html.twig', [
