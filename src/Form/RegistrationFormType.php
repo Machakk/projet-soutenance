@@ -83,7 +83,7 @@ class RegistrationFormType extends AbstractType
                 'label' => 'Niveau:',
                 'required' => true,
                 'choices' => [
-                    '- ton niveau -' => false,
+                    '- Ton niveau -' => false,
                     'Junior' => 'junior',
                     'Confirmé' => 'confirmé',
                     'Expert' => 'expert'

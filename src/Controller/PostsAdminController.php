@@ -43,21 +43,24 @@ class PostsAdminController extends AbstractController
 
             $infoImg = $form['img']->getData();
             if($infoImg !=null){
-
                 $extebsionImg = $infoImg->guessExtension();
                 $nomImg = '1-'. time() .'.'. $extebsionImg;// compose un nom d'image unique
                 $infoImg->move($this->getParameter('photos_posts') ,$nomImg); //déplace l'image dans le dossier
      
                 $post->setImg($nomImg);
             }
-            $date = new \DateTime('@'.strtotime('now'));
-            $post->setDate($date);
-            $post->setUser($user);
-            $manager = $this->getDoctrine()->getManager();
-            $manager->persist($post);
-            $manager->flush();
-            return $this->redirectToRoute('admin_posts');
-            //métier modifié
+            if(!is_null($form['title']->getData() && !is_null($form['content']->getData()) && !is_null($form['metier']->getData())))
+            {
+                $date = new \DateTime('@'.strtotime('now'));
+                $post->setDate($date);
+                $post->setUser($user);
+                $manager = $this->getDoctrine()->getManager();
+                $manager->persist($post);
+                $manager->flush();
+                $this->addFlash('success', 'Vous avez ajouté un post!');
+                return $this->redirectToRoute('admin_posts');
+                //métier modifié
+            }
         }
         return $this->render('admin/postsForm.html.twig', [
             'postsForm'=>$form->createView(),

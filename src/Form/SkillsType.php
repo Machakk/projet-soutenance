@@ -16,7 +16,13 @@ class SkillsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title', TextType::class)
+            ->add('title', TextType::class, [
+                'required' => true,
+                'attr' => [
+                    'minlength' => 1,
+                    'maxlength' => 15 
+                ]
+            ])
             ->add('imageskill', FileType::class, array('data_class' => null))
             ->add('valider', SubmitType::class)
         ;

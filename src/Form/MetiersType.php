@@ -13,7 +13,14 @@ class MetiersType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('metier', TextType::class)
+            ->add('metier', TextType::class, [
+                'required' => true,
+                'label' => 'Metier:',
+                'attr' => [
+                    'minlength' => 5,
+                    'maxlength' => 20,
+                ],
+            ])
             ->add('valider', SubmitType::class)
         ;
     }

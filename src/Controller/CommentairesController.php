@@ -39,13 +39,17 @@ class CommentairesController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid())
         {
-            $date = new \DateTime('@'.strtotime('now'));
-            $commentaire->setDate($date);
-            $commentaire->setUser($user);
-            $manager = $this->getDoctrine()->getManager();
-            $manager->persist($commentaire);
-            $manager->flush();
-            return $this->redirectToRoute('admin_commentaires');
+            if(!is_null($form['content']) && !is_null($form['post']))
+            {
+                $date = new \DateTime('@'.strtotime('now'));
+                $commentaire->setDate($date);
+                $commentaire->setUser($user);
+                $manager = $this->getDoctrine()->getManager();
+                $manager->persist($commentaire);
+                $manager->flush();
+                $this->addFlash('success', 'Vous avez ajouté un commentaire');
+                return $this->redirectToRoute('admin_commentaires');
+            }
         }
 
         return $this->render('admin/commentaireForm.html.twig', [
@@ -136,15 +140,18 @@ class CommentairesController extends AbstractController
         
         if($form->isSubmitted() && $form->isValid())
         {
-            $commentaire->setUser($user);
-            $commentaire->setPost($post);
-            $date = new \DateTime('@'.strtotime('now'));
-            $commentaire->setDate($date);
-            $manager = $this->getDoctrine()->getManager();
-            $manager->persist($commentaire);
-            $manager->flush();
-            $this->addFlash('success', 'Vous avez commenté ce post!');
-            return $this->redirectToRoute('commentaire_user_create', array('id' => $id));
+            if(!is_null($form['content']))
+            {
+                $commentaire->setUser($user);
+                $commentaire->setPost($post);
+                $date = new \DateTime('@'.strtotime('now'));
+                $commentaire->setDate($date);
+                $manager = $this->getDoctrine()->getManager();
+                $manager->persist($commentaire);
+                $manager->flush();
+                $this->addFlash('success', 'Vous avez commenté ce post!');
+                return $this->redirectToRoute('commentaire_user_create', array('id' => $id));
+            }
         }
         $commentaires = $commentaireForumRepository->findAll();
         

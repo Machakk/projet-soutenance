@@ -1844,6 +1844,8 @@ font-weight:bold ;
 .com{
   font-family: 'KoHo', sans-serif;
   font-size: 16px;
+  max-width: 760px;
+  overflow-wrap: break-word;
 }
 .date-post{
   color: #184d4d;
