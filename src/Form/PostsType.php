@@ -42,9 +42,9 @@ class PostsType extends AbstractType
                     'placeholder' => 'Image du post'
                 ]
             ])
-            ->add('date', DateTimeType::class, [
-                'date_label' => 'Starts On'
-            ])
+            // ->add('date', DateTimeType::class, [
+            //     'date_label' => 'Starts On'
+            // ])
 
             ->add('metier', EntityType::class, [
                 'label' => 'Métier:',
@@ -56,7 +56,7 @@ class PostsType extends AbstractType
 
             ->add('valider',SubmitType::class, [
                 'attr' => [
-                    'class' => 'btn-valide-post w-100 ',
+                    'class' => 'btn-valide-post w-100',
                 ]
             ])
         ;

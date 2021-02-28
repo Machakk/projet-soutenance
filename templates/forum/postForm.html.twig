@@ -8,26 +8,22 @@
         <!-- <div class="create-post"> -->
             <h2 class=" text-center">Ajouter  un post</h2>
             <div class="line line-register"></div>
-            <div>
-                <form>                 
-                        <div class="contain-input  mb-4">
-                            {{ form_row(postForm.title) }}
-                        </div>
-                        <div class="contain-input text-center  mb-4">
-                            {{ form_row(postForm.metier) }}
-                        </div>
-                        <div class="contain-input  my-4">
-                            {{ form_row(postForm.img) }}
-                        </div>
-                        <div class="contain-input  my-4">
-                            {{ form_row(postForm.content) }}
-                        </div>
-                        <div class=" text-center ">
-                           
-                            {{ form_row(postForm.valider) }}
-                        </div>       
-                </form>
-
+            <div>                
+                <div class="contain-input  mb-4">
+                    {{ form_row(postForm.title) }}
+                </div>
+                <div class="contain-input text-center  mb-4">
+                    {{ form_row(postForm.metier) }}
+                </div>
+                <div class="contain-input  my-4">
+                    {{ form_row(postForm.img) }}
+                </div>
+                <div class="contain-input  my-4">
+                    {{ form_row(postForm.content) }}
+                </div>
+                <div class=" text-center ">
+                    {{ form_row(postForm.valider) }}
+                </div>                             
             </div>
 
         <!-- </div> -->
