@@ -209,7 +209,7 @@ class ForumController extends AbstractController
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($posts);
             $manager->flush();
-
+            
 
             return $this->redirectToRoute('forum_post',['id' => $id]);
         }
@@ -217,6 +217,7 @@ class ForumController extends AbstractController
         return $this->render('forum/post.html.twig', [
             'posts' => $posts,
             'commentaireUserCreate'=>$form->createView(),
+            
             
         ]);
 

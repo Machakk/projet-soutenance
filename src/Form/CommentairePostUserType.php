@@ -18,8 +18,9 @@ class CommentairePostUserType extends AbstractType
             
             ->add('content', TextareaType::class, [
                 'required' => true,
-                'label' => 'Contenu commentaire',
+                'label' => 'Votre commentaire:',
                 'attr' => [
+                    'class' => 'votre-com',
                     'cols' => 30,
                     'rows' => 5
                 ]
