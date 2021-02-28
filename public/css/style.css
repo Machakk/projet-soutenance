@@ -414,6 +414,7 @@ a.login-register{
   color: white;
   font-family: "Noto Sans", sans-serif;
   font-size: 25px;
+  font-size:bold;
 }
 
 .test{
@@ -1571,7 +1572,89 @@ box-shadow: -10px 0px 13px -7px #a3a3a3, 10px 0px 13px -7px #c2c2c2, inset 0px -
   }
 }
 
+/* Partie all-users  */
 
+<<<<<<< HEAD
+.container-all-users{
+  margin-top: 60px;
+  margin-bottom: 60px;  
+  background: white;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  width: 1200px;
+  background: white;
+  border-radius: 30px;
+  -webkit-box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
+  box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
+}
+
+.recherche-users{
+  font-size: 15px;
+  text-align: center;
+}
+
+.h1-all-users {
+font-size: 20px;
+margin-left: 40px;
+font-weight:bold ;
+}
+
+.nom-users {
+  margin-bottom: 0px;
+  font-size: 25px;
+  color: #184D4D;
+  font-weight: bold;
+}
+
+.lien-lexique {
+  font-size: 18px;
+  text-align: right;
+  margin-right: 40px;
+  
+}
+
+.container-users-all {
+  width: 300px;
+  height: 450px;
+  margin-left: 40px;
+  background-color: #91BFAF;
+  border-radius: 30px;
+  display: line;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+  -webkit-box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
+  box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
+}
+
+.metier-users {
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+.btn-profil{
+  background: #184d4d;
+  text-align: center;
+  padding: 10px;
+  border-radius: 30px;
+  min-width:200px;
+  margin-top: 210px;
+  }
+
+.btn-profil a{
+  color: white;
+  font-family: "Noto Sans", sans-serif;
+  text-decoration: none; 
+  font-size: 25px;
+  font-size:bold;
+}
+
+.photo-users {
+  
+=======
 /* ****************** Partie responsive Modifier profil ****************** */
 @media (max-width: 1220px) and (min-width:993px ){
   .modifier-profil-container{   
@@ -1671,4 +1754,5 @@ box-shadow: -10px 0px 13px -7px #a3a3a3, 10px 0px 13px -7px #c2c2c2, inset 0px -
   .content-create-post a {
     font-size: 18px;
   }
+>>>>>>> 102f8eca631cfb6ab02317db648fbc3a4be31b19
 }
