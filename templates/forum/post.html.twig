@@ -41,6 +41,7 @@
                         {{com.content}}
                     </div>  
                     <p>Ecrit par: {{ com.user.pseudo}}</p>
+                    <p>Le: {{ com.date|date }}</p>
                     {% endif %}
                 {% endfor %}
             </div>
