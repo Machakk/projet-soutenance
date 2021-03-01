@@ -45,7 +45,7 @@
                 <div class="commentaire">
                     <p class="auteur-post">Posté par: <span>{{ com.user.pseudo}}</span> </p>
                     <div class="com">
-                        {{com.content | nl2br |}}
+                        {{com.content | nl2br }}
                     </div>
                     <div class="date-post">
                         <p>Le: <span>{{ com.date|date('d/m/Y' ~ ' à ' ~ 'H:i:s') }}</span></p>

@@ -19,7 +19,7 @@ class ContactType extends AbstractType
                 'required' => true,
                 'attr' => [
                     'placeholder' => 'Nom Prenom',
-                    'pattern' => "[A-Za-z]",
+                    
                 ]
             ])
             ->add('email', EmailType::class, [

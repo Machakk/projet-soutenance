@@ -21,7 +21,7 @@ class SkillsType extends AbstractType
                 'attr' => [
                     'minlength' => 1,
                     'maxlength' => 15,
-                    'pattern' => "[A-Za-z]", 
+                     
                 ],
                 'help' => 'Input text only!'
             ])
