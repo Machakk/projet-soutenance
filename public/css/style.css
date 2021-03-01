@@ -920,19 +920,18 @@ box-shadow: -10px 0px 13px -7px #a3a3a3, 10px 0px 13px -7px #c2c2c2, inset 0px -
 /***************************** Partie login post **********************************/
 
 .login-post-container{
+  margin-top: -600px;
   padding: 40px;
   width: 550px;
   height: 450px;
   background-color: white;
   border-radius: 30px;
   padding-top: 50px;
+  display: none;
+  position: relative;
   -webkit-box-shadow: 0px 0px 243px 134px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 0px 243px 134px rgba(0,0,0,0.75);
   box-shadow: 0px 0px 243px 134px rgba(0,0,0,0.75);
-  display: none;
-  position: absolute;
-  top: 40%;
-  left: 40%;
 }
 .login-post-container form{
   display: flex;
@@ -957,9 +956,6 @@ box-shadow: -10px 0px 13px -7px #a3a3a3, 10px 0px 13px -7px #c2c2c2, inset 0px -
 .btncreate{
   text-align: center;
 }
-.all-post{
-  position: relative;
-}
 .part-commentaire{
   width: 100%;
   border: 2px solid rgb(133, 133, 133);
@@ -973,6 +969,11 @@ box-shadow: -10px 0px 13px -7px #a3a3a3, 10px 0px 13px -7px #c2c2c2, inset 0px -
 
 }
 
+@media only screen and (max-width:680px ){
+  .login-post-container{
+    width: 80%;
+  }
+}
 
 /* ********************  ******Modifie Profil ******************************** */
 
@@ -1309,7 +1310,6 @@ box-shadow: -10px 0px 13px -7px #a3a3a3, 10px 0px 13px -7px #c2c2c2, inset 0px -
   }
 }
 /* END VERSION  PROFIL */
-
 
 
 /* **************************FORUM MEDIA *******************************/
@@ -1658,7 +1658,7 @@ font-weight:bold ;
 .container-users-all {
   width: 300px;
   height: 450px;
-  margin-left: 40px;
+  /* margin-left: 40px; */
   background-color: #91BFAF;
   border-radius: 30px;
   display: line;
@@ -1893,6 +1893,8 @@ a.btn-profil {
 .com{
   font-family: 'KoHo', sans-serif;
   font-size: 16px;
+  max-width: 760px;
+  overflow-wrap: break-word;
 }
 .date-post{
   color: #184d4d;
@@ -1923,6 +1925,7 @@ a.btn-profil {
 }
 .btn-commenter{
   margin-left: 110px;
+  position: relative;
 }
 
 /* Responsive partie post */
@@ -1974,3 +1977,82 @@ a.btn-profil {
   }
 }
                                                  
+
+
+
+
+/* ************************ Partie responsive All users */
+
+
+@media (max-width: 1220px) and (min-width:993px ){
+  .container-all-users{
+    width: 950px;
+  }
+}
+@media (max-width: 992px) and (min-width:769px ){
+  .container-all-users{
+    width: 700px;
+  }
+}
+@media (max-width: 768px) and (min-width:577px ){
+  .container-all-users{
+    width: 500px;
+  }
+}
+@media (max-width: 576px) and (min-width:351px ){
+  .container-all-users{
+    width: 340px;
+  }
+}
+@media (max-width: 350px) {
+  .container-all-users{
+    width: 340px;
+  }
+  
+}
+
+/* ************************ Partie responsive contact */
+
+
+@media (max-width: 1220px) and (min-width:993px ){
+  .au-content h2{
+    font-size: 50px;
+  }
+
+  .au-content h1{
+    font-size: 2.3rem;
+  }
+}
+@media (max-width: 992px) and (min-width:769px ){
+  .au-content h2{
+    font-size: 40px;
+  }
+  .au-content h1{
+    font-size: 2.3rem;
+  }
+}
+@media (max-width: 768px) and (min-width:577px ){
+  .au-content h2{
+    font-size: 30px;
+  }
+  .au-content h1{
+    font-size: 1.7rem;
+  }
+}
+@media (max-width: 576px) and (min-width:351px ){
+  .au-content h2{
+    font-size: 25px;
+  }
+  .au-content h1{
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 350px) {
+  .au-content h2{
+    font-size: 20px;
+  }
+  .au-content h1{
+    font-size: 1.3rem;
+  }
+  
+}

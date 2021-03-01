@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+    <div class="au-content-bg">
+        <div class="au-content">
+
+            <ul class="au-header-nav">
+                <li><a href="{{path('aboutus')}}" class="au-a">About us</a></li>
+                <li class="au-separator"></li>
+                <li><a href="{{path('contact')}}" class="au-a">Contact us</a></li>
+                <li class="au-separator"></li>
+                <li><a href="{{path('faq')}}" class="au-a">FAQ</a></li>
+            </ul>
+
+            <h1 class="au-h1">Contactez nous</h1>
+            {% for label, messages in app.flashes(['success', 'danger']) %}
+                {% for message in messages %}
+                <div class="flash-{{ label }} bg-{{ label }} text-light p-3 rounded">
+                    {{ message }}
+                </div>
+                <br>
+                {% endfor %}
+            {% endfor %}
+            
+            <hr class="au-hr">
+            
+
+            <!-- <h2 class="au-title">Bonjour la D<span class="au-title-color2">ev</span> N<span class="au-title-color2">ation</span>.</h2> -->
+            {{ form_start(contactForm) }}
+            <div class="col-12 col-lg-6  offset-lg-3 mt-5">
+                <div class="m-3">
+                    {{form_widget(contactForm.pseudo)}}
+                </div>
+                <div class="m-3">
+                    {{form_widget(contactForm.email)}}
+                </div>
+                <div class="m-3">
+                    {{form_widget(contactForm.objet)}}
+                </div>
+                <div class="m-3">
+                    {{form_widget(contactForm.message)}}
+                </div>
+                <div class="m-3">
+
+                    {{form_widget(contactForm.envoyer)}}
+                </div>
+                
+                
+                
+            </div>
+            {{ form_end(contactForm)}}
+        </div>
+    </div>
+
+{% endblock %}

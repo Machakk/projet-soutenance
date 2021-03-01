@@ -15,6 +15,13 @@
         </tr>
     </thead>
     <tbody>
+        {% for label, message in app.flashes(['success']) %}
+            {% for message in message %}
+                <div class="flash-{{ label }} bg-{{ label }} text-light p-3 rounded">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
         {% for metier in metiers %}
             <tr>
                 <td class="align-middle">{{loop.index}}</td>

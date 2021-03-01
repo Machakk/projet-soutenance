@@ -23,6 +23,10 @@ class PostsType extends AbstractType
             ->add('title', TextType::class, [
                 'required' => true,
                 'label' => 'Titre:',
+                'attr' => [
+                    'minlength' => 3,
+                    'maxlength' => 30,
+                ],
                 'help' => 'Un titre est obligatoire'
             ])
             ->add('content' , TextareaType::class, [
@@ -30,9 +34,9 @@ class PostsType extends AbstractType
                 'label' => 'Contenu:',
                 'attr' => [
                     'minlength' => 20,
-                    'maxlength' => 1000
+                    'maxlength' => 5000
                 ],
-                'help' => 'Maximum 1000 caractères'
+                'help' => 'Maximum 5000 caractères'
             ])
             ->add('img' , FileType::class , [
                 'label' => 'Image:',
@@ -40,7 +44,8 @@ class PostsType extends AbstractType
                 'mapped' =>false,
                 'attr' => [
                     'placeholder' => 'Image du post'
-                ]
+                ],
+                'help' => 'png, jpg ou jpeg'
             ])
             // ->add('date', DateTimeType::class, [
             //     'date_label' => 'Starts On'
@@ -50,8 +55,7 @@ class PostsType extends AbstractType
                 'label' => 'Métier:',
                 'required' => true,
                 'class' => Metiers::class,
-                'choice_label' => 'metier',
-                
+                'choice_label' => 'metier',                
             ])
 
             ->add('valider',SubmitType::class, [

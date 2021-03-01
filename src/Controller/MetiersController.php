@@ -34,11 +34,15 @@ class MetiersController extends AbstractController
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid())
         {
-            $manager = $this->getDoctrine()->getManager();
-            $manager->persist($metiers);
-            $manager->flush();
-            // metier ajouté
-            return $this->redirectToRoute('admin_metiers');
+            if(!is_null($form['metier']))
+            {
+                $manager = $this->getDoctrine()->getManager();
+                $manager->persist($metiers);
+                $manager->flush();
+                $this->addFlash('success', 'Vous avez ajouté un nouveau métier!');
+                // metier ajouté
+                return $this->redirectToRoute('admin_metiers');
+            }
         }
         else
         {
@@ -65,6 +69,7 @@ class MetiersController extends AbstractController
             $manager->persist($metiers);
             $manager->flush();
             return $this->redirectToRoute('admin_metiers');
+            $this->addFlash('success', 'Modification réussie!');
             //métier modifié
         }
         return $this->render('admin/metiersForm.html.twig', [

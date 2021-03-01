@@ -18,7 +18,18 @@ class CommentairesPostType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('content', TextType::class)
+            ->add('content', TextType::class, [
+                'required' => true,
+                'label' => 'Votre commentaire:',
+                'attr' => [
+                    'class' => 'votre-com',
+                    'cols' => 30,
+                    'rows' => 5,
+                    'minlength' => 1,
+                    'maxlength' => 5000 
+                ]
+            ])
+
             // ->add('date', DateTimeType::class)
             
             ->add('post', EntityType::class, [
