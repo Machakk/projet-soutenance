@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+ {% block title %} {% trans %} erreur {% endtrans %}  {%  endblock title %}
+
+ {% block body %} 
+
+ <div class="container-error">
+
+     <div class="container-fluid text-center">
+        <div class="row p-5">
+            <div class="col-12 ">
+                <h1>DEVNATION -  {% trans %} erreur {% endtrans %} </h1>
+            </div>
+        </div>
+    
+        <div class="row p-5">
+            <div class="col-12">
+                <h2> {% trans %} une erreur est survenue. {% endtrans %}</h2>
+            </div>
+        </div>
+        <div class="row p-5">
+            <div class="col-4 offset-4">
+                <p>  {% trans %} Retourner à l' {% endtrans %} <a href="{{path('home')}}"> {% trans %}accueil {% endtrans %}</a>.</p>
+            </div>
+        </div>
+     </div>
+        
+ </div>
+
+ {% endblock body %}
