@@ -26,6 +26,7 @@ class PostsType extends AbstractType
                 'attr' => [
                     'minlength' => 3,
                     'maxlength' => 30,
+                    'pattern' => "[A-Za-z0-9]",
                 ],
                 'help' => 'Un titre est obligatoire'
             ])
@@ -34,9 +35,9 @@ class PostsType extends AbstractType
                 'label' => 'Contenu:',
                 'attr' => [
                     'minlength' => 20,
-                    'maxlength' => 5000
+                    'maxlength' => 1500
                 ],
-                'help' => 'Maximum 5000 caractères'
+                'help' => 'Maximum 1500 caractères'
             ])
             ->add('img' , FileType::class , [
                 'label' => 'Image:',
