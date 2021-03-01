@@ -27,7 +27,8 @@ class ProfilUserType extends AbstractType
                 'required' => true,
                 'attr' => [
                     'class' => 'form-control mb-3'
-                ]
+                ],
+                'pattern' => "[A-Za-z0-9]",
                 
             ])
             ->add('plainPassword', PasswordType::class, [

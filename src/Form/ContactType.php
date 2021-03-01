@@ -18,7 +18,8 @@ class ContactType extends AbstractType
             ->add('pseudo', TextType::class, [
                 'required' => true,
                 'attr' => [
-                    'placeholder' => 'Nom Prenom'
+                    'placeholder' => 'Nom Prenom',
+                    'pattern' => "[A-Za-z]",
                 ]
             ])
             ->add('email', EmailType::class, [

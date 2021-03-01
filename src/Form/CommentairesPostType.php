@@ -26,7 +26,7 @@ class CommentairesPostType extends AbstractType
                     'cols' => 30,
                     'rows' => 5,
                     'minlength' => 1,
-                    'maxlength' => 5000 
+                    'maxlength' => 1000 
                 ]
             ])
 
