@@ -49,7 +49,7 @@ class UserProfilController extends AbstractController
     
             if($form->isSubmitted() && $form->isValid())
             {
-                if(!is_null($form['pseudo']->getdata()) && !is_null($form['plainPassword']->getdata()) && !is_null($form['metier']->getdata()) && !is_null($form['niveau']->getdata()))
+                if(!is_null($form['pseudo']->getdata()) && !is_null($form['metier']->getdata()) && !is_null($form['niveau']->getdata()))
                 {
                     if($form->get('plainPassword')->getData() !== null) 
                     {
@@ -61,9 +61,11 @@ class UserProfilController extends AbstractController
                         );
                     }
         
+                    // $skills=$form['skills']->getData();
+                    // $user->addSkill($skills);
                     // image profil
-        
                     
+
                     $infoImg1 = $form['imgprofil']->getData();
                     $oldNomImg1 = $user->getImgprofil();
         

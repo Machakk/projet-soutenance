@@ -440,6 +440,7 @@ a.login-register{
   flex-direction: column;
   align-items: center;
   padding: 30px;
+  min-height: 650px;
   width: 1200px;
   background: white;
   border-radius: 30px;
@@ -1626,6 +1627,7 @@ box-shadow: -10px 0px 13px -7px #a3a3a3, 10px 0px 13px -7px #c2c2c2, inset 0px -
   display: flex;
   flex-direction: column;
   padding: 30px;
+  min-height: 650px;
   width: 1200px;
   background: white;
   border-radius: 30px;

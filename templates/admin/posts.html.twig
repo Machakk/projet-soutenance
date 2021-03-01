@@ -35,7 +35,7 @@
                 <td class="align-middle">{{post.title}}</td>
                 <td class="align-middle">{{post.content}}</td>
                 <td class="align-middle">{{post.img}}</td>
-                <td class="align-middle">{{post.date|date("m/d/Y","Europe/Paris")}}</td>
+                <td class="align-middle">{{post.date|date('d/m/Y H:i:s')}}</td>
                 <td class="align-middle">{{post.metier.metier}}</td>
                 <td class="align-middle"> <a href="{{ path('post_update' , { 'id': post.id })}}"> <i class="fas fa-pen"></i> </a> </td>
                 <td class="align-middle"> <a href="{{ path('post_delete' , { 'id': post.id })}}"> <i class="fas fa-trash-alt"></i></a>  </td>

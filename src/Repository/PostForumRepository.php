@@ -47,4 +47,15 @@ class PostForumRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    /**
+     * @return PostForum[] Returns an array of Maison objects ordered by latest insert
+    */
+    public function findPosts(){ //poue selectionner que six maisons
+        return $this->createQueryBuilder('s') // 's' est un alias
+            ->orderBy('s.date', 'DESC') // trie on ordre décroissant
+            ->getQuery() // requête
+            ->getResult() // résultat(s)
+        ;
+    }
 }

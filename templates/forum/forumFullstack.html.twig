@@ -48,15 +48,18 @@
         {% if post.metier.metier == "Fullstack" %}
             <div class="content-post my-4">
                 <div class="row">
-                    <div class="col-9">
+                    <div class="col-8 col-lg-10">
                         <h3 class="text-center"> {{post.title}}</h3>
 
                     </div>
-                    <div class="col-3 user ">
+                    <div class="col-4 col-lg-2 user text-right ">
                         <a href="{{path('user_profil', {'id': post.user.id })}}" class="img-perso-profil-posts m-2 p-2"> 
                             écrit par 
                             <img  class="ml-2 somthing " src="{{ asset('img/users/') ~ post.user.imgprofil }}" alt="">
                         </a>
+                        <div class="info2">
+                            <p>le <span>{{ post.date|date('d/m/Y H:i:s') }}</span></p>
+                        </div>
                     </div>
                 </div>
 

@@ -21,7 +21,7 @@ class ForumController extends AbstractController
      */
     public function index(PostForumRepository $postForumRepository): Response
     {
-        $posts = $postForumRepository->findAll();
+        $posts = $postForumRepository->findPosts();
         return $this->render('forum/forum.html.twig', [
             'posts' => $posts,
         ]);
@@ -33,7 +33,7 @@ class ForumController extends AbstractController
      */
     public function forumBack(PostForumRepository $postForumRepository): Response
     {
-        $posts = $postForumRepository->findAll();
+        $posts = $postForumRepository->findPosts();
         return $this->render('forum/forumBack.html.twig', [
             'posts' => $posts,
         ]);
@@ -45,7 +45,7 @@ class ForumController extends AbstractController
      */
     public function forumDes(PostForumRepository $postForumRepository): Response
     {
-        $posts = $postForumRepository->findAll();
+        $posts = $postForumRepository->findPosts();
         return $this->render('forum/forumDesign.html.twig', [
             'posts' => $posts,
         ]);
@@ -57,7 +57,7 @@ class ForumController extends AbstractController
      */
     public function forumFront(PostForumRepository $postForumRepository): Response
     {
-        $posts = $postForumRepository->findAll();
+        $posts = $postForumRepository->findPosts();
         return $this->render('forum/forumFront.html.twig', [
             'posts' => $posts,
         ]);
@@ -69,7 +69,7 @@ class ForumController extends AbstractController
      */
     public function forumFullstack(PostForumRepository $postForumRepository): Response
     {
-        $posts = $postForumRepository->findAll();
+        $posts = $postForumRepository->findPosts();
         return $this->render('forum/forumFullstack.html.twig', [
             'posts' => $posts,
         ]);
@@ -81,7 +81,7 @@ class ForumController extends AbstractController
      */
     public function forumAutre(PostForumRepository $postForumRepository): Response
     {
-        $posts = $postForumRepository->findAll();
+        $posts = $postForumRepository->findPosts();
         return $this->render('forum/forumAutre.html.twig', [
             'posts' => $posts,
         ]);
