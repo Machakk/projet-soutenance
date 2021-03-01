@@ -2008,3 +2008,49 @@ a.btn-profil {
   }
   
 }
+
+/* ************************ Partie responsive contact */
+
+
+@media (max-width: 1220px) and (min-width:993px ){
+  .au-content h2{
+    font-size: 50px;
+  }
+
+  .au-content h1{
+    font-size: 2.3rem;
+  }
+}
+@media (max-width: 992px) and (min-width:769px ){
+  .au-content h2{
+    font-size: 40px;
+  }
+  .au-content h1{
+    font-size: 2.3rem;
+  }
+}
+@media (max-width: 768px) and (min-width:577px ){
+  .au-content h2{
+    font-size: 30px;
+  }
+  .au-content h1{
+    font-size: 1.7rem;
+  }
+}
+@media (max-width: 576px) and (min-width:351px ){
+  .au-content h2{
+    font-size: 25px;
+  }
+  .au-content h1{
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 350px) {
+  .au-content h2{
+    font-size: 20px;
+  }
+  .au-content h1{
+    font-size: 1.3rem;
+  }
+  
+}
