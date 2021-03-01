@@ -609,7 +609,7 @@ box-shadow: -10px 0px 13px -7px #a3a3a3, 10px 0px 13px -7px #c2c2c2, inset 0px -
 /*** Partie post ?? ***/
 
 .img-perso-profil-posts{
-  /* width: 80px; */
+  width: 80px;
   height: 80px;
   overflow: hidden;
   display: flex;
@@ -692,7 +692,7 @@ box-shadow: -10px 0px 13px -7px #a3a3a3, 10px 0px 13px -7px #c2c2c2, inset 0px -
 
 /********************************* Partie Profil *********************************/
 .container-profil{
-  margin-top: 60px;
+  margin: 4%;
   width: 1200px;
   background: white;
   border-radius: 30px;
@@ -768,6 +768,7 @@ box-shadow: -10px 0px 13px -7px #a3a3a3, 10px 0px 13px -7px #c2c2c2, inset 0px -
 }
 .profil-metier img{
   width: 52px;
+  padding-bottom: 10px;
 }
 .profil-niveau{
   font-family: "Noto Sans", sans-serif;
@@ -899,21 +900,38 @@ box-shadow: -10px 0px 13px -7px #a3a3a3, 10px 0px 13px -7px #c2c2c2, inset 0px -
   font-weight: bold;
 }
 
-.profil-content-post{
+.profil-content-post {
   background: #f3f3f3;
-  min-width:500px ;
-  max-width:500px ;
+  min-width: 500px;
+  max-width: 500px;
   border-radius: 10px;
   border: solid 1px;
   border-color: #41826a;
+  position: relative;
+  padding-right: 1%;
+  padding-left: 1%;
 }
+
 .post-container-prof{
   display: flex;
   flex-wrap: wrap;
 }
 
+.profil-post-p {
+  padding-bottom: 10%;
+}
+.profil-post-btn {
+  position: absolute;
+  right: -19px;
+  bottom: 0px;
+  padding-top: 8%;
+} 
 
-
+.profil-post-user {
+  position: absolute;
+  top: -22px;
+  right: -1px;
+}
 
 /****************************** partie create post **************************/
 

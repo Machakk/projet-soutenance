@@ -17,7 +17,7 @@
                     </a>
                 </div>
                 <div class="info2">
-                    <p>le <span>{{ post.date|date('d/m/Y') }}</span></p>
+                    <p>Le <span>{{ post.date|date('d/m/Y') }}</span></p>
                 </div>
             </div>
         </div>
@@ -43,7 +43,7 @@
                 
                 {% if com.post.id == post.id %}
                 <div class="commentaire">
-                    <p class="auteur-post">Ecrit par: <span>{{ com.user.pseudo}}</span> </p>
+                    <p class="auteur-post">Posté par: <span>{{ com.user.pseudo}}</span> </p>
                     <div class="com">
                         {{com.content}}
                     </div>
