@@ -103,36 +103,45 @@ class ForumController extends AbstractController
         if($form->isSubmitted()){
             if($form->isValid()) {
 
-                
-                $infoImg = $form['img']->getData();
-                if($infoImg !=null){
+                if($form['title']->getData()!=null &&
+                    $form['content']->getData()!=null && 
+                    $form['metier']->getData()!=null) 
+                {
 
-                    $extebsionImg = $infoImg->guessExtension();
-                    $nomImg = '1-'. time() .'.'. $extebsionImg;// compose un nom d'image unique
-                    $infoImg->move($this->getParameter('photos_posts') ,$nomImg); //déplace l'image dans le dossier
-        
-                    $post->setImg($nomImg);
+                    $infoImg = $form['img']->getData();
+                    if($infoImg !=null){
+    
+                        $extebsionImg = $infoImg->guessExtension();
+                        $nomImg = '1-'. time() .'.'. $extebsionImg;// compose un nom d'image unique
+                        $infoImg->move($this->getParameter('photos_posts') ,$nomImg); //déplace l'image dans le dossier
+            
+                        $post->setImg($nomImg);
+                    }
+                    $date = new \DateTime('@'.strtotime('now'));
+
+                    $post->setDate($date);
+                    $post->setUser($user);
+    
+                   
+                    $manager = $this->getDoctrine()->getManager();
+                    $manager->persist($post);
+                    $manager->flush();
+                    $this->addFlash('success', 'Vous avez créé un nouveau post!');
+                    return $this->redirectToRoute('forum');
                 }
-                $date = new \DateTime('@'.strtotime('now'));
-                $post->setDate($date);
-                $post->setUser($user);
-
-               
-                $manager = $this->getDoctrine()->getManager();
-                $manager->persist($post);
-                $manager->flush();
-                $this->addFlash('success', 'Vous avez créé un nouveau post!');
-                return $this->redirectToRoute('forum');
+                else {
+                    $this->addFlash('danger', 'Vous devez remplir les champs suivants: titre, contenu, métier !');
+                }
             } 
-            else {
-                $this->addFlash('danger', 'Error');
-            }
+            // else {
+            //     $this->addFlash('danger', 'Error');
+            // }
         
         } 
-        else {
-            // echo "hi";
-            // die();
-        }
+        // else {
+        //     // echo "hi";
+        //     // die();
+        // }
         return $this->render('forum/postForm.html.twig', [
             'postForm'=>$form->createView(),
         ]);

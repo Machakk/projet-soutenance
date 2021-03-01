@@ -41,7 +41,7 @@ class UserProfilController extends AbstractController
     public function updateProfil(UsersRepository $usersRepository, $id, Request $request, UserPasswordEncoderInterface $passwordEncoder, SkillsRepository $skillsRepository ){
         $user = $usersRepository->find($id);
         $userlogin = $this->getUser();
-        // $skills = $skillsRepository->findAll();
+
         if($userlogin == $user){
 
             $form = $this->createForm(ProfilUserType::class, $user);
@@ -49,7 +49,9 @@ class UserProfilController extends AbstractController
     
             if($form->isSubmitted() && $form->isValid())
             {
-                if(!is_null($form['pseudo']->getdata()) && !is_null($form['metier']->getdata()) && !is_null($form['niveau']->getdata()))
+                if($form['pseudo']->getData()!=null && 
+                $form['metier']->getData()!=null && 
+                $form['niveau']->getData()!=null)
                 {
                     if($form->get('plainPassword')->getData() !== null) 
                     {
@@ -61,11 +63,6 @@ class UserProfilController extends AbstractController
                         );
                     }
         
-                    // $skills=$form['skills']->getData();
-                    // $user->addSkill($skills);
-                    // image profil
-                    
-
                     $infoImg1 = $form['imgprofil']->getData();
                     $oldNomImg1 = $user->getImgprofil();
         
@@ -80,14 +77,16 @@ class UserProfilController extends AbstractController
                         $infoImg1->move($this->getParameter('photos_users'), $nomImg1);
                         $user->setImgprofil($nomImg1);
                     }
-                    
-        
+
                     $manager = $this->getDoctrine()->getManager();
                     $manager->persist($user);
                     $manager->flush();
                     $this->addFlash('success', 'Vous avez modifié votre profil!');
                     // redirection vers profil user courant 
                     return $this->redirectToRoute('user_profil', ['id' => $id]);
+                }
+                else {
+                    $this->addFlash('danger', 'Vous devez remplir les champs suivants: pseudo, métier, niveau !');
                 }
             }
             return $this->render('user_profil/userProfilForm.html.twig', [
