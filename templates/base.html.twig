@@ -82,11 +82,18 @@
       </header>
       <div class="slide-menu" id="slide">
         <ul>
-          <li><a href="{{path('user_profil', {'id': app.user.id })}}">Mon compte</a></li>
+          {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+          <li><a href="{{path('user_profil', {'id': app.user.id })}}">Mon compte</a></li>          
           <li><a href="{{ path('all_users') }}">Les membres</a></li>
           <li><a href="{{ path('faq') }}">FAQ</a></li>
           <li><a href="{{ path('aboutus') }}">A propos</a></li>
           <li><a href="{{ path('contact') }}">Contact</a></li>
+          {% else %}
+          <li><a href="{{ path('all_users') }}">Les membres</a></li>
+          <li><a href="{{ path('faq') }}">FAQ</a></li>
+          <li><a href="{{ path('aboutus') }}">A propos</a></li>
+          <li><a href="{{ path('contact') }}">Contact</a></li>
+          {% endif %}
         </ul>
       </div>
       <script src="{{asset('js/main.js')}}" type="text/javascript"></script>
