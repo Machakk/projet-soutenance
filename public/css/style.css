@@ -727,17 +727,18 @@ box-shadow: -10px 0px 13px -7px #a3a3a3, 10px 0px 13px -7px #c2c2c2, inset 0px -
 }
 .profil-metier{
   display: flex;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center; */
+  /* justify-content: center; */
   width: 270px;
   margin-bottom: 10px;
+  flex-direction: column;
 }
 .profil-metier p{
   font-family: "Noto Sans", sans-serif;
   font-size: 18px;
   color: #41826a;
   font-weight: 600;
-  
+  display: contents;
 }
 .profil-metier img{
   width: 52px;
@@ -874,7 +875,8 @@ box-shadow: -10px 0px 13px -7px #a3a3a3, 10px 0px 13px -7px #c2c2c2, inset 0px -
   min-width:500px ;
   max-width:500px ;
   border-radius: 10px;
-
+  border: solid 1px;
+  border-color: #41826a;
 }
 .post-container-prof{
   display: flex;
@@ -970,7 +972,7 @@ box-shadow: -10px 0px 13px -7px #a3a3a3, 10px 0px 13px -7px #c2c2c2, inset 0px -
   font-size: 20px !important;
 }
 
-.img-perso-profil-forum{
+.img-perso-profil-forum {
   width: 80px;
   height: 80px;
   overflow: hidden;
@@ -981,7 +983,7 @@ box-shadow: -10px 0px 13px -7px #a3a3a3, 10px 0px 13px -7px #c2c2c2, inset 0px -
   margin-bottom: 100px;
 }
 
-.img-perso-profil-forum img{
+.img-perso-profil-forum img {
   width: 110px;
   text-align: center;
 }
