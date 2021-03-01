@@ -61,6 +61,13 @@
                   onmouseout="this.src='{{asset('img/icons/account 2.png')}}'"
               /></a>
             </li>
+            <li>
+              <div class="icon-more" onclick="menuDrop();">
+                <div class="point-icon"></div>
+                <div class="point-icon"></div>
+                <div class="point-icon"></div>
+              </div>
+            </li>
             {# is not granted
               li
                 form
@@ -73,6 +80,15 @@
           </ul>
         </nav>
       </header>
+      <div class="slide-menu" id="slide">
+        <ul>
+          <li><a href="{{path('user_profil', {'id': app.user.id })}}">Mon compte</a></li>
+          <li><a href="{{ path('all_users') }}">Les membres</a></li>
+          <li><a href="{{ path('faq') }}">FAQ</a></li>
+          <li><a href="{{ path('aboutus') }}">A propos</a></li>
+          <li><a href="{{ path('contact') }}">Contact</a></li>
+        </ul>
+      </div>
       <script src="{{asset('js/main.js')}}" type="text/javascript"></script>
       {% block body %}{% endblock %}
     </div>
