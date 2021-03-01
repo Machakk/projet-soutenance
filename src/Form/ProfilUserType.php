@@ -61,9 +61,9 @@ class ProfilUserType extends AbstractType
                 'required' => true,
                 'choices' => [
                     '- ton niveau -' => false,
-                    'Junior' => 'junior',
-                    'Confirmé' => 'confirmé',
-                    'Expert' => 'expert'
+                    'Junior' => 'Junior',
+                    'Confirmé' => 'Confirmé',
+                    'Expert' => 'Expert'
                 ],
                 'attr' => [
                     'class' => 'form-control mb-3'

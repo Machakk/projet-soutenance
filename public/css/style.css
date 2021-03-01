@@ -432,6 +432,7 @@ a.login-register{
   background: white;
   margin: 4%;
   border-radius: 30px;
+  width: 55%;
 }
 
 .au-content {
@@ -476,21 +477,23 @@ a.login-register{
 
 .au-h1 {
   color: #41826A;
-  padding: 10%;
+  padding-top: 9%;
   font-family: 'Sawarabi Gothic', sans-serif;
 }
 
 .au-hr {
   color: #41826a;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  margin-bottom: 10%;
   max-width: 85%;
 }
 
 .au-title {
   color: #41826a;
   font-size: 60px;
-  padding: 3%;
-  padding-top: 10%;
+  padding-bottom: 3%;
   font-family: 'Sawarabi Gothic', sans-serif;
 }
 
@@ -521,6 +524,10 @@ a.login-register{
   color: #41826a;
   font-size: 36px;
   padding: 4%;
+}
+
+.au-linkedin {
+  width: 12%;
 }
 
 /********************************  Partie Forum ***************************/
@@ -746,17 +753,18 @@ box-shadow: -10px 0px 13px -7px #a3a3a3, 10px 0px 13px -7px #c2c2c2, inset 0px -
 }
 .profil-metier{
   display: flex;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center; */
+  /* justify-content: center; */
   width: 270px;
   margin-bottom: 10px;
+  flex-direction: column;
 }
 .profil-metier p{
   font-family: "Noto Sans", sans-serif;
   font-size: 18px;
   color: #41826a;
   font-weight: 600;
-  
+  display: contents;
 }
 .profil-metier img{
   width: 52px;
@@ -896,7 +904,8 @@ box-shadow: -10px 0px 13px -7px #a3a3a3, 10px 0px 13px -7px #c2c2c2, inset 0px -
   min-width:500px ;
   max-width:500px ;
   border-radius: 10px;
-
+  border: solid 1px;
+  border-color: #41826a;
 }
 .post-container-prof{
   display: flex;
@@ -992,7 +1001,7 @@ box-shadow: -10px 0px 13px -7px #a3a3a3, 10px 0px 13px -7px #c2c2c2, inset 0px -
   font-size: 20px !important;
 }
 
-.img-perso-profil-forum{
+.img-perso-profil-forum {
   width: 80px;
   height: 80px;
   overflow: hidden;
@@ -1003,7 +1012,7 @@ box-shadow: -10px 0px 13px -7px #a3a3a3, 10px 0px 13px -7px #c2c2c2, inset 0px -
   margin-bottom: 100px;
 }
 
-.img-perso-profil-forum img{
+.img-perso-profil-forum img {
   width: 110px;
   text-align: center;
 }
@@ -1620,8 +1629,8 @@ box-shadow: -10px 0px 13px -7px #a3a3a3, 10px 0px 13px -7px #c2c2c2, inset 0px -
 /* Partie FAQ */
 
 .container-faq{
-  margin-top: 60px;
-  width: 80%;
+  margin: 4%;
+  width: 55%;
   background: white;
   border-radius: 30px;
   -webkit-box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
