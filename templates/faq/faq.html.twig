@@ -4,6 +4,13 @@
 
 {% block body %}
     <div class="container-faq">
+        <ul class="au-header-nav">
+            <li><a href="{{path('aboutus')}}" class="au-a">About us</a></li>
+            <li class="au-separator"></li>
+            <li><a href="{{path('contact')}}" class="au-a">Contact us</a></li>
+            <li class="au-separator"></li>
+            <li><a href="{{path('faq')}}" class="au-a">FAQ</a></li>
+        </ul>
         <h2>FAQ</h2>
         <div class="content-faq">
             <div class="ask-container" onclick="changeStyle2('block');">
