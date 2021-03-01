@@ -46,6 +46,7 @@
             <img class="img-profil-middle" src="{{ asset('img/icons/profil.png') }}" alt="profil-icon">
             
             <!-- Pour modifier son profil -->
+            
             {% if user.id == app.user.id %}
                 <a href="{{path('update_profil', { 'id': user.id })}}" class=""> <b>Modifier</b>  </a>
             {% endif %}

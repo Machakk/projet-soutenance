@@ -134,8 +134,7 @@ class ProfilUserType extends AbstractType
                 'multiple' => true,
                 'expanded' => true  
              ])
-            // ->add('abonne')
-            // ->add('users_abonnes')
+
             ->add('valider',SubmitType::class, [
                 'attr' => [
                     'class' => 'btn-valide-post w-100 '
