@@ -94,38 +94,6 @@ class CommentairesController extends AbstractController
         return $this->redirectToRoute('admin_commentaires');
     }
 
-    /* test 1 */
-
-    // /**
-    //  * @Route("/forum/post-{id}", name="commentaire_user_create")
-    //  */
-    // public function createCommentaireUser(Request $request){
-
-    //     $user = $this->getUser();
-    //     $commentaire = new CommentaireForum();
-    //     $form = $this->createForm(CommentairePostUserType::class, $commentaire);
-    //     $form->handleRequest($request);
-
-    //     if($form->isSubmitted() && $form->isValid())
-    //     {
-    //         $commentaire->setUser($user);
-    //         $date = new \DateTime('@'.strtotime('now'));
-    //         $commentaire->setDate($date);
-    //         $manager = $this->getDoctrine()->getManager();
-    //         $manager->persist($commentaire);
-    //         $manager->flush();
-    //         return $this->redirectToRoute('commentaire_user_create');
-    //     }
-
-    //     return $this->render('forum/post.html.twig', [
-    //         'commentaireUserCreate'=>$form->createView(),
-    //     ]);
-    // }
-    
-
-    /* test 2 */
-
-
     /**
      * @Route("/forum/post-{id}", name="commentaire_user_create")
      */
@@ -153,7 +121,7 @@ class CommentairesController extends AbstractController
                 return $this->redirectToRoute('commentaire_user_create', array('id' => $id));
             }
         }
-        $commentaires = $commentaireForumRepository->findAll();
+        $commentaires = $commentaireForumRepository->findCommentaire();
         
         
         return $this->render('forum/post.html.twig', [

@@ -61,9 +61,11 @@ class UserProfilController extends AbstractController
                         );
                     }
         
+                    // $skills=$form['skills']->getData();
+                    // $user->addSkill($skills);
                     // image profil
-        
                     
+
                     $infoImg1 = $form['imgprofil']->getData();
                     $oldNomImg1 = $user->getImgprofil();
         

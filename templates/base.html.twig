@@ -51,6 +51,19 @@
                   onmouseout="this.src='{{asset('img/icons/discussion 1.png')}}'"
               /></a>
             </li>{# is granted pour afficher le lien vers le compte #}
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+              <li class="account-button">
+                <a href="{{path('user_profil', {'id': app.user.id })}}"
+                  ><img
+                    class="icon-account"
+                    src="{{asset('img/icons/account 2.png')}}"
+                    alt="icon-home"
+                    onmouseover="this.src='{{asset('img/icons/account 2-vert.png')}}'"
+                    onmouseout="this.src='{{asset('img/icons/account 2.png')}}'"
+                /></a>
+              </li>
+            {% else %}
+
             <li class="account-button">
               <a href="{{ path('app_login') }}"
                 ><img
@@ -61,6 +74,7 @@
                   onmouseout="this.src='{{asset('img/icons/account 2.png')}}'"
               /></a>
             </li>
+            {% endif %}
             <li>
               <div class="icon-more" onclick="menuDrop();">
                 <div class="point-icon"></div>
@@ -83,11 +97,11 @@
       <div class="slide-menu" id="slide">
         <ul>
           {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-          <li><a href="{{path('user_profil', {'id': app.user.id })}}">Mon compte</a></li>          
           <li><a href="{{ path('all_users') }}">Les membres</a></li>
           <li><a href="{{ path('faq') }}">FAQ</a></li>
           <li><a href="{{ path('aboutus') }}">A propos</a></li>
           <li><a href="{{ path('contact') }}">Contact</a></li>
+          <li><a href="{{ path('app_logout') }}">Déconnexion</a></li>
           {% else %}
           <li><a href="{{ path('all_users') }}">Les membres</a></li>
           <li><a href="{{ path('faq') }}">FAQ</a></li>
