@@ -45,7 +45,7 @@
             <a href="#" class="profil-btn-message"><img src="" alt="">Message</a> -->
 
             
-            <p class="descri-profil">{{user.description}}</p>
+            <p class="descri-profil">{{user.description | nl2br}}</p>
             {% if user.id == app.user.id %}
                 <div class="mt-5 mb-2">
 
