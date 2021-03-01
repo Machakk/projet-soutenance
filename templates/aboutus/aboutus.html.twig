@@ -6,12 +6,12 @@
     <div class="au-content-bg">
         <div class="au-content">
 
-            <ul class="au-header-nav">
-                <li><a href="" class="au-a">About us</a></li>
+            <ul class="au-nav">
+                <li><a href="{{ path('aboutus') }}" class="au-a">About us</a></li>
                 <li class="au-separator"></li>
                 <li><a href="" class="au-a">Contact us</a></li>
                 <li class="au-separator"></li>
-                <li><a href="" class="au-a">FAQ</a></li>
+                <li><a href="{{ path('faq') }}" class="au-a">FAQ</a></li>
             </ul>
 
             <h1 class="au-h1">A propos de nous</h1>
@@ -29,6 +29,7 @@
                 <ul class="au-ul">                          
                         <li>
                             <img src="{{ asset('img/aboutus/account 2.png') }}" alt="">
+                            
                             <p class="au-li">Milan Jovanovic</p>
                          </li>
                         <li>
