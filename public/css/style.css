@@ -416,6 +416,7 @@ a.login-register{
   background: white;
   margin: 4%;
   border-radius: 30px;
+  width: 55%;
 }
 
 .au-content {
@@ -460,21 +461,23 @@ a.login-register{
 
 .au-h1 {
   color: #41826A;
-  padding: 10%;
+  padding-top: 9%;
   font-family: 'Sawarabi Gothic', sans-serif;
 }
 
 .au-hr {
   color: #41826a;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  margin-bottom: 10%;
   max-width: 85%;
 }
 
 .au-title {
   color: #41826a;
   font-size: 60px;
-  padding: 3%;
-  padding-top: 10%;
+  padding-bottom: 3%;
   font-family: 'Sawarabi Gothic', sans-serif;
 }
 
@@ -505,6 +508,10 @@ a.login-register{
   color: #41826a;
   font-size: 36px;
   padding: 4%;
+}
+
+.au-linkedin {
+  width: 12%;
 }
 
 /********************************  Partie Forum ***************************/
@@ -1566,8 +1573,8 @@ box-shadow: -10px 0px 13px -7px #a3a3a3, 10px 0px 13px -7px #c2c2c2, inset 0px -
 /* Partie FAQ */
 
 .container-faq{
-  margin-top: 60px;
-  width: 80%;
+  margin: 4%;
+  width: 55%;
   background: white;
   border-radius: 30px;
   -webkit-box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
