@@ -24,7 +24,7 @@ class CommentairePostUserType extends AbstractType
                     'cols' => 30,
                     'rows' => 5,
                     'minlength' => 1, //please fill this field
-                    'maxlength' => 5000 
+                    'maxlength' => 1000 
                 ]                
             ])
             

@@ -20,8 +20,10 @@ class SkillsType extends AbstractType
                 'required' => true,
                 'attr' => [
                     'minlength' => 1,
-                    'maxlength' => 15 
-                ]
+                    'maxlength' => 15,
+                    'pattern' => "[A-Za-z]", 
+                ],
+                'help' => 'Input text only!'
             ])
             ->add('imageskill', FileType::class, array('data_class' => null))
             ->add('valider', SubmitType::class)
