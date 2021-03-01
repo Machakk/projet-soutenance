@@ -19,7 +19,7 @@ class MetiersType extends AbstractType
                 'attr' => [
                     'minlength' => 5,
                     'maxlength' => 20,
-                    'pattern' => "[A-Za-z]",
+                   
                 ],
                 'help' => 'Input text only!'
             ])
