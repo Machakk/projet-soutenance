@@ -16,4 +16,9 @@ document.getElementById("answer5").style.display = newDisplay;
 function changeStyle6(newDisplay) {
 document.getElementById("answer6").style.display = newDisplay;
 }
+function menuDrop() {
+  let element = document.getElementById("slide");
+  element.classList.toggle("slide-affiché");
+}
+
   
