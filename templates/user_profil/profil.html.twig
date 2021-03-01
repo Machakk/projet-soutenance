@@ -16,22 +16,27 @@
                 
                 {% if user.metier.metier == "Frontend" %}
                 
-                    <img src="{{ asset('img/metier/front-end.png') }}" alt="">
-                    <p>Front-end</p>
+                    <img src="{{ asset('img/metier/front-end.png') }}"  class="mr-2" alt="">
+                    <p> Développeur Front-end</p>
                 
                 {% elseif user.metier.metier == "Backend" %}
                     
-                    <img src="{{ asset('img/metier/back-end.png') }}" alt="">
-                    <p>Back-end</p>
+                    <img src="{{ asset('img/metier/back-end.png') }}" class="mr-2" alt="">
+                    <p> Développeur Back-end</p>
                    
                 {% elseif user.metier.metier == "Design" %}
                     
-                    <img src="{{ asset('img/metier/design.png') }}" alt="">
-                    <p>Design</p>
+                    <img src="{{ asset('img/metier/design.png') }}" class="mr-3" alt="">
+                    <p>Designer</p>
+                   
+                {% elseif user.metier.metier == "Design" %}
+                    
+                    <img src="{{ asset('img/metier/unknow.png') }}" class="mr-2" alt="">
+                    <p>Développeur Fullstack</p>
                    
                 {% else %}
                     
-                    <img src="{{ asset('img/metier/unknow.png') }}" alt="">
+                    <img src="{{ asset('img/metier/unknow.png') }}" class="mr-3" alt="">
                     <p>Autre</p>
                 {% endif %}
             </div>
@@ -41,15 +46,19 @@
 
             
             <p class="descri-profil">{{user.description}}</p>
+            {% if user.id == app.user.id %}
+                <div class="mt-5 mb-2">
+
+                    <a href="{{path('update_profil', { 'id': user.id })}}" class=" btn-modifier-profil mt-3  "> <b>Modifier</b>  </a>
+                </div>
+            {% endif %}
         </div>
         <div class="profil-middle">
             <img class="img-profil-middle" src="{{ asset('img/icons/profil.png') }}" alt="profil-icon">
             
             <!-- Pour modifier son profil -->
             
-            {% if user.id == app.user.id %}
-                <a href="{{path('update_profil', { 'id': user.id })}}" class=""> <b>Modifier</b>  </a>
-            {% endif %}
+            
 
             <a href="{{user.fichier}}">Mon CV</a>
             <a href="{{user.linksite}}">monsite.com</a>

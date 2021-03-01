@@ -46,18 +46,20 @@
     </div>
     <hr>
     <div class="row text-center">
-        {% if is_granted('IS_AUTHENTICATED_FULLY')  %}
+        {#{% if is_granted('IS_AUTHENTICATED_FULLY')  %}#}
             <div class="forum-create-post">
                 <div class="create-container">
-                    <div class="img-perso-profil-forum mb-0">
-                        <img src="{{ asset('img/users/') ~ app.user.imgprofil }}" alt="" class="text-left">
-                    </div>
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                        <div class="img-perso-profil-forum mb-0">
+                            <img src="{{ asset('img/users/') ~ app.user.imgprofil }}" alt="" class="text-left">
+                        </div>
+                    {% endif %}
                     <div class="create-post">
                         <a class="btn-create-post" href="{{path('post_createu')}}"  >Créer un post</a>
                     </div>
                 </div>
             </div>            
-        {% endif %}
+        {#{% endif %}#}
     </div>
     {% for post in posts %}
 

@@ -16,7 +16,10 @@
         pretium. Phasellus eu diam turpis. Nam bibendum non nisi sit amet
         semper.
       </p> -->
-      <a href="{{ path('aboutus') }}" class="btn-plus">En savoir plus</a>
+      <div class="text-center text-sm-center text-md-center text-lg-right   m-4 ">
+        <a href="{{ path('forum') }}" class=" savoir-plus   text-center">En savoir plus</a>
+      </div>
+        
     </div>
     <div class="part-form">
       {% if is_granted('IS_AUTHENTICATED_FULLY') %}
@@ -24,8 +27,9 @@
 
         <h2>Bienvenue</h2>
         <p class="conn-on-home">Connecté en tant que : <br> <span>{{ app.user.pseudo }}</span> </p>
-        <a class="btn-logout-home" href="{{ path('app_logout') }}">Se déconnecter</a>
-        <a class="btn-mon-profil-home" href="{{path('user_profil', {'id': app.user.id })}}" class="text-center">Mon Profil</a>
+        <a class="btn-mon-profil-home mb-3" href="{{path('user_profil', {'id': app.user.id })}}" class="text-center">Mon Profil</a>
+        <a class="btn-logout-home " href="{{ path('app_logout') }}">Se déconnecter</a>
+        
       </div>
       
       {% else %}
@@ -60,9 +64,7 @@
           <div class="connex-div">
             <button class="btn-connexion" type="submit">Connexion</button>
           </div>
-          <div class="mdp">
-            <a class="mdp-forget" href="">Mot de passe oublié ?</a>
-          </div>
+         
           <div class="line"></div>
           <div class="create-div">
             <a class="btncreate" href="{{ path('app_register') }}">Créer un compte</a>

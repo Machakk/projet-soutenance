@@ -30,7 +30,7 @@ class Skills
     private $imageskill;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Users::class, inversedBy="skills")
+     * @ORM\ManyToMany(targetEntity=Users::class, mappedBy="skills")
      */
     private $user;
 
