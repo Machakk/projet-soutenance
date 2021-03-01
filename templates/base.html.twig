@@ -97,16 +97,19 @@
       <div class="slide-menu" id="slide">
         <ul>
           {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-          <li><a href="{{ path('all_users') }}">Les membres</a></li>
-          <li><a href="{{ path('faq') }}">FAQ</a></li>
-          <li><a href="{{ path('aboutus') }}">A propos</a></li>
-          <li><a href="{{ path('contact') }}">Contact</a></li>
-          <li><a href="{{ path('app_logout') }}">Déconnexion</a></li>
+            <li><a href="{{ path('all_users') }}">Les membres</a></li>
+            <li><a href="{{ path('faq') }}">FAQ</a></li>
+            <li><a href="{{ path('aboutus') }}">A propos</a></li>
+            <li><a href="{{ path('contact') }}">Contact</a></li>
+            <li><a href="{{ path('app_logout') }}">Déconnexion</a></li>
+            {% if is_granted('ROLE_ADMIN') %}
+              <li><a href="{{ path('admin') }}">Espace Admin</a></li>
+            {% endif %}
           {% else %}
-          <li><a href="{{ path('all_users') }}">Les membres</a></li>
-          <li><a href="{{ path('faq') }}">FAQ</a></li>
-          <li><a href="{{ path('aboutus') }}">A propos</a></li>
-          <li><a href="{{ path('contact') }}">Contact</a></li>
+            <li><a href="{{ path('all_users') }}">Les membres</a></li>
+            <li><a href="{{ path('faq') }}">FAQ</a></li>
+            <li><a href="{{ path('aboutus') }}">A propos</a></li>
+            <li><a href="{{ path('contact') }}">Contact</a></li>
           {% endif %}
         </ul>
       </div>

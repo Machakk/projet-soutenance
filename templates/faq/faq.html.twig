@@ -3,58 +3,62 @@
 {% block title %}DEV-NATION | FAQ{% endblock %}
 
 {% block body %}
-    <div class="container-faq">
-        <ul class="au-header-nav">
-            <li><a href="{{path('aboutus')}}" class="au-a">About us</a></li>
-            <li class="au-separator"></li>
-            <li><a href="{{path('contact')}}" class="au-a">Contact us</a></li>
-            <li class="au-separator"></li>
-            <li><a href="{{path('faq')}}" class="au-a">FAQ</a></li>
-        </ul>
+    <div class="au-content-bg">
+        <div class="au-content">
 
-        <h1 class="au-h1">FAQ</h1>
+            <ul class="au-header-nav">
+                <li><a href="{{path('aboutus')}}" class="au-a">About us</a></li>
+                <li class="au-separator"></li>
+                <li><a href="{{path('contact')}}" class="au-a">Contact us</a></li>
+                <li class="au-separator"></li>
+                <li><a href="{{path('faq')}}" class="au-a">FAQ</a></li>
+            </ul>
 
-            <hr class="au-hr">
+            <h1 class="au-h1">FAQ</h1>
 
-        <div class="content-faq">
-            <div class="ask-container" onclick="changeStyle2('block');">
-                <h3>Comment changer mon mot de passe ?</h3>
-                <img src="{{asset('img/icons/down-ask.png')}}" alt="icon-down">    
+                <hr class="au-hr">
+
+            <div class="content-faq">
+                <div class="ask-container" onclick="changeStyle2('block');">
+                        <h3>Comment changer mon mot de passe ?</h3>
+                        <img src="{{asset('img/icons/down-ask.png')}}" alt="icon-down">    
+                </div>
+
+                <p id="answer2" class="answer-faq">Cliquer sur profile en haut à droite puis sur modifier.
+                    Vous pouvez changer votre mot de passe ainsi que d'autres éléments.
+                </p>
             </div>
-            <p id="answer2" class="answer-faq">Cliquer sur profile en haut à droite puis sur modifier.
-                Vous pouvez changer votre mot de passe ainsi que d'autre éléments.
-            </p>
-        </div>
-        <div class="content-faq">
-            <div class="ask-container" onclick="changeStyle3('block');">
-                <h3>Comment changer mon mot de passe ?</h3>
-                <img src="{{asset('img/icons/down-ask.png')}}" alt="icon-down">    
+            <div class="content-faq">
+                <div class="ask-container" onclick="changeStyle3('block');">
+                    <h3>Comment changer mon mot de passe ?</h3>
+                    <img src="{{asset('img/icons/down-ask.png')}}" alt="icon-down">    
+                </div>
+                <p id="answer3" class="answer-faq">Cliquer sur profile en haut à droite puis sur modifier.
+                    Vous pouvez changer votre mot de passe ainsi que d'autres éléments.
+                </p>
             </div>
-            <p id="answer3" class="answer-faq">Cliquer sur profile en haut à droite puis sur modifier.
-                Vous pouvez changer votre mot de passe ainsi que d'autre éléments.
-            </p>
-        </div>
-        <div class="content-faq">
-            <div class="ask-container" onclick="changeStyle4('block');">
-                <h3>Comment changer mon mot de passe ?</h3>
-                <img src="{{asset('img/icons/down-ask.png')}}" alt="icon-down">    
+            <div class="content-faq">
+                <div class="ask-container" onclick="changeStyle4('block');">
+                    <h3>Comment changer mon mot de passe ?</h3>
+                    <img src="{{asset('img/icons/down-ask.png')}}" alt="icon-down">    
+                </div>
+                <p id="answer4" class="answer-faq">Cliquer sur profile en haut à droite puis sur modifier.
+                    Vous pouvez changer votre mot de passe ainsi que d'autres éléments.
+                </p>
             </div>
-            <p id="answer4" class="answer-faq">Cliquer sur profile en haut à droite puis sur modifier.
-                Vous pouvez changer votre mot de passe ainsi que d'autre éléments.
-            </p>
-        </div>
-        <div class="content-faq">
-            <div class="ask-container" onclick="changeStyle5('block');">
-                <h3>Comment changer mon mot de passe ?</h3>
-                <img src="{{asset('img/icons/down-ask.png')}}" alt="icon-down">    
+            <div class="content-faq">
+                <div class="ask-container" onclick="changeStyle5('block');">
+                    <h3>Comment changer mon mot de passe ?</h3>
+                    <img src="{{asset('img/icons/down-ask.png')}}" alt="icon-down">    
+                </div>
+                <p id="answer5" class="answer-faq">Cliquer sur profile en haut à droite puis sur modifier.
+                    Vous pouvez changer votre mot de passe ainsi que d'autres éléments.
+                </p>
             </div>
-            <p id="answer5" class="answer-faq">Cliquer sur profile en haut à droite puis sur modifier.
-                Vous pouvez changer votre mot de passe ainsi que d'autre éléments.
-            </p>
-        </div>
-        <h4>Vous trouvez pas votre réponse ?</h4>
-        <div class="container-btn-faq">
-            <a href="">Nous contacter</a>
+            <h4 class="h4-faq">Vous ne trouvez pas votre réponse ?</h4>
+            <div class="container-btn-faq">
+                <a href="{{path('contact')}}">Nous contacter</a>
+            </div>
         </div>
 
 

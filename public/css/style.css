@@ -448,6 +448,7 @@ a.login-register{
   justify-content: space-evenly;
   font-size: 28px;
   list-style: none;
+  width: 100%;
 }
 
 .au-a {
@@ -1720,6 +1721,10 @@ box-shadow: -10px 0px 13px -7px #a3a3a3, 10px 0px 13px -7px #c2c2c2, inset 0px -
   text-decoration: none;
 }
 
+.h4-faq {
+  padding-top: 8px; 
+  padding-bottom: 28px;
+}
 /* Partie responsive de FAQ */
 @media only screen and (max-width: 1216px){
   .ask-container{
@@ -1747,6 +1752,48 @@ box-shadow: -10px 0px 13px -7px #a3a3a3, 10px 0px 13px -7px #c2c2c2, inset 0px -
     font-size: 16px;
   }
 }
+
+
+/*********************************** Error *************************************/
+.container-error{
+  margin-top: 60px;
+  margin-bottom: 60px;  
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  min-height: 670px;
+  width: 1200px;
+  background: white;
+  border-radius: 30px;
+  -webkit-box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
+  box-shadow: 4px 4px 15px -2px rgba(0, 0, 0, 0.79);
+}
+
+.container-error h1{
+  font-family: 'Sawarabi Gothic';
+  color: #184D4D;
+}
+
+.container-error h2  {
+  font-family: 'Noto Sans', sans-serif;
+  color: #41826A ;
+}
+
+.container-error p  {
+  font-family: 'KoHo', sans-serif;
+  color: #4e4e4e ;
+}
+
+.container-error  a {
+  font-family: 'KoHo', sans-serif;
+  color: #184D4D;
+  list-style: none;
+  font-weight: bold;
+}
+
+
 
 /* ****************** Partie responsive de register, Login ************************/
 @media (max-width: 1220px) and (min-width:993px ){
@@ -2225,6 +2272,50 @@ a.btn-profil {
   }
   .au-content h1{
     font-size: 1.3rem;
+  }
+  
+}
+
+
+/* ***************responsive page error */
+
+@media (max-width: 1220px) and (min-width:993px ){
+  .container-error{
+    width: 950px;
+  }
+
+}
+@media (max-width: 992px) and (min-width:769px ){
+  .container-error{
+    width: 700px;
+  }
+}
+@media (max-width: 768px) and (min-width:577px ){
+  .container-error{
+    width: 500px;
+  }
+}
+@media (max-width: 576px) and (min-width:351px ){
+  .container-error{
+    width: 340px;
+  }
+  .container-error h1{
+    font-size: 30px;
+  }
+  .container-error h2{
+    font-size: 20px;
+  }
+}
+@media (max-width: 350px) {
+  .container-error{
+    width: 340px;
+  }
+  .container-error h1{
+    font-size: 25px;
+  }
+
+  .container-error h2{
+    font-size: 18px;
   }
   
 }

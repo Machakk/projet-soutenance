@@ -32,7 +32,7 @@ class RegistrationFormType extends AbstractType
                 'attr' => [
                     'class' => 'form-control mb-3',
                     'placeholder'=>'nom-prenom',
-                    'pattern' => "[A-Za-z0-9]", //nom prénom ou pseudo avec un chiffre?
+                    // 'pattern' => "[A-Za-z0-9]", //nom prénom ou pseudo avec un chiffre?
                 ]
                 
             ])
