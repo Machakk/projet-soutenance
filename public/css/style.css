@@ -2132,6 +2132,7 @@ a.btn-profil {
   .container-all-users{
     width: 950px;
   }
+
 }
 @media (max-width: 992px) and (min-width:769px ){
   .container-all-users{
