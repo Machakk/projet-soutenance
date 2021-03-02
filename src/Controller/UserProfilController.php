@@ -49,8 +49,9 @@ class UserProfilController extends AbstractController
     
             if($form->isSubmitted() && $form->isValid())
             {
-                if($form['pseudo']->getData()!=null && 
+                if( 
                 $form['metier']->getData()!=null && 
+                $form['pseudo']->getData()!=null &&
                 $form['niveau']->getData()!=null)
                 {
                     if($form->get('plainPassword')->getData() !== null) 
@@ -73,9 +74,18 @@ class UserProfilController extends AbstractController
                             unlink($oldCheminImg1);
                         }
                         $extensionImg1 = $infoImg1->guessExtension();
-                        $nomImg1 = '1-' . time() . '.' . $extensionImg1;
-                        $infoImg1->move($this->getParameter('photos_users'), $nomImg1);
-                        $user->setImgprofil($nomImg1);
+                        if($extensionImg1 =='png' || $extebsionImg =='jpeg' || $extebsionImg =='jpg' || $extebsionImg =='gif') {
+                            
+                            $nomImg1 = '1-' . time() . '.' . $extensionImg1;
+                            $infoImg1->move($this->getParameter('photos_users'), $nomImg1);
+                            $user->setImgprofil($nomImg1);
+                        }
+                        else {
+                            $this->addFlash('danger', 'Pas le bon type d\'image !');
+                            return $this->render('user_profil/userProfilForm.html.twig', [
+                                'userProfilForm' => $form->createView()
+                            ]);
+                        }
                     }
 
                     $manager = $this->getDoctrine()->getManager();
