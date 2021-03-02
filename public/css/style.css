@@ -1726,6 +1726,10 @@ box-shadow: -10px 0px 13px -7px #a3a3a3, 10px 0px 13px -7px #c2c2c2, inset 0px -
   padding-top: 8px; 
   padding-bottom: 28px;
 }
+
+.faq-img-profil {
+  width: 23px;
+}
 /* Partie responsive de FAQ */
 @media only screen and (max-width: 1216px){
   .ask-container{
@@ -2283,7 +2287,6 @@ a.btn-profil {
     width: 90%;
   }
   .au-ul {
-    padding: ;
     flex-wrap: wrap;
     flex-basis: 200px;
   }
@@ -2316,11 +2319,6 @@ a.btn-profil {
   .au-ul>* {
     flex: 1 1 160px;
  }
-}
-
-  .au-ul-bg {
-    height: ;
-  }
 }
 
 @media (max-width: 992px) and (min-width:769px ){
