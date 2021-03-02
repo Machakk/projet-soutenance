@@ -21,7 +21,7 @@ class UserProfilController extends AbstractController
     {
 
         $user = $usersRepository->find($id);
-        $posts = $postForumRepository->findAll();
+        $posts = $postForumRepository->findPosts();
         $skills= $user->getSkills();
 
         
@@ -73,10 +73,10 @@ class UserProfilController extends AbstractController
                         {
                             unlink($oldCheminImg1);
                         }
-                        $extensionImg1 = $infoImg1->guessExtension();
-                        if($extensionImg1 =='png' || $extebsionImg =='jpeg' || $extebsionImg =='jpg' || $extebsionImg =='gif') {
+                        $extensionImg = $infoImg1->guessExtension();
+                        if($extensionImg =='png' || $extensionImg =='jpeg' || $extensionImg =='jpg' || $extensionImg =='gif') {
                             
-                            $nomImg1 = '1-' . time() . '.' . $extensionImg1;
+                            $nomImg1 = '1-' . time() . '.' . $extensionImg;
                             $infoImg1->move($this->getParameter('photos_users'), $nomImg1);
                             $user->setImgprofil($nomImg1);
                         }
