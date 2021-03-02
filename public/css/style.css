@@ -923,7 +923,7 @@ box-shadow: -10px 0px 13px -7px #a3a3a3, 10px 0px 13px -7px #c2c2c2, inset 0px -
   padding-bottom: 10%;
 }
 .profil-post-btn {
-  position: absolute;
+  /* position: absolute; */
   right: -19px;
   bottom: 0px;
   padding-top: 8%;
@@ -2326,6 +2326,7 @@ a.post-back-forum {
     flex: 1 1 160px;
  }
 }
+
 
 @media (max-width: 992px) and (min-width:769px ){
   .au-content h2{

@@ -110,7 +110,7 @@
                         </div>
             
                         <div class="content">
-                            <p class="profil-post-p">{{post.content | u.truncate(100,'...')}}</p>
+                            <p class="profil-post-p p-3">{{post.content  | nl2br | u.truncate(100,'...')}}</p>
                         </div>
                         <div class="profil-post-btn text-right p-2 m-2 mb-3">
                             <a href="{{ path('forum_post', {'id': post.id}) }}" class="commentaire"><i class="fas fa-comment-alt"></i></a>
