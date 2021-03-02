@@ -112,10 +112,18 @@ class ForumController extends AbstractController
                     if($infoImg !=null){
     
                         $extebsionImg = $infoImg->guessExtension();
-                        $nomImg = '1-'. time() .'.'. $extebsionImg;// compose un nom d'image unique
-                        $infoImg->move($this->getParameter('photos_posts') ,$nomImg); //déplace l'image dans le dossier
-            
-                        $post->setImg($nomImg);
+                        if($extebsionImg =='png' || $extebsionImg =='jpeg' || $extebsionImg =='jpg' || $extebsionImg =='gif') {
+                            $nomImg = '1-'. time() .'.'. $extebsionImg;// compose un nom d'image unique
+                            $infoImg->move($this->getParameter('photos_posts') ,$nomImg); //déplace l'image dans le dossier
+                
+                            $post->setImg($nomImg);
+                        }
+                        else {
+                            $this->addFlash('danger', 'Pas le bon type d\'image !');
+                            return $this->render('forum/postForm.html.twig', [
+                                'postForm'=>$form->createView(),
+                            ]);
+                        }
                     }
                     $date = new \DateTime('@'.strtotime('now'));
 
@@ -132,16 +140,8 @@ class ForumController extends AbstractController
                 else {
                     $this->addFlash('danger', 'Vous devez remplir les champs suivants: titre, contenu, métier !');
                 }
-            } 
-            // else {
-            //     $this->addFlash('danger', 'Error');
-            // }
-        
+            }   
         } 
-        // else {
-        //     // echo "hi";
-        //     // die();
-        // }
         return $this->render('forum/postForm.html.twig', [
             'postForm'=>$form->createView(),
         ]);
