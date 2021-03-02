@@ -40,10 +40,19 @@ class SkillsController extends AbstractController
                 // Image
                 $infoImg = $form['imageskill']->getData();
                 $extebsionImg = $infoImg->guessExtension();
-                $nomImg = '1-'. time() .'.'. $extebsionImg;// compose un nom d'image unique
-                $infoImg->move($this->getParameter('photos_skills') ,$nomImg); //déplace l'image dans le dossier
-     
-                $skill->setImageskill($nomImg);
+                if($extebsionImg =='png' || $extebsionImg =='jpeg' || $extebsionImg =='jpg' || $extebsionImg =='gif') {
+          
+                    $nomImg = '1-'. time() .'.'. $extebsionImg;// compose un nom d'image unique
+                    $infoImg->move($this->getParameter('photos_skills') ,$nomImg); //déplace l'image dans le dossier
+         
+                    $skill->setImageskill($nomImg);
+                }
+                else {
+                    $this->addFlash('danger', 'Pas le bon type d\'image !');
+                    return $this->render('admin/skillsForm.html.twig', [
+                        'skillsForm'=>$form->createView(),
+                    ]);
+                }
     
                     $manager=$this->getDoctrine()->getManager();
                     $manager->persist($skill);

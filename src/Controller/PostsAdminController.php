@@ -44,10 +44,19 @@ class PostsAdminController extends AbstractController
             $infoImg = $form['img']->getData();
             if($infoImg !=null){
                 $extebsionImg = $infoImg->guessExtension();
-                $nomImg = '1-'. time() .'.'. $extebsionImg;// compose un nom d'image unique
-                $infoImg->move($this->getParameter('photos_posts') ,$nomImg); //déplace l'image dans le dossier
-     
-                $post->setImg($nomImg);
+                if($extebsionImg =='png' || $extebsionImg =='jpeg' || $extebsionImg =='jpg' || $extebsionImg =='gif') {
+                
+                    $nomImg = '1-'. time() .'.'. $extebsionImg;// compose un nom d'image unique
+                    $infoImg->move($this->getParameter('photos_posts') ,$nomImg); //déplace l'image dans le dossier
+         
+                    $post->setImg($nomImg);
+                }
+                else {
+                    $this->addFlash('danger', 'Pas le bon type d\'image !');
+                    return $this->render('admin/postsForm.html.twig', [
+                        'postsForm'=>$form->createView(),
+                    ]);
+                }
             }
             if(!is_null($form['title']->getData() && !is_null($form['content']->getData()) && !is_null($form['metier']->getData())))
             {

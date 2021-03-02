@@ -39,7 +39,7 @@ class UserType extends AbstractType
             'multiple' => true,
             'expanded' => true,
             'choices' => [
-                    'super admin' => 'ROME_SUPER_ADMIN',
+                    'super admin' => 'ROLE_SUPER_ADMIN',
                     'admin' => 'ROLE_ADMIN',
                     'utiliseateur' => ' ROLE_USER'
             ]

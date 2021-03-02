@@ -4,7 +4,14 @@
 
 {% block body %}
     
-
+{% for label, messages in app.flashes(['success', 'danger']) %}
+    {% for message in messages %}
+        <div class="flash-{{ label }} bg-{{ label }} text-light p-3 rounded">
+            {{ message }}
+        </div>
+    {% endfor %}
+    
+{% endfor %}
 
 {{ form_start(userProfilForm)}}
     <div class="modifier-profil-container">
