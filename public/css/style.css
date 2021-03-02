@@ -2042,6 +2042,11 @@ a.btn-profil {
   display: flex;
   justify-content: space-between;
 }
+
+a.post-back-forum {
+    font-size: 18px;
+  }
+
 .info-post{
   display: flex;
   flex-direction: column;
@@ -2222,6 +2227,7 @@ a.btn-profil {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+  
   }
   .content-post{
     padding: 20px;
